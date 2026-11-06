@@ -25,3 +25,4 @@ export * from './components/Spinner';
 export * from './components/Skeleton';
 export * from './components/Toast';
 export * from './components/Dialog';
+export * from './components/Drawer';

@@ -192,7 +192,19 @@ Before marking a component goal complete:
   - Tests: `Dialog.test.tsx` (4 tests passing)
   - Stories: `Dialog.stories.tsx` (Storybook v10 with confirmation and profile form layouts)
 
-- [ ] **Drawer / Sheet**: Slide-out panels
+#### 6. Drawer / Sheet
+- **Path**: `src/components/Drawer/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless a11y primitive: `@radix-ui/react-dialog` configured for slide-out drawers and bottom sheets
+  - Sides: `right` (default), `left`, `top`, `bottom`
+  - Sizes: `sm`, `md`, `lg`, `full`
+  - Subcomponents: `Drawer`, `DrawerTrigger`, `DrawerPortal`, `DrawerOverlay`, `DrawerContent`, `DrawerHeader`, `DrawerTitle`, `DrawerDescription`, `DrawerBody`, `DrawerFooter`, `DrawerClose`
+  - Semantic aliases: `Sheet`, `SheetTrigger`, `SheetPortal`, `SheetOverlay`, `SheetContent`, `SheetHeader`, `SheetTitle`, `SheetDescription`, `SheetBody`, `SheetFooter`, `SheetClose`
+  - Smooth slide animations with directional transform
+  - Tests: `Drawer.test.tsx` (4 tests passing)
+  - Stories: `Drawer.stories.tsx` (Storybook v10 with right side, left navigation, and bottom sheet examples)
+
 - [ ] **Tooltip & Popover**: Floating helper content
 - [ ] **Tabs & Accordion**: Accessible collapsible panels
 - [ ] **Breadcrumb**: Path navigation
