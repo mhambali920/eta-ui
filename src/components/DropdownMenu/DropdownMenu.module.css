@@ -1,0 +1,111 @@
+.content {
+  box-sizing: border-box;
+  min-width: 180px;
+  background-color: var(--eta-bg-surface);
+  border: 1px solid var(--eta-border-default);
+  border-radius: var(--eta-radius-md);
+  box-shadow: var(--eta-shadow-lg);
+  padding: 4px;
+  color: var(--eta-text-body);
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  z-index: 1050;
+  outline: none;
+  animation-duration: 150ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: var(--eta-radius-sm);
+  color: var(--eta-text-body);
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: background-color var(--eta-transition-fast), color var(--eta-transition-fast);
+  gap: 8px;
+}
+
+.item[data-highlighted] {
+  background-color: var(--eta-bg-subtle);
+  color: var(--eta-text-heading);
+}
+
+.item.danger {
+  color: var(--eta-status-error-solid);
+}
+
+.item.danger[data-highlighted] {
+  background-color: var(--eta-status-error-bg);
+  color: var(--eta-status-error-text);
+}
+
+.item[data-disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.label {
+  padding: 6px 10px 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--eta-text-muted);
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--eta-border-default);
+  margin: 4px 0;
+}
+
+.shortcut {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--eta-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.subTrigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: var(--eta-radius-sm);
+  color: var(--eta-text-body);
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: background-color var(--eta-transition-fast), color var(--eta-transition-fast);
+}
+
+.subTrigger[data-highlighted] {
+  background-color: var(--eta-bg-subtle);
+  color: var(--eta-text-heading);
+}
+
+.indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: var(--eta-color-primary);
+  flex-shrink: 0;
+}
+
+.indicator svg {
+  width: 100%;
+  height: 100%;
+}
