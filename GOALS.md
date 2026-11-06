@@ -205,7 +205,17 @@ Before marking a component goal complete:
   - Tests: `Drawer.test.tsx` (4 tests passing)
   - Stories: `Drawer.stories.tsx` (Storybook v10 with right side, left navigation, and bottom sheet examples)
 
-- [ ] **Tooltip & Popover**: Floating helper content
+#### 7. Tooltip
+- **Path**: `src/components/Tooltip/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless `@radix-ui/react-tooltip` with shorthand `<Tooltip content="..."><button /></Tooltip>` and composable subcomponents
+  - Variants: `dark` (high-contrast charcoal) and `soft` (tinted surface)
+  - Customizable placements (`top`, `right`, `bottom`, `left`), optional arrow, and delay
+  - Tests: `Tooltip.test.tsx` (3 tests passing)
+  - Stories: `Tooltip.stories.tsx` (Storybook v10 with interactive controls)
+
+- [ ] **Popover**: Floating helper content
 - [ ] **Tabs & Accordion**: Accessible collapsible panels
 - [ ] **Breadcrumb**: Path navigation
 

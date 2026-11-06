@@ -1,0 +1,70 @@
+.content {
+  box-sizing: border-box;
+  padding: 6px 12px;
+  border-radius: var(--eta-radius-md);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-family: inherit;
+  font-weight: 500;
+  z-index: 1050;
+  max-width: 280px;
+  word-wrap: break-word;
+  user-select: none;
+  box-shadow: var(--eta-shadow-md);
+  animation-duration: 150ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.variant-dark {
+  background-color: var(--eta-text-heading);
+  color: var(--eta-text-inverse);
+}
+
+.variant-soft {
+  background-color: var(--eta-bg-surface);
+  color: var(--eta-text-body);
+  border: 1px solid var(--eta-border-default);
+}
+
+.arrow {
+  fill: currentColor;
+}
+
+.variant-dark .arrow {
+  fill: var(--eta-text-heading);
+}
+
+.variant-soft .arrow {
+  fill: var(--eta-bg-surface);
+}
+
+.content[data-state='delayed-open'] {
+  animation-name: eta-tooltip-slide-in;
+}
+
+.content[data-state='closed'] {
+  animation-name: eta-tooltip-slide-out;
+}
+
+@keyframes eta-tooltip-slide-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes eta-tooltip-slide-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
