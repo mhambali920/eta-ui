@@ -3,6 +3,7 @@
   --eta-bg-base: #FAF9F6;
   --eta-bg-surface: #F3F1ED;
   --eta-bg-subtle: #EAE6DF;
+  --eta-bg-hover: #E2DDD4;
 
   /* Primary Accent (Sage Green) */
   --eta-color-primary: #6B9080;
@@ -72,6 +73,7 @@
   --eta-bg-base: #181A20;
   --eta-bg-surface: #22252E;
   --eta-bg-subtle: #2C303B;
+  --eta-bg-hover: #363B48;
 
   --eta-color-primary: #84A98C;
   --eta-color-primary-hover: #95B89D;
@@ -125,6 +127,7 @@
     --eta-bg-base: #181A20;
     --eta-bg-surface: #22252E;
     --eta-bg-subtle: #2C303B;
+    --eta-bg-hover: #363B48;
 
     --eta-color-primary: #84A98C;
     --eta-color-primary-hover: #95B89D;

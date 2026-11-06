@@ -34,3 +34,4 @@ export * from './components/Breadcrumb';
 export * from './components/Select';
 export * from './components/Slider';
 export * from './components/DropdownMenu';
+export * from './components/Table';
