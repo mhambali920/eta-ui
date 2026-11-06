@@ -1,0 +1,88 @@
+.skeleton {
+  box-sizing: border-box;
+  display: block;
+  background-color: var(--eta-bg-subtle);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* --- Shapes / Variants --- */
+.variant-text {
+  height: 1rem;
+  border-radius: var(--eta-radius-sm);
+  margin-bottom: 0.5rem;
+}
+
+.variant-text:last-child {
+  margin-bottom: 0;
+}
+
+.variant-circular {
+  border-radius: var(--eta-radius-full);
+}
+
+.variant-rectangular {
+  border-radius: 0;
+}
+
+.variant-rounded {
+  border-radius: var(--eta-radius-md);
+}
+
+/* --- Animations --- */
+.animation-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--eta-bg-subtle) 0%,
+    var(--eta-bg-surface) 50%,
+    var(--eta-bg-subtle) 100%
+  );
+  background-size: 200% 100%;
+  animation: eta-shimmer 1.6s ease-in-out infinite;
+}
+
+[data-theme="dark"] .animation-shimmer,
+.dark .animation-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--eta-bg-subtle) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    var(--eta-bg-subtle) 100%
+  );
+  background-size: 200% 100%;
+}
+
+.animation-pulse {
+  animation: eta-pulse 1.8s ease-in-out infinite;
+}
+
+.animation-none {
+  animation: none;
+}
+
+/* --- SkeletonText Helper --- */
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@keyframes eta-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes eta-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -154,7 +154,17 @@ Before marking a component goal complete:
   - Tests: `Spinner.test.tsx` (5 tests passing)
   - Stories: `Spinner.stories.tsx` (Storybook v10)
 
-- [ ] **Skeleton**: Soft pastel shimmer loading indicators
+#### 3. Skeleton
+- **Path**: `src/components/Skeleton/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Soft pastel shimmer and pulse placeholders avoiding stark contrasts
+  - Variants: `rounded`, `text`, `circular`, `rectangular`
+  - Customizable dimensions and wrapper `isLoaded` support
+  - Subcomponents: `SkeletonCircle`, `SkeletonText` (multi-line layout with natural last-line truncation)
+  - Tests: `Skeleton.test.tsx` (8 tests passing)
+  - Stories: `Skeleton.stories.tsx` (Storybook v10)
+
 - [ ] **Toast**: Floating transient notifications
 
 - [ ] **Modal / Dialog**: Radix-based accessible modal dialog

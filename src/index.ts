@@ -22,3 +22,4 @@ export * from './components/Layout';
 export * from './components/ThemeToggle';
 export * from './components/Alert';
 export * from './components/Spinner';
+export * from './components/Skeleton';
