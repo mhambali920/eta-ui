@@ -245,7 +245,17 @@ Before marking a component goal complete:
   - Tests: `Accordion.test.tsx` (4 tests passing)
   - Stories: `Accordion.stories.tsx` (Storybook v10 with interactive controls)
 
-- [ ] **Breadcrumb**: Path navigation
+#### 11. Breadcrumb
+- **Path**: `src/components/Breadcrumb/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Semantic HTML navigation (`<nav aria-label="Breadcrumb">`, `<ol>`, `<li>`)
+  - Subcomponents: `Breadcrumb`, `BreadcrumbList`, `BreadcrumbItem`, `BreadcrumbLink`, `BreadcrumbPage`, `BreadcrumbSeparator`, `BreadcrumbEllipsis`
+  - Current page indicator with accessible `aria-current="page"`
+  - Radix `Slot` integration with `asChild` for router frameworks (Next.js Link, React Router)
+  - Custom separator support and collapsed path ellipsis
+  - Tests: `Breadcrumb.test.tsx` (4 tests passing)
+  - Stories: `Breadcrumb.stories.tsx` (Storybook v10 with custom separators and collapsed ellipsis)
 
 ---
 

@@ -30,3 +30,4 @@ export * from './components/Tooltip';
 export * from './components/Popover';
 export * from './components/Tabs';
 export * from './components/Accordion';
+export * from './components/Breadcrumb';
