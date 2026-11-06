@@ -1,0 +1,122 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  border-radius: var(--eta-radius-md, 8px);
+  transition: all var(--eta-transition-fast, 150ms cubic-bezier(0.4, 0, 0.2, 1));
+  box-sizing: border-box;
+}
+
+/* Base Input Element */
+.input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  color: var(--eta-text-heading);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.input::placeholder {
+  color: var(--eta-text-muted);
+  opacity: 1;
+}
+
+/* Sizes */
+.sm {
+  min-height: 32px;
+  font-size: 0.8125rem;
+  padding: 0 10px;
+  gap: 6px;
+}
+
+.md {
+  min-height: 40px;
+  font-size: 0.875rem;
+  padding: 0 14px;
+  gap: 8px;
+}
+
+.lg {
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0 18px;
+  gap: 10px;
+}
+
+/* Variants */
+.outline {
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+}
+
+.outline:hover:not(.disabled) {
+  border-color: var(--eta-color-secondary);
+}
+
+.outline.focused {
+  border-color: var(--eta-color-primary);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus, rgba(107, 144, 128, 0.25));
+}
+
+.filled {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  border: 1px solid transparent;
+}
+
+.filled:hover:not(.disabled) {
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  border-color: var(--eta-border-default, #E5E3DC);
+}
+
+.filled.focused {
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  border-color: var(--eta-color-primary);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus, rgba(107, 144, 128, 0.25));
+}
+
+.unstyled {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Error / Invalid State */
+.invalid {
+  border-color: #E63946 !important;
+}
+
+.invalid.focused {
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.25) !important;
+}
+
+/* Disabled State */
+.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+}
+
+.disabled .input {
+  cursor: not-allowed;
+}
+
+/* Adornments */
+.adornment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--eta-text-muted);
+  flex-shrink: 0;
+}
+
+.adornment svg {
+  width: 1.15em;
+  height: 1.15em;
+}

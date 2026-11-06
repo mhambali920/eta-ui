@@ -1,0 +1,107 @@
+.textarea {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  color: var(--eta-text-heading);
+  border-radius: var(--eta-radius-md, 8px);
+  transition: all var(--eta-transition-fast, 150ms cubic-bezier(0.4, 0, 0.2, 1));
+  box-sizing: border-box;
+  margin: 0;
+  line-height: 1.5;
+  outline: none;
+}
+
+.textarea::placeholder {
+  color: var(--eta-text-muted);
+  opacity: 1;
+}
+
+/* Sizes */
+.sm {
+  min-height: 72px;
+  padding: 8px 10px;
+  font-size: 0.8125rem;
+}
+
+.md {
+  min-height: 96px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+}
+
+.lg {
+  min-height: 128px;
+  padding: 14px 18px;
+  font-size: 1rem;
+}
+
+/* Variants */
+.outline {
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+}
+
+.outline:hover:not(:disabled) {
+  border-color: var(--eta-color-secondary);
+}
+
+.outline:focus {
+  border-color: var(--eta-color-primary);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus, rgba(107, 144, 128, 0.25));
+}
+
+.filled {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  border: 1px solid transparent;
+}
+
+.filled:hover:not(:disabled) {
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  border-color: var(--eta-border-default, #E5E3DC);
+}
+
+.filled:focus {
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  border-color: var(--eta-color-primary);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus, rgba(107, 144, 128, 0.25));
+}
+
+.unstyled {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Resize controls */
+.resize-none {
+  resize: none;
+}
+
+.resize-vertical {
+  resize: vertical;
+}
+
+.resize-horizontal {
+  resize: horizontal;
+}
+
+.resize-both {
+  resize: both;
+}
+
+/* Error / Invalid */
+.invalid {
+  border-color: #E63946 !important;
+}
+
+.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.25) !important;
+}
+
+/* Disabled */
+.disabled,
+.textarea:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+}

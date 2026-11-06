@@ -1,0 +1,174 @@
+:root {
+  /* Surface & Background */
+  --eta-bg-base: #FAF9F6;
+  --eta-bg-surface: #F3F1ED;
+  --eta-bg-subtle: #EAE6DF;
+
+  /* Primary Accent (Sage Green) */
+  --eta-color-primary: #6B9080;
+  --eta-color-primary-hover: #557567;
+  --eta-color-primary-subtle: rgba(107, 144, 128, 0.12);
+  --eta-color-primary-focus: rgba(107, 144, 128, 0.25);
+
+  /* Secondary Accent (Dusty Blue) */
+  --eta-color-secondary: #7E99A3;
+  --eta-color-secondary-hover: #6B8791;
+  --eta-color-secondary-subtle: rgba(126, 153, 163, 0.12);
+
+  /* Typography */
+  --eta-text-heading: #2B2D42;
+  --eta-text-body: #5C6070;
+  --eta-text-muted: #8D99AE;
+  --eta-text-inverse: #FFFFFF;
+
+  /* Border */
+  --eta-border-default: #E5E3DC;
+  --eta-border-focus: #6B9080;
+
+  /* Semantic - Status */
+  --eta-status-success-bg: #D8F3DC;
+  --eta-status-success-text: #1B4332;
+  --eta-status-success-solid: #2D6A4F;
+  --eta-status-success-solid-hover: #1E4D38;
+  --eta-status-success-focus: rgba(45, 106, 79, 0.25);
+
+  --eta-status-warning-bg: #FFF3B0;
+  --eta-status-warning-text: #7F4F24;
+  --eta-status-warning-solid: #BC6C25;
+  --eta-status-warning-solid-hover: #9E5618;
+  --eta-status-warning-focus: rgba(188, 108, 37, 0.25);
+
+  --eta-status-error-bg: #FFCAD4;
+  --eta-status-error-text: #641220;
+  --eta-status-error-solid: #C1121F;
+  --eta-status-error-solid-hover: #9B0E19;
+  --eta-status-error-focus: rgba(193, 18, 31, 0.25);
+
+  --eta-status-info-bg: #D8E2DC;
+  --eta-status-info-text: #1D3557;
+  --eta-status-info-solid: #3D5A80;
+  --eta-status-info-solid-hover: #293E58;
+  --eta-status-info-focus: rgba(61, 90, 128, 0.25);
+
+  /* Geometry & Radius */
+  --eta-radius-sm: 6px;
+  --eta-radius-md: 8px;
+  --eta-radius-lg: 12px;
+  --eta-radius-full: 9999px;
+
+  /* Elevations */
+  --eta-shadow-sm: 0 2px 8px -2px rgba(43, 45, 66, 0.05);
+  --eta-shadow-md: 0 8px 24px -4px rgba(43, 45, 66, 0.06);
+  --eta-shadow-lg: 0 16px 36px -6px rgba(43, 45, 66, 0.08);
+
+  /* Transitions */
+  --eta-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --eta-transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"],
+.dark {
+  --eta-bg-base: #181A20;
+  --eta-bg-surface: #22252E;
+  --eta-bg-subtle: #2C303B;
+
+  --eta-color-primary: #84A98C;
+  --eta-color-primary-hover: #95B89D;
+  --eta-color-primary-subtle: rgba(132, 169, 140, 0.18);
+  --eta-color-primary-focus: rgba(132, 169, 140, 0.35);
+
+  --eta-color-secondary: #9BB1BC;
+  --eta-color-secondary-hover: #B0C3CD;
+  --eta-color-secondary-subtle: rgba(155, 177, 188, 0.18);
+
+  --eta-text-heading: #EDF2F4;
+  --eta-text-body: #B8C0CC;
+  --eta-text-muted: #7D8597;
+  --eta-text-inverse: #181A20;
+
+  --eta-border-default: #323642;
+  --eta-border-focus: #84A98C;
+
+  --eta-status-success-bg: rgba(82, 183, 136, 0.16);
+  --eta-status-success-text: #95D5B2;
+  --eta-status-success-solid: #40916C;
+  --eta-status-success-solid-hover: #52B788;
+  --eta-status-success-focus: rgba(82, 183, 136, 0.35);
+
+  --eta-status-warning-bg: rgba(255, 209, 102, 0.16);
+  --eta-status-warning-text: #FFE082;
+  --eta-status-warning-solid: #DDA15E;
+  --eta-status-warning-solid-hover: #E9C46A;
+  --eta-status-warning-focus: rgba(255, 209, 102, 0.35);
+
+  --eta-status-error-bg: rgba(255, 133, 161, 0.16);
+  --eta-status-error-text: #FFCCD5;
+  --eta-status-error-solid: #E63946;
+  --eta-status-error-solid-hover: #F26470;
+  --eta-status-error-focus: rgba(230, 57, 70, 0.35);
+
+  --eta-status-info-bg: rgba(142, 202, 230, 0.16);
+  --eta-status-info-text: #BAE6FD;
+  --eta-status-info-solid: #4EA8DE;
+  --eta-status-info-solid-hover: #6EC1E4;
+  --eta-status-info-focus: rgba(142, 202, 230, 0.35);
+
+  --eta-shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.35);
+  --eta-shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+  --eta-shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.55);
+}
+
+/* System Fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --eta-bg-base: #181A20;
+    --eta-bg-surface: #22252E;
+    --eta-bg-subtle: #2C303B;
+
+    --eta-color-primary: #84A98C;
+    --eta-color-primary-hover: #95B89D;
+    --eta-color-primary-subtle: rgba(132, 169, 140, 0.18);
+    --eta-color-primary-focus: rgba(132, 169, 140, 0.35);
+
+    --eta-color-secondary: #9BB1BC;
+    --eta-color-secondary-hover: #B0C3CD;
+    --eta-color-secondary-subtle: rgba(155, 177, 188, 0.18);
+
+    --eta-text-heading: #EDF2F4;
+    --eta-text-body: #B8C0CC;
+    --eta-text-muted: #7D8597;
+    --eta-text-inverse: #181A20;
+
+    --eta-border-default: #323642;
+    --eta-border-focus: #84A98C;
+
+    --eta-status-success-bg: rgba(82, 183, 136, 0.16);
+    --eta-status-success-text: #95D5B2;
+    --eta-status-success-solid: #40916C;
+    --eta-status-success-solid-hover: #52B788;
+    --eta-status-success-focus: rgba(82, 183, 136, 0.35);
+
+    --eta-status-warning-bg: rgba(255, 209, 102, 0.16);
+    --eta-status-warning-text: #FFE082;
+    --eta-status-warning-solid: #DDA15E;
+    --eta-status-warning-solid-hover: #E9C46A;
+    --eta-status-warning-focus: rgba(255, 209, 102, 0.35);
+
+    --eta-status-error-bg: rgba(255, 133, 161, 0.16);
+    --eta-status-error-text: #FFCCD5;
+    --eta-status-error-solid: #E63946;
+    --eta-status-error-solid-hover: #F26470;
+    --eta-status-error-focus: rgba(230, 57, 70, 0.35);
+
+    --eta-status-info-bg: rgba(142, 202, 230, 0.16);
+    --eta-status-info-text: #BAE6FD;
+    --eta-status-info-solid: #4EA8DE;
+    --eta-status-info-solid-hover: #6EC1E4;
+    --eta-status-info-focus: rgba(142, 202, 230, 0.35);
+
+    --eta-shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.35);
+    --eta-shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+    --eta-shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.55);
+  }
+}

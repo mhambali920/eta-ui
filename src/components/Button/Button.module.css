@@ -1,0 +1,241 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: var(--eta-radius-md, 8px);
+  cursor: pointer;
+  transition: all var(--eta-transition-fast, 150ms cubic-bezier(0.4, 0, 0.2, 1));
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-focus-ring, var(--eta-color-primary-focus, rgba(107, 144, 128, 0.25)));
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Sizes */
+.sm {
+  height: 32px;
+  padding: 0 10px;
+  font-size: 0.8125rem;
+}
+
+.md {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 0.875rem;
+}
+
+.lg {
+  height: 48px;
+  padding: 0 22px;
+  font-size: 1rem;
+}
+
+/* Color Palettes via Scoped CSS Variables */
+.primary {
+  --btn-solid-bg: var(--eta-color-primary);
+  --btn-solid-hover: var(--eta-color-primary-hover);
+  --btn-solid-text: var(--eta-text-inverse, #ffffff);
+
+  --btn-soft-bg: var(--eta-color-primary-subtle, rgba(107, 144, 128, 0.12));
+  --btn-soft-hover: rgba(107, 144, 128, 0.22);
+  --btn-soft-text: var(--eta-color-primary);
+
+  --btn-outline-text: var(--eta-color-primary);
+  --btn-outline-border: var(--eta-border-default, #E5E3DC);
+  --btn-outline-hover-border: var(--eta-color-primary);
+
+  --btn-ghost-text: var(--eta-color-primary);
+  --btn-focus-ring: var(--eta-color-primary-focus, rgba(107, 144, 128, 0.25));
+}
+
+.secondary {
+  --btn-solid-bg: var(--eta-color-secondary);
+  --btn-solid-hover: var(--eta-color-secondary-hover);
+  --btn-solid-text: var(--eta-text-inverse, #ffffff);
+
+  --btn-soft-bg: var(--eta-color-secondary-subtle, rgba(126, 153, 163, 0.12));
+  --btn-soft-hover: rgba(126, 153, 163, 0.22);
+  --btn-soft-text: var(--eta-color-secondary);
+
+  --btn-outline-text: var(--eta-color-secondary);
+  --btn-outline-border: var(--eta-border-default, #E5E3DC);
+  --btn-outline-hover-border: var(--eta-color-secondary);
+
+  --btn-ghost-text: var(--eta-color-secondary);
+  --btn-focus-ring: rgba(126, 153, 163, 0.25);
+}
+
+.success {
+  --btn-solid-bg: var(--eta-status-success-solid);
+  --btn-solid-hover: var(--eta-status-success-solid-hover);
+  --btn-solid-text: #ffffff;
+
+  --btn-soft-bg: var(--eta-status-success-bg);
+  --btn-soft-hover: rgba(82, 183, 136, 0.28);
+  --btn-soft-text: var(--eta-status-success-text);
+
+  --btn-outline-text: var(--eta-status-success-text);
+  --btn-outline-border: var(--eta-status-success-text);
+  --btn-outline-hover-border: var(--eta-status-success-solid);
+
+  --btn-ghost-text: var(--eta-status-success-text);
+  --btn-focus-ring: var(--eta-status-success-focus);
+}
+
+.warning {
+  --btn-solid-bg: var(--eta-status-warning-solid);
+  --btn-solid-hover: var(--eta-status-warning-solid-hover);
+  --btn-solid-text: #ffffff;
+
+  --btn-soft-bg: var(--eta-status-warning-bg);
+  --btn-soft-hover: rgba(255, 209, 102, 0.32);
+  --btn-soft-text: var(--eta-status-warning-text);
+
+  --btn-outline-text: var(--eta-status-warning-text);
+  --btn-outline-border: var(--eta-status-warning-text);
+  --btn-outline-hover-border: var(--eta-status-warning-solid);
+
+  --btn-ghost-text: var(--eta-status-warning-text);
+  --btn-focus-ring: var(--eta-status-warning-focus);
+}
+
+.danger {
+  --btn-solid-bg: var(--eta-status-error-solid);
+  --btn-solid-hover: var(--eta-status-error-solid-hover);
+  --btn-solid-text: #ffffff;
+
+  --btn-soft-bg: var(--eta-status-error-bg);
+  --btn-soft-hover: rgba(255, 133, 161, 0.28);
+  --btn-soft-text: var(--eta-status-error-text);
+
+  --btn-outline-text: var(--eta-status-error-text);
+  --btn-outline-border: var(--eta-status-error-text);
+  --btn-outline-hover-border: var(--eta-status-error-solid);
+
+  --btn-ghost-text: var(--eta-status-error-text);
+  --btn-focus-ring: var(--eta-status-error-focus);
+}
+
+.info {
+  --btn-solid-bg: var(--eta-status-info-solid);
+  --btn-solid-hover: var(--eta-status-info-solid-hover);
+  --btn-solid-text: #ffffff;
+
+  --btn-soft-bg: var(--eta-status-info-bg);
+  --btn-soft-hover: rgba(142, 202, 230, 0.28);
+  --btn-soft-text: var(--eta-status-info-text);
+
+  --btn-outline-text: var(--eta-status-info-text);
+  --btn-outline-border: var(--eta-status-info-text);
+  --btn-outline-hover-border: var(--eta-status-info-solid);
+
+  --btn-ghost-text: var(--eta-status-info-text);
+  --btn-focus-ring: var(--eta-status-info-focus);
+}
+
+/* Style Variants */
+.solid {
+  background-color: var(--btn-solid-bg);
+  color: var(--btn-solid-text);
+  border-color: transparent;
+}
+
+.solid:hover:not(:disabled) {
+  background-color: var(--btn-solid-hover);
+}
+
+.soft {
+  background-color: var(--btn-soft-bg);
+  color: var(--btn-soft-text);
+  border-color: transparent;
+}
+
+.soft:hover:not(:disabled) {
+  background-color: var(--btn-soft-hover);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--btn-outline-text);
+  border-color: var(--btn-outline-border);
+}
+
+.outline:hover:not(:disabled) {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  border-color: var(--btn-outline-hover-border);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--btn-ghost-text);
+  border-color: transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+}
+
+/* Spinner / Loading */
+.loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: eta-spin 0.6s linear infinite;
+}
+
+/* Icon Button */
+.iconButton.sm {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.iconButton.md {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.iconButton.lg {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}
+
+@keyframes eta-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
