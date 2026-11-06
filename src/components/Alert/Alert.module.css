@@ -1,0 +1,175 @@
+.alert {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--eta-radius-lg);
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  transition: all var(--eta-transition-fast);
+  position: relative;
+}
+
+/* --- Variants & Status --- */
+
+/* Soft Variant */
+.variant-soft.status-info {
+  background-color: var(--eta-status-info-bg);
+  color: var(--eta-status-info-text);
+  border: 1px solid rgba(61, 90, 128, 0.2);
+}
+
+.variant-soft.status-success {
+  background-color: var(--eta-status-success-bg);
+  color: var(--eta-status-success-text);
+  border: 1px solid rgba(45, 106, 79, 0.2);
+}
+
+.variant-soft.status-warning {
+  background-color: var(--eta-status-warning-bg);
+  color: var(--eta-status-warning-text);
+  border: 1px solid rgba(188, 108, 37, 0.2);
+}
+
+.variant-soft.status-error {
+  background-color: var(--eta-status-error-bg);
+  color: var(--eta-status-error-text);
+  border: 1px solid rgba(193, 18, 31, 0.2);
+}
+
+/* Outline Variant */
+.variant-outline {
+  background-color: transparent;
+}
+
+.variant-outline.status-info {
+  border: 1px solid var(--eta-status-info-solid);
+  color: var(--eta-status-info-text);
+}
+
+.variant-outline.status-success {
+  border: 1px solid var(--eta-status-success-solid);
+  color: var(--eta-status-success-text);
+}
+
+.variant-outline.status-warning {
+  border: 1px solid var(--eta-status-warning-solid);
+  color: var(--eta-status-warning-text);
+}
+
+.variant-outline.status-error {
+  border: 1px solid var(--eta-status-error-solid);
+  color: var(--eta-status-error-text);
+}
+
+/* Solid Variant */
+.variant-solid {
+  color: var(--eta-text-inverse, #ffffff);
+}
+
+.variant-solid.status-info {
+  background-color: var(--eta-status-info-solid);
+  border: 1px solid transparent;
+}
+
+.variant-solid.status-success {
+  background-color: var(--eta-status-success-solid);
+  border: 1px solid transparent;
+}
+
+.variant-solid.status-warning {
+  background-color: var(--eta-status-warning-solid);
+  border: 1px solid transparent;
+}
+
+.variant-solid.status-error {
+  background-color: var(--eta-status-error-solid);
+  border: 1px solid transparent;
+}
+
+/* --- Subcomponents --- */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
+  color: currentColor;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+  gap: 2px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: inherit;
+}
+
+.description {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: inherit;
+  opacity: 0.92;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.closeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin: -4px -4px -4px 0;
+  border-radius: var(--eta-radius-sm);
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity var(--eta-transition-fast), background var(--eta-transition-fast);
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.closeButton:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .closeButton:hover,
+.dark .closeButton:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.closeButton svg {
+  width: 16px;
+  height: 16px;
+}

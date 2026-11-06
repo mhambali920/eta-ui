@@ -20,3 +20,4 @@ export * from './components/Card';
 export * from './components/Typography';
 export * from './components/Layout';
 export * from './components/ThemeToggle';
+export * from './components/Alert';

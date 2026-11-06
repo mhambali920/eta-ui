@@ -128,9 +128,24 @@ Before marking a component goal complete:
 ---
 
 ## 📋 Phase 2: Feedback & Navigation (Target `v0.2.0`)
-- [ ] **Alert / Callout**: Semantic soft status boxes (Success, Warning, Error, Info)
+
+#### 1. Alert / Callout
+- **Path**: `src/components/Alert/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Variants: `soft` (pastel background with WCAG AA contrast), `outline`, `solid`
+  - Statuses: `info`, `success`, `warning`, `error`, `danger` (alias for error)
+  - Subcomponents: `AlertTitle`, `AlertDescription`, `AlertIcon`, `AlertCloseButton`
+  - Built-in accessible SVGs for semantic status icons & close button
+  - Shorthand props: `title`, `description`, `icon`, `action`, `isClosable`, `onClose`
+  - Semantic alias: `Callout` (identical API)
+  - A11y: `role="status"` (info/success) or `role="alert"` (warning/error) with `aria-live="polite"`
+  - Tests: `Alert.test.tsx` (11 tests passing)
+  - Stories: `Alert.stories.tsx` (Storybook v10 with status, variant, dismissible, and action examples)
+
 - [ ] **Toast**: Floating transient notifications
 - [ ] **Spinner & Skeleton**: Soft pastel shimmer loading indicators
+
 - [ ] **Modal / Dialog**: Radix-based accessible modal dialog
 - [ ] **Drawer / Sheet**: Slide-out panels
 - [ ] **Tooltip & Popover**: Floating helper content
