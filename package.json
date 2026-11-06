@@ -1,7 +1,10 @@
 {
-  "name": "eta-ui",
+  "name": "@eta-ui/react",
   "version": "0.1.0",
   "description": "Accessible React UI Kit with a calming soft color scheme",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "react",
     "ui-kit",
@@ -9,7 +12,8 @@
     "soft-ui",
     "pastel",
     "component-library",
-    "eta-ui"
+    "eta-ui",
+    "@eta-ui/react"
   ],
   "license": "MIT",
   "author": "mhambali <mhambali920@gmail.com>",

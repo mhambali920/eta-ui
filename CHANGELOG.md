@@ -1,12 +1,12 @@
 # Changelog
 
-All notable changes to `eta-ui` will be documented in this file.
+All notable changes to `@eta-ui/react` will be documented in this file.
 
 ## 0.1.0
 
 ### Initial Release
 
-- First public release of **`eta-ui`** - An accessible React UI Kit with a calming soft/muted pastel color scheme.
+- First public release of **`@eta-ui/react`** - An accessible React UI Kit with a calming soft/muted pastel color scheme.
 - **Core Primitives**:
   - `Button` & `IconButton`: Solid, soft, outline, ghost variants, loading spinner, polymorphic `asChild`.
   - `Input` & `Textarea`: Soft focus rings, left/right adornments, character counter, auto-resize.

@@ -1,8 +1,8 @@
 ---
-"eta-ui": patch
+"@eta-ui/react": patch
 ---
 
-Initial release of eta-ui (v0.1.0) - Accessible React UI Kit with a calming soft/pastel color scheme:
+Initial release of @eta-ui/react (v0.1.0) - Accessible React UI Kit with a calming soft/pastel color scheme:
 - Core Primitives: Button, IconButton, Input, Textarea, Checkbox, Radio, RadioGroup, Switch, Badge, Avatar, AvatarGroup, Card, Typography, Layout, ThemeToggle
 - Feedback & Overlay: Alert, Callout, Spinner, Skeleton, Toast, Dialog/Modal, Drawer/Sheet, Tooltip, Popover
 - Navigation: Tabs, Accordion, Breadcrumb, Pagination

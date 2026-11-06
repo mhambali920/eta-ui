@@ -22,7 +22,7 @@ Built on top of accessible headless primitives (Radix UI), CSS Variables (`--eta
 ## Installation
 
 ```bash
-npm install eta-ui
+npm install @eta-ui/react
 ```
 
 ---
@@ -32,7 +32,7 @@ npm install eta-ui
 Import the stylesheet once at your application's entry point (e.g. `main.tsx`, `_app.tsx`, or `layout.tsx`):
 
 ```tsx
-import 'eta-ui/styles.css';
+import '@eta-ui/react/styles.css';
 import {
   ThemeProvider,
   Button,
@@ -43,7 +43,7 @@ import {
   Input,
   Badge,
   Alert,
-} from 'eta-ui';
+} from '@eta-ui/react';
 
 export default function App() {
   return (
@@ -51,8 +51,8 @@ export default function App() {
       <Card style={{ maxWidth: 480, margin: '40px auto' }}>
         <CardHeader>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <CardTitle>Welcome to eta-ui</CardTitle>
-            <Badge variant="soft" color="primary">v0.2.0</Badge>
+            <CardTitle>Welcome to @eta-ui/react</CardTitle>
+            <Badge variant="soft" color="primary">v0.1.0</Badge>
           </div>
         </CardHeader>
 
@@ -80,7 +80,7 @@ export default function App() {
 Wrap your root layout with `ThemeProvider` to enable seamless theme switching with persistence:
 
 ```tsx
-import { ThemeProvider, ThemeToggle, useTheme } from 'eta-ui';
+import { ThemeProvider, ThemeToggle, useTheme } from '@eta-ui/react';
 
 function Header() {
   const { theme, setTheme } = useTheme();
