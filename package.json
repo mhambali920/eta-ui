@@ -12,6 +12,15 @@
     "eta-ui"
   ],
   "license": "MIT",
+  "author": "mhambali <mhambali920@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhambali920/eta-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mhambali920/eta-ui/issues"
+  },
+  "homepage": "https://github.com/mhambali920/eta-ui#readme",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

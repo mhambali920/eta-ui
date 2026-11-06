@@ -1,8 +1,23 @@
 # eta-ui
 
-> Accessible React UI Kit with a calming soft color scheme (WCAG AA Compliant).
+> Accessible React UI Kit with a calming, soft color scheme (WCAG AA Compliant).
 
-Built on top of Headless primitives, CSS Variables (`--eta-*`), TypeScript, and zero-runtime CSS modules.
+`eta-ui` is a modern component library designed with soft pastel aesthetics. It avoids harsh pure whites (`#FFFFFF`) and pure blacks (`#000000`) to reduce eye strain, while ensuring all text and interactive elements satisfy WCAG AA contrast requirements (>= 4.5:1).
+
+Built on top of accessible headless primitives (Radix UI), CSS Variables (`--eta-*`), and zero-runtime CSS Modules.
+
+---
+
+## Features
+
+- **Soft & Eye-Friendly Aesthetics**: Muted pastel color palette calibrated for focus and comfortable viewing.
+- **Accessible by Default**: Powered by Radix UI primitives with built-in keyboard navigation, ARIA attributes, and focus management.
+- **Dynamic Dark Mode**: Automatic support for Light, Dark, and System modes using CSS custom properties (`--eta-*`).
+- **Fully Typed**: Written in TypeScript with complete type declarations (`.d.ts`).
+- **Zero-Config Styling**: Bundles pre-compiled CSS with scoped CSS Modules. No Tailwind or runtime CSS-in-JS setup required.
+- **Tree-Shakeable**: Optimized ESM and CJS bundles built with esbuild.
+
+---
 
 ## Installation
 
@@ -10,70 +25,139 @@ Built on top of Headless primitives, CSS Variables (`--eta-*`), TypeScript, and 
 npm install eta-ui
 ```
 
+---
+
 ## Quick Start
 
-Import styles once in your root layout:
+Import the stylesheet once at your application's entry point (e.g. `main.tsx`, `_app.tsx`, or `layout.tsx`):
+
 ```tsx
 import 'eta-ui/styles.css';
-import { ThemeProvider, Button, Input, Textarea, Checkbox, RadioGroup, Radio, Switch } from 'eta-ui';
+import {
+  ThemeProvider,
+  Button,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
+  Input,
+  Badge,
+  Alert,
+} from 'eta-ui';
 
 export default function App() {
   return (
     <ThemeProvider defaultTheme="system">
-      <Button variant="soft" size="md">
-        Simpan Perubahan
-      </Button>
+      <Card style={{ maxWidth: 480, margin: '40px auto' }}>
+        <CardHeader>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <CardTitle>Welcome to eta-ui</CardTitle>
+            <Badge variant="soft" color="primary">v0.2.0</Badge>
+          </div>
+        </CardHeader>
 
-      <Input
-        placeholder="Cari sesuatu..."
-        leftAdornment={<span>🔍</span>}
-      />
+        <CardBody style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <Alert status="info" title="Soft Color Palette">
+            Muted colors with high contrast for comfortable long-session viewing.
+          </Alert>
 
-      <Textarea
-        placeholder="Tulis catatan Anda..."
-        resize="vertical"
-      />
+          <Input placeholder="Enter your email address..." />
 
-      <Checkbox
-        label="Setuju dengan syarat & ketentuan"
-        description="Harap baca ketentuan privasi kami."
-      />
-
-      <RadioGroup defaultValue="1">
-        <Radio value="1" label="Opsi Pertama" />
-        <Radio value="2" label="Opsi Kedua" />
-      </RadioGroup>
-
-      <Switch
-        label="Mode Notifikasi"
-        description="Terima notifikasi otomatis saat ada pembaruan."
-      />
+          <Button variant="solid" color="primary">
+            Get Started
+          </Button>
+        </CardBody>
+      </Card>
     </ThemeProvider>
   );
 }
 ```
 
-## Autonomous Workflow & Automation
-This repository contains an automated component development pipeline:
-- `GOALS.md`: Tracks goals per UI component.
-- `AGENTS.md`: Agent protocol for uninterrupted autonomous vibe coding.
-- `scripts/verify-component.mjs`: Automated TypeScript, Vitest, and bundler verification runner per component.
-- `scripts/scaffold-component.mjs`: Component generator.
+---
 
-## Storybook & Dokumentasi Komponen
-Untuk melihat, menguji interaktivitas, dan melakukan audit aksesibilitas (a11y) seluruh komponen di Storybook 8:
+## Theme & Dark Mode
+
+Wrap your root layout with `ThemeProvider` to enable seamless theme switching with persistence:
+
+```tsx
+import { ThemeProvider, ThemeToggle, useTheme } from 'eta-ui';
+
+function Header() {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <span>My Workspace</span>
+      <ThemeToggle variant="segmented" size="sm" />
+    </header>
+  );
+}
+```
+
+`ThemeProvider` automatically persists the selected theme in `localStorage` under `eta-ui-theme` and updates the `data-theme` attribute on `<html>`.
+
+---
+
+## Design Tokens
+
+All colors, radii, shadows, and transitions are exposed as CSS variables prefixed with `--eta-`:
+
+| CSS Variable | Light Mode | Dark Mode | Usage |
+| :--- | :--- | :--- | :--- |
+| `--eta-bg-base` | `#FAF9F6` | `#181A20` | Primary page background |
+| `--eta-bg-surface` | `#F3F1ED` | `#22252E` | Card, dialog, and panel surface |
+| `--eta-bg-subtle` | `#EAE6DF` | `#2C303B` | Input background & subtle hover states |
+| `--eta-color-primary` | `#6B9080` (Sage) | `#84A98C` (Mint) | Primary buttons, active tabs, focus ring |
+| `--eta-color-secondary` | `#7E99A3` (Dusty Blue) | `#9BB1BC` | Secondary accents, badges, links |
+| `--eta-text-heading` | `#2B2D42` | `#EDF2F4` | Headings and titles |
+| `--eta-text-body` | `#5C6070` | `#B8C0CC` | Paragraphs and labels |
+| `--eta-text-muted` | `#8D99AE` | `#7D8597` | Captions, placeholders, disabled text |
+| `--eta-border-default` | `#E5E3DC` | `#323642` | Borders and dividers |
+
+---
+
+## Component Catalog
+
+### Core Primitives
+- **Button & IconButton**: `solid`, `soft`, `outline`, `ghost` variants with semantic colors and loading states.
+- **Form Inputs**: `Input` and `Textarea` with adornments, soft focus rings, and validation states.
+- **Selection**: `Checkbox`, `Radio` & `RadioGroup`, and `Switch`.
+- **Data Display**: `Badge`, `Avatar`, and `AvatarGroup`.
+- **Containers**: `Card` (`CardHeader`, `CardTitle`, `CardDescription`, `CardBody`, `CardFooter`).
+- **Typography & Layout**: `Heading`, `Text`, `Container`, and `Divider`.
+- **Theme**: `ThemeProvider`, `useTheme()`, and `ThemeToggle`.
+
+### Feedback
+- **Alert / Callout**: Semantic soft status boxes (`info`, `success`, `warning`, `error`).
+- **Spinner**: Smooth rotating loading indicator with customizable sizes and colors.
+- **Skeleton**: Soft pastel shimmer and pulse placeholders (`SkeletonText`, `SkeletonCircle`).
+- **Toast**: Floating transient notifications via `@radix-ui/react-toast` with `useToast()` hook.
+
+### Overlay
+- **Dialog / Modal**: Accessible dialogs with diffused backdrop blur and focus trap.
+- **Drawer / Sheet**: Slide-out panels from `right`, `left`, `top`, or `bottom`.
+- **Tooltip**: Floating helper text with `dark` and `soft` variants.
+- **Popover**: Floating interactive content panel with header, body, and footer.
+
+### Navigation
+- **Tabs**: Segmented, underlined, or outlined tab navigation with keyboard support.
+- **Accordion**: Accessible collapsible sections with smooth height animations.
+- **Breadcrumb**: Accessible hierarchical path navigation.
+
+---
+
+## Interactive Documentation (Storybook)
+
+To explore and test all components interactively:
+
 ```bash
 npm run storybook
 ```
-Buka browser di `http://localhost:6006`.
 
-### Verification
-```bash
-# Verify single component
-node scripts/verify-component.mjs Button
-node scripts/verify-component.mjs Input
-node scripts/verify-component.mjs Textarea
+This starts Storybook at `http://localhost:6006` with live property controls and accessibility audits.
 
-# Verify full project
-npm run verify:all
-```
+---
+
+## License
+
+MIT &copy; [mhambali920](https://github.com/mhambali920)
