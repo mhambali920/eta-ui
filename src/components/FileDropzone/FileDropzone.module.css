@@ -1,0 +1,192 @@
+.dropzone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  border: 2px dashed var(--eta-border-default);
+  border-radius: var(--eta-radius-lg);
+  background-color: var(--eta-bg-surface);
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  outline: none;
+  transition:
+    border-color var(--eta-transition-fast),
+    background-color var(--eta-transition-fast),
+    box-shadow var(--eta-transition-fast),
+    transform var(--eta-transition-fast);
+}
+
+.dropzone:hover:not(.disabled) {
+  border-color: var(--eta-color-primary);
+  background-color: var(--eta-bg-subtle);
+}
+
+.dropzone:focus-visible {
+  outline: none;
+  border-color: var(--eta-color-primary);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus);
+}
+
+/* Dragging state */
+.isDragging {
+  border-color: var(--eta-color-primary);
+  background-color: var(--eta-color-primary-subtle);
+  transform: scale(1.008);
+}
+
+/* Invalid state */
+.isInvalid {
+  border-color: var(--eta-status-error-solid);
+}
+
+.isInvalid:focus-visible {
+  box-shadow: 0 0 0 3px var(--eta-status-error-bg);
+}
+
+/* Disabled */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Soft variant */
+.variant-soft {
+  background-color: var(--eta-bg-subtle);
+}
+
+/* Outline variant */
+.variant-outline {
+  background-color: transparent;
+}
+
+.hiddenInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+  border-radius: var(--eta-radius-full);
+  background-color: var(--eta-color-primary-subtle);
+  color: var(--eta-color-primary);
+  transition: transform var(--eta-transition-fast);
+}
+
+.isDragging .icon {
+  transform: scale(1.1);
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--eta-text-heading);
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 0.8125rem;
+  color: var(--eta-text-muted);
+}
+
+/* File List */
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  list-style: none;
+  margin: 16px 0 0 0;
+  padding: 0;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--eta-radius-md);
+  border: 1px solid var(--eta-border-default);
+  background-color: var(--eta-bg-surface);
+  font-size: 0.875rem;
+  color: var(--eta-text-body);
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.fileIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--eta-color-primary);
+  flex-shrink: 0;
+}
+
+.fileIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.fileName {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fileSize {
+  font-size: 0.75rem;
+  color: var(--eta-text-muted);
+  flex-shrink: 0;
+}
+
+.removeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--eta-radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--eta-text-muted);
+  cursor: pointer;
+  transition: background-color var(--eta-transition-fast), color var(--eta-transition-fast);
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.removeBtn:hover {
+  background-color: var(--eta-status-error-bg);
+  color: var(--eta-status-error-text);
+}
+
+.removeBtn svg {
+  width: 14px;
+  height: 14px;
+}
