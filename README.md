@@ -15,7 +15,7 @@ npm install eta-ui
 Import styles once in your root layout:
 ```tsx
 import 'eta-ui/styles.css';
-import { ThemeProvider, Button, Input, Textarea } from 'eta-ui';
+import { ThemeProvider, Button, Input, Textarea, Checkbox, RadioGroup, Radio, Switch } from 'eta-ui';
 
 export default function App() {
   return (
@@ -32,6 +32,21 @@ export default function App() {
       <Textarea
         placeholder="Tulis catatan Anda..."
         resize="vertical"
+      />
+
+      <Checkbox
+        label="Setuju dengan syarat & ketentuan"
+        description="Harap baca ketentuan privasi kami."
+      />
+
+      <RadioGroup defaultValue="1">
+        <Radio value="1" label="Opsi Pertama" />
+        <Radio value="2" label="Opsi Kedua" />
+      </RadioGroup>
+
+      <Switch
+        label="Mode Notifikasi"
+        description="Terima notifikasi otomatis saat ada pembaruan."
       />
     </ThemeProvider>
   );

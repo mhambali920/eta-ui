@@ -11,3 +11,6 @@ export * from './utils/cn';
 export * from './components/Button';
 export * from './components/Input';
 export * from './components/Textarea';
+export * from './components/Checkbox';
+export * from './components/Radio';
+export * from './components/Switch';

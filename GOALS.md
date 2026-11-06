@@ -58,11 +58,15 @@ Before marking a component goal complete:
 
 #### 3. Selection Controls (Checkbox, Radio, Switch)
 - **Path**: `src/components/Checkbox/`, `src/components/Radio/`, `src/components/Switch/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
-  - Headless a11y primitives (Radix UI)
-  - Soft pastel checked states & focus outline
-  - Custom label alignment and disabled styling
+  - Headless a11y primitives (Radix UI Checkbox, RadioGroup, Switch)
+  - Soft pastel checked states & soft focus outline
+  - Custom label & description alignment with accessible IDs (`aria-describedby`)
+  - Sizes: `sm`, `md`, `lg`
+  - States: `checked`, `defaultChecked`, `disabled`, `isInvalid` (with `aria-invalid`), `indeterminate` (for Checkbox)
+  - Tests: `Checkbox.test.tsx` (6 tests), `Radio.test.tsx` (4 tests), `Switch.test.tsx` (5 tests) - All passing
+  - Stories: `Checkbox.stories.tsx`, `Radio.stories.tsx`, `Switch.stories.tsx` (Storybook v10)
 
 ---
 

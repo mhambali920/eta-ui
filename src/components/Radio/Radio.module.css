@@ -1,0 +1,141 @@
+.group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.group[data-orientation="vertical"] {
+  flex-direction: column;
+}
+
+.group[data-orientation="horizontal"] {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  color: var(--eta-text-body);
+}
+
+.container[data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.item {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--eta-radius-full, 9999px);
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  transition: all var(--eta-transition-fast, 150ms cubic-bezier(0.4, 0, 0.2, 1));
+  box-sizing: border-box;
+  flex-shrink: 0;
+  cursor: inherit;
+  position: relative;
+}
+
+.item:hover:not([data-disabled]) {
+  border-color: var(--eta-color-primary);
+}
+
+.item:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus, rgba(107, 144, 128, 0.25));
+}
+
+.item[data-state="checked"] {
+  border-color: var(--eta-color-primary);
+  background-color: var(--eta-bg-surface, #F3F1ED);
+}
+
+/* Invalid State */
+.invalid {
+  border-color: var(--eta-status-error-solid, #C1121F) !important;
+}
+
+.invalid:focus-visible {
+  box-shadow: 0 0 0 3px var(--eta-status-error-focus, rgba(193, 18, 31, 0.25)) !important;
+}
+
+/* Sizes */
+.sm {
+  width: 16px;
+  height: 16px;
+}
+
+.md {
+  width: 20px;
+  height: 20px;
+}
+
+.lg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Inner Indicator Dot */
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.indicator::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 50%;
+  border-radius: var(--eta-radius-full, 9999px);
+  background-color: var(--eta-color-primary);
+  animation: eta-scale-in 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes eta-scale-in {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Label & Description */
+.labelContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--eta-text-heading);
+  line-height: 1.25;
+}
+
+.sm + .labelContent .label {
+  font-size: 0.8125rem;
+}
+
+.lg + .labelContent .label {
+  font-size: 1rem;
+}
+
+.description {
+  font-size: 0.75rem;
+  color: var(--eta-text-muted);
+  line-height: 1.4;
+}

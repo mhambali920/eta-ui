@@ -1,0 +1,133 @@
+.container {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  color: var(--eta-text-body);
+}
+
+.container[data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.root {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border-radius: var(--eta-radius-full, 9999px);
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+  transition: all var(--eta-transition-fast, 150ms cubic-bezier(0.4, 0, 0.2, 1));
+  box-sizing: border-box;
+  flex-shrink: 0;
+  cursor: inherit;
+  padding: 2px;
+}
+
+.root:hover:not([data-disabled]) {
+  border-color: var(--eta-color-secondary);
+}
+
+.root:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus, rgba(107, 144, 128, 0.25));
+}
+
+.root[data-state="checked"] {
+  background-color: var(--eta-color-primary);
+  border-color: var(--eta-color-primary);
+}
+
+/* Invalid State */
+.invalid {
+  border-color: var(--eta-status-error-solid, #C1121F) !important;
+}
+
+.invalid:focus-visible {
+  box-shadow: 0 0 0 3px var(--eta-status-error-focus, rgba(193, 18, 31, 0.25)) !important;
+}
+
+/* Sizes */
+.sm {
+  width: 32px;
+  height: 18px;
+}
+
+.sm .thumb {
+  width: 12px;
+  height: 12px;
+}
+
+.sm[data-state="checked"] .thumb {
+  transform: translateX(14px);
+}
+
+.md {
+  width: 42px;
+  height: 24px;
+}
+
+.md .thumb {
+  width: 18px;
+  height: 18px;
+}
+
+.md[data-state="checked"] .thumb {
+  transform: translateX(18px);
+}
+
+.lg {
+  width: 52px;
+  height: 30px;
+}
+
+.lg .thumb {
+  width: 24px;
+  height: 24px;
+}
+
+.lg[data-state="checked"] .thumb {
+  transform: translateX(22px);
+}
+
+/* Sliding Thumb */
+.thumb {
+  display: block;
+  border-radius: var(--eta-radius-full, 9999px);
+  background-color: #ffffff;
+  box-shadow: var(--eta-shadow-sm, 0 2px 8px -2px rgba(43, 45, 66, 0.05));
+  transition: transform var(--eta-transition-fast, 150ms cubic-bezier(0.4, 0, 0.2, 1));
+  will-change: transform;
+}
+
+/* Label & Description */
+.labelContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--eta-text-heading);
+  line-height: 1.25;
+}
+
+.sm + .labelContent .label {
+  font-size: 0.8125rem;
+}
+
+.lg + .labelContent .label {
+  font-size: 1rem;
+}
+
+.description {
+  font-size: 0.75rem;
+  color: var(--eta-text-muted);
+  line-height: 1.4;
+}

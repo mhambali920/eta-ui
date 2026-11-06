@@ -52,12 +52,16 @@
     "verify:all": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.4.1",
+    "@radix-ui/react-radio-group": "^1.5.1",
     "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-switch": "^1.4.1",
     "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.6.0",
     "@storybook/addon-a11y": "10.6.6",
+    "@storybook/addon-docs": "10.6.6",
     "@storybook/react-vite": "10.6.6",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
@@ -71,7 +75,6 @@
     "storybook": "10.6.6",
     "tsup": "^8.4.0",
     "typescript": "^5.8.2",
-    "vitest": "^3.0.8",
-    "@storybook/addon-docs": "10.6.6"
+    "vitest": "^3.0.8"
   }
 }
