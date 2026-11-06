@@ -102,12 +102,14 @@ Before marking a component goal complete:
 
 #### 6. Typography & Layout
 - **Path**: `src/components/Typography/`, `src/components/Layout/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
-  - `Heading` (h1-h6 tags, font sizes, soft charcoal ink)
-  - `Text` (body, muted, small)
-  - `Divider` (subtle hairline)
-  - `Container` (max-width responsive container)
+  - `Heading`: Polymorphic h1-h6 tags, font sizes (xs to 4xl), weights, alignments, and soft charcoal ink (`--eta-text-heading`)
+  - `Text`: Polymorphic (p, span, div, label, small, strong, em), variants (body, muted, lead, caption), and semantic colors
+  - `Container`: Responsive max-width container (`sm`, `md`, `lg`, `xl`, `2xl`, `fluid`) with optional padding & centering
+  - `Divider`: Accessible separator (`role="separator"`), horizontal & vertical orientations, styles (solid, dashed, dotted), with optional label (left, center, right)
+  - Tests: `Typography.test.tsx` (6 tests), `Layout.test.tsx` (6 tests) - All passing
+  - Stories: `Typography.stories.tsx`, `Layout.stories.tsx` (Storybook v10)
 
 ---
 

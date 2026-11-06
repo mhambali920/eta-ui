@@ -17,3 +17,5 @@ export * from './components/Switch';
 export * from './components/Badge';
 export * from './components/Avatar';
 export * from './components/Card';
+export * from './components/Typography';
+export * from './components/Layout';

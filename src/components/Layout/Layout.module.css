@@ -1,0 +1,117 @@
+/* Container Component */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.padded {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.centerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.size-sm {
+  max-width: 640px;
+}
+
+.size-md {
+  max-width: 768px;
+}
+
+.size-lg {
+  max-width: 1024px;
+}
+
+.size-xl {
+  max-width: 1280px;
+}
+
+.size-2xl {
+  max-width: 1440px;
+}
+
+.size-fluid {
+  max-width: 100%;
+}
+
+/* Divider Component */
+.divider {
+  display: flex;
+  align-items: center;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.horizontal {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.horizontal.hasNoLabel {
+  border-top: 1px solid var(--eta-border-default, #E5E3DC);
+}
+
+.vertical {
+  display: inline-flex;
+  height: 100%;
+  min-height: 1rem;
+  margin: 0 0.75rem;
+  vertical-align: middle;
+}
+
+.vertical.hasNoLabel {
+  border-left: 1px solid var(--eta-border-default, #E5E3DC);
+}
+
+/* Line Styles */
+.solid {
+  border-style: solid;
+}
+
+.dashed {
+  border-style: dashed;
+}
+
+.dotted {
+  border-style: dotted;
+}
+
+/* Divider with Label */
+.horizontal.hasLabel {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.horizontal.hasLabel::before,
+.horizontal.hasLabel::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--eta-border-default, #E5E3DC);
+  border-style: inherit;
+}
+
+.label-left::before {
+  max-width: 5%;
+}
+
+.label-right::after {
+  max-width: 5%;
+}
+
+.labelContent {
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--eta-text-muted, #8D99AE);
+  white-space: nowrap;
+}

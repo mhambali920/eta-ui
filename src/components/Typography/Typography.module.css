@@ -1,0 +1,155 @@
+/* Heading Component */
+.heading {
+  margin: 0;
+  font-family: inherit;
+  color: var(--eta-text-heading, #2B2D42);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  box-sizing: border-box;
+}
+
+/* Heading Sizes */
+.heading-xs {
+  font-size: 0.875rem; /* 14px */
+}
+
+.heading-sm {
+  font-size: 1rem; /* 16px */
+}
+
+.heading-md {
+  font-size: 1.25rem; /* 20px */
+}
+
+.heading-lg {
+  font-size: 1.5rem; /* 24px */
+}
+
+.heading-xl {
+  font-size: 1.875rem; /* 30px */
+}
+
+.heading-2xl {
+  font-size: 2.25rem; /* 36px */
+}
+
+.heading-3xl {
+  font-size: 3rem; /* 48px */
+}
+
+.heading-4xl {
+  font-size: 3.75rem; /* 60px */
+}
+
+/* Text Component */
+.text {
+  margin: 0;
+  font-family: inherit;
+  color: var(--eta-text-body, #5C6070);
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/* Text Sizes */
+.text-xs {
+  font-size: 0.75rem; /* 12px */
+}
+
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+}
+
+.text-md {
+  font-size: 1rem; /* 16px */
+}
+
+.text-lg {
+  font-size: 1.125rem; /* 18px */
+}
+
+.text-xl {
+  font-size: 1.25rem; /* 20px */
+}
+
+/* Text Variants */
+.variant-body {
+  color: var(--eta-text-body, #5C6070);
+}
+
+.variant-muted {
+  color: var(--eta-text-muted, #8D99AE);
+}
+
+.variant-lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--eta-text-body, #5C6070);
+}
+
+.variant-caption {
+  font-size: 0.75rem;
+  color: var(--eta-text-muted, #8D99AE);
+}
+
+/* Semantic Colors */
+.color-primary {
+  color: var(--eta-color-primary, #6B9080) !important;
+}
+
+.color-secondary {
+  color: var(--eta-color-secondary, #7E99A3) !important;
+}
+
+.color-muted {
+  color: var(--eta-text-muted, #8D99AE) !important;
+}
+
+.color-success {
+  color: var(--eta-status-success-solid, #2D6A4F) !important;
+}
+
+.color-warning {
+  color: var(--eta-status-warning-solid, #BC6C25) !important;
+}
+
+.color-danger {
+  color: var(--eta-status-error-solid, #C1121F) !important;
+}
+
+.color-inverse {
+  color: var(--eta-text-inverse, #ffffff) !important;
+}
+
+/* Weights */
+.weight-normal {
+  font-weight: 400;
+}
+
+.weight-medium {
+  font-weight: 500;
+}
+
+.weight-semibold {
+  font-weight: 600;
+}
+
+.weight-bold {
+  font-weight: 700;
+}
+
+/* Text Alignment */
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
