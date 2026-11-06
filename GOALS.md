@@ -178,7 +178,20 @@ Before marking a component goal complete:
   - Tests: `Toast.test.tsx` (5 tests passing)
   - Stories: `Toast.stories.tsx` (Storybook v10 with interactive demo in multiple positions)
 
-- [ ] **Modal / Dialog**: Radix-based accessible modal dialog
+#### 5. Modal / Dialog
+- **Path**: `src/components/Dialog/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless a11y primitive: `@radix-ui/react-dialog` with focus trap, aria attributes, and keyboard ESC navigation
+  - Subcomponents: `Dialog`, `DialogTrigger`, `DialogPortal`, `DialogOverlay`, `DialogContent`, `DialogHeader`, `DialogTitle`, `DialogDescription`, `DialogBody`, `DialogFooter`, `DialogClose`
+  - Semantic aliases: `Modal`, `ModalTrigger`, `ModalContent`, `ModalHeader`, `ModalTitle`, `ModalDescription`, `ModalBody`, `ModalFooter`, `ModalClose`
+  - Soft overlay backdrop blur (`backdrop-filter: blur(4px)`)
+  - Elevated modal surface with soft rounded corners (`--eta-radius-lg` / 12px)
+  - Sizes: `sm` (400px), `md` (540px), `lg` (720px), `xl` (900px), `full` (fluid fullscreen)
+  - Smooth scale & fade-in entrance animation
+  - Tests: `Dialog.test.tsx` (4 tests passing)
+  - Stories: `Dialog.stories.tsx` (Storybook v10 with confirmation and profile form layouts)
+
 - [ ] **Drawer / Sheet**: Slide-out panels
 - [ ] **Tooltip & Popover**: Floating helper content
 - [ ] **Tabs & Accordion**: Accessible collapsible panels
