@@ -1,0 +1,205 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  color: var(--eta-text-body);
+  background-color: var(--eta-bg-base);
+  border: 1px solid var(--eta-border-default);
+  border-radius: var(--eta-radius-md);
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--eta-transition-fast), box-shadow var(--eta-transition-fast);
+  user-select: none;
+  gap: 8px;
+}
+
+.trigger:hover:not(:disabled) {
+  border-color: var(--eta-text-muted);
+}
+
+.trigger:focus-visible,
+.trigger[data-state='open'] {
+  border-color: var(--eta-color-primary);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus);
+}
+
+.trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--eta-bg-subtle);
+}
+
+.trigger.isInvalid {
+  border-color: var(--eta-status-error-solid) !important;
+}
+
+.trigger.isInvalid:focus-visible,
+.trigger.isInvalid[data-state='open'] {
+  box-shadow: 0 0 0 3px var(--eta-status-error-focus) !important;
+}
+
+/* Sizes */
+.size-sm {
+  height: 32px;
+  padding: 0 10px;
+  font-size: 0.8125rem;
+}
+
+.size-md {
+  height: 40px;
+  padding: 0 14px;
+  font-size: 0.875rem;
+}
+
+.size-lg {
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+}
+
+/* Variants */
+.variant-outline {
+  background-color: var(--eta-bg-base);
+}
+
+.variant-filled {
+  background-color: var(--eta-bg-subtle);
+  border-color: transparent;
+}
+
+.variant-filled:hover:not(:disabled) {
+  border-color: var(--eta-border-default);
+}
+
+/* Value & Placeholder */
+.value {
+  flex-grow: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder {
+  color: var(--eta-text-muted);
+}
+
+/* Icon */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--eta-text-muted);
+  transition: transform var(--eta-transition-fast);
+}
+
+.trigger[data-state='open'] .icon {
+  transform: rotate(180deg);
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Content */
+.content {
+  box-sizing: border-box;
+  background-color: var(--eta-bg-surface);
+  border: 1px solid var(--eta-border-default);
+  border-radius: var(--eta-radius-md);
+  box-shadow: var(--eta-shadow-lg);
+  color: var(--eta-text-body);
+  font-family: inherit;
+  font-size: 0.875rem;
+  min-width: var(--radix-select-trigger-width);
+  max-height: 280px;
+  overflow: hidden;
+  z-index: 1050;
+  padding: 4px;
+  animation-duration: 150ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.viewport {
+  padding: 2px;
+}
+
+/* Item */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: var(--eta-radius-sm);
+  color: var(--eta-text-body);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: background-color var(--eta-transition-fast), color var(--eta-transition-fast);
+  position: relative;
+}
+
+.item[data-highlighted] {
+  background-color: var(--eta-bg-subtle);
+  color: var(--eta-text-heading);
+}
+
+.item[data-state='checked'] {
+  color: var(--eta-color-primary);
+  font-weight: 600;
+}
+
+.item[data-disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.itemIndicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--eta-color-primary);
+  flex-shrink: 0;
+}
+
+.itemIndicator svg {
+  width: 100%;
+  height: 100%;
+}
+
+.label {
+  padding: 6px 10px 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--eta-text-muted);
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--eta-border-default);
+  margin: 4px 0;
+}
+
+.scrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  background-color: var(--eta-bg-surface);
+  color: var(--eta-text-muted);
+  cursor: default;
+}

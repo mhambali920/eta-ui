@@ -20,3 +20,9 @@ global.ResizeObserver = class ResizeObserver {
   unobserve() {}
   disconnect() {}
 };
+
+// Mock PointerCapture and scrollIntoView for Radix UI Select in jsdom
+window.HTMLElement.prototype.hasPointerCapture = () => false;
+window.HTMLElement.prototype.setPointerCapture = () => {};
+window.HTMLElement.prototype.releasePointerCapture = () => {};
+window.HTMLElement.prototype.scrollIntoView = () => {};
