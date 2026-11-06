@@ -143,6 +143,14 @@ All colors, radii, shadows, and transitions are exposed as CSS variables prefixe
 - **Tabs**: Segmented, underlined, or outlined tab navigation with keyboard support.
 - **Accordion**: Accessible collapsible sections with smooth height animations.
 - **Breadcrumb**: Accessible hierarchical path navigation.
+- **Pagination**: Accessible page navigation controls with active variants and `asChild` router support.
+
+### Advanced Form & Data
+- **Select**: Headless select with custom styled triggers, options, scroll controls, and groups.
+- **Slider**: Single and dual-thumb range sliders with semantic pastel accents.
+- **DropdownMenu**: Contextual actions, nested submenus, checkable & radio menu items.
+- **Table**: Responsive styled data table with column sorting and empty state illustrations.
+- **FileDropzone**: Drag & drop file upload with validation filters and file list preview.
 
 ---
 

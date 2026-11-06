@@ -260,8 +260,83 @@ Before marking a component goal complete:
 ---
 
 ## 📋 Phase 3: Advanced Form & Data (Target `v1.0.0`)
-- [ ] **Select / Combobox**: Searchable accessible dropdown
-- [ ] **Datepicker & Slider**
-- [ ] **FileDropzone**: Drag & drop file upload
-- [ ] **Table**: Soft styled data table with sorting and empty states
-- [ ] **Pagination & DropdownMenu**
+
+#### 1. Select
+- **Path**: `src/components/Select/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless `@radix-ui/react-select` with full keyboard navigation and scroll buttons
+  - Subcomponents: `Select`, `SelectGroup`, `SelectValue`, `SelectTrigger`, `SelectContent`, `SelectItem`, `SelectLabel`, `SelectSeparator`
+  - Variants: `outline`, `filled`
+  - Sizes: `sm`, `md`, `lg`
+  - Soft focus ring (`0 0 0 3px var(--eta-color-primary-focus)`)
+  - Validation: `isInvalid` with `aria-invalid`
+  - Tests: `Select.test.tsx` (3 tests passing)
+  - Stories: `Select.stories.tsx` (Storybook v10 with dynamic controls)
+
+#### 2. Slider
+- **Path**: `src/components/Slider/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless `@radix-ui/react-slider` with single and dual-thumb range slider support
+  - Subcomponents: `Slider`, `SliderTrack`, `SliderRange`, `SliderThumb`
+  - Sizes: `sm`, `md`, `lg`
+  - Colors: `primary`, `secondary`, `success`, `warning`, `danger`
+  - Orientations: `horizontal`, `vertical`
+  - Smooth scale animations on hover/grab and soft diffused focus rings
+  - Tests: `Slider.test.tsx` (4 tests passing)
+  - Stories: `Slider.stories.tsx` (Storybook v10 with dynamic controls)
+
+#### 3. DropdownMenu
+- **Path**: `src/components/DropdownMenu/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless `@radix-ui/react-dropdown-menu` with full keyboard navigation and item highlighting
+  - Subcomponents: `DropdownMenu`, `DropdownMenuTrigger`, `DropdownMenuContent`, `DropdownMenuItem`, `DropdownMenuCheckboxItem`, `DropdownMenuRadioGroup`, `DropdownMenuRadioItem`, `DropdownMenuLabel`, `DropdownMenuSeparator`, `DropdownMenuShortcut`, `DropdownMenuSub`, `DropdownMenuSubTrigger`, `DropdownMenuSubContent`
+  - Colors: default soft highlight, danger item with pastel status error background
+  - Checkbox & Radio item indicators with custom inline SVG checkmarks
+  - Submenu cascading flyout with chevron indicators
+  - Tests: `DropdownMenu.test.tsx` (3 tests passing)
+  - Stories: `DropdownMenu.stories.tsx` (Storybook v10 with dynamic controls)
+
+#### 4. Table
+- **Path**: `src/components/Table/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Accessible responsive data table wrapper (`<div class="container"><table>...`)
+  - Subcomponents: `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`, `TableEmpty`
+  - Variants: `default`, `striped`, `hoverable`
+  - Sizes: `sm`, `md`, `lg`
+  - Bordered option with delicate soft lines (`--eta-border-default`)
+  - Column sorting support with sort indicators (`asc`, `desc`, neutral) and `aria-sort`
+  - Empty state helper (`TableEmpty`) with icon, title, and description
+  - Tests: `Table.test.tsx` (4 tests passing)
+  - Stories: `Table.stories.tsx` (Storybook v10 with interactive sorting and controls)
+
+#### 5. Pagination
+- **Path**: `src/components/Pagination/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Semantic `<nav role="navigation" aria-label="Pagination">` and `<ul role="list">`
+  - Subcomponents: `Pagination`, `PaginationContent`, `PaginationItem`, `PaginationLink`, `PaginationPrevious`, `PaginationNext`, `PaginationEllipsis`
+  - Variants: `ghost`, `outline`
+  - Active variants: `soft` (tinted pastel), `solid` (filled primary)
+  - Sizes: `sm`, `md`, `lg`
+  - Current page indicator with accessible `aria-current="page"`
+  - Disabled previous/next handling with `aria-disabled="true"`
+  - Radix `Slot` integration via `asChild` for router frameworks (Next.js Link, React Router)
+  - Tests: `Pagination.test.tsx` (4 tests passing)
+  - Stories: `Pagination.stories.tsx` (Storybook v10 with interactive page switcher and controls)
+
+#### 6. FileDropzone
+- **Path**: `src/components/FileDropzone/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Accessible drag & drop file upload with hidden input fallback
+  - Subcomponents: `FileDropzone`, `FileDropzoneIcon`, `FileDropzoneTitle`, `FileDropzoneDescription`, `FileDropzoneFileList`, `FileDropzoneFileItem`
+  - Drag-over highlight animation with soft scaling and primary border
+  - File filtering: `accept`, `maxFiles`, `maxSize`, with rejection callback `onFileReject`
+  - Keyboard activation via `Enter` or `Space` (`role="button"`, `tabIndex={0}`)
+  - File preview list item with filename, human-readable file size formatter (`formatBytes`), and removal button
+  - Tests: `FileDropzone.test.tsx` (7 tests passing)
+  - Stories: `FileDropzone.stories.tsx` (Storybook v10 with interactive file queue and controls)
