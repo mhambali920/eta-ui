@@ -21,3 +21,4 @@ export * from './components/Typography';
 export * from './components/Layout';
 export * from './components/ThemeToggle';
 export * from './components/Alert';
+export * from './components/Spinner';

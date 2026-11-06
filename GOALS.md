@@ -143,8 +143,19 @@ Before marking a component goal complete:
   - Tests: `Alert.test.tsx` (11 tests passing)
   - Stories: `Alert.stories.tsx` (Storybook v10 with status, variant, dismissible, and action examples)
 
+#### 2. Spinner
+- **Path**: `src/components/Spinner/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Smooth rotating loading indicator with sizes (`xs`, `sm`, `md`, `lg`, `xl`)
+  - Semantic status colors (`primary`, `secondary`, `success`, `warning`, `danger`, `info`, `neutral`)
+  - Custom `thickness`, `speed`, and `emptyColor` support
+  - Screen-reader accessible label (`role="status"`)
+  - Tests: `Spinner.test.tsx` (5 tests passing)
+  - Stories: `Spinner.stories.tsx` (Storybook v10)
+
+- [ ] **Skeleton**: Soft pastel shimmer loading indicators
 - [ ] **Toast**: Floating transient notifications
-- [ ] **Spinner & Skeleton**: Soft pastel shimmer loading indicators
 
 - [ ] **Modal / Dialog**: Radix-based accessible modal dialog
 - [ ] **Drawer / Sheet**: Slide-out panels
