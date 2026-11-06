@@ -115,10 +115,15 @@ Before marking a component goal complete:
 
 #### 7. ThemeToggle
 - **Path**: `src/components/ThemeToggle/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - Interactive toggle button between Light, Dark, and System modes
-  - Smooth icon transition
+  - Variants: `icon` (rotating/cycling button) and `segmented` (pill option group)
+  - Sizes: `sm`, `md`, `lg`
+  - Inline custom SVGs for Sun, Moon, and Monitor (zero external icon dependency)
+  - Seamless integration with `useTheme()` and `ThemeProvider`
+  - Tests: `ThemeToggle.test.tsx` (3 tests passing)
+  - Stories: `ThemeToggle.stories.tsx` (Storybook v10)
 
 ---
 
