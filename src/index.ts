@@ -23,3 +23,4 @@ export * from './components/ThemeToggle';
 export * from './components/Alert';
 export * from './components/Spinner';
 export * from './components/Skeleton';
+export * from './components/Toast';

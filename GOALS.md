@@ -165,7 +165,18 @@ Before marking a component goal complete:
   - Tests: `Skeleton.test.tsx` (8 tests passing)
   - Stories: `Skeleton.stories.tsx` (Storybook v10)
 
-- [ ] **Toast**: Floating transient notifications
+#### 4. Toast
+- **Path**: `src/components/Toast/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless a11y primitive: `@radix-ui/react-toast` with swipe-to-dismiss gesture support
+  - Subcomponents: `ToastProvider`, `Toast`, `ToastTitle`, `ToastDescription`, `ToastAction`, `ToastClose`, `ToastViewport`
+  - Imperative hook: `useToast()` with `toast()`, `toast.success()`, `toast.error()`, `toast.warning()`, `toast.info()`, and `dismiss()`
+  - Viewport positions: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`
+  - Variants: `surface` (accented side border) and `soft` (tinted background)
+  - Diffused elevation: `--eta-shadow-lg`
+  - Tests: `Toast.test.tsx` (5 tests passing)
+  - Stories: `Toast.stories.tsx` (Storybook v10 with interactive demo in multiple positions)
 
 - [ ] **Modal / Dialog**: Radix-based accessible modal dialog
 - [ ] **Drawer / Sheet**: Slide-out panels
