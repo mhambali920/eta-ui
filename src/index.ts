@@ -27,3 +27,4 @@ export * from './components/Toast';
 export * from './components/Dialog';
 export * from './components/Drawer';
 export * from './components/Tooltip';
+export * from './components/Popover';

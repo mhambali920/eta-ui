@@ -1,0 +1,147 @@
+.content {
+  box-sizing: border-box;
+  background-color: var(--eta-bg-surface);
+  border: 1px solid var(--eta-border-default);
+  border-radius: var(--eta-radius-lg);
+  box-shadow: var(--eta-shadow-lg);
+  color: var(--eta-text-body);
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation-duration: 180ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  outline: none;
+}
+
+/* Sizes */
+.size-sm {
+  width: 240px;
+}
+
+.size-md {
+  width: 320px;
+}
+
+.size-lg {
+  width: 420px;
+}
+
+.size-auto {
+  width: auto;
+  max-width: 90vw;
+}
+
+/* Subcomponents */
+.header {
+  padding: 14px 16px 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--eta-text-heading);
+  line-height: 1.35;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--eta-text-muted);
+  line-height: 1.45;
+}
+
+.body {
+  padding: 8px 16px 14px 16px;
+  flex-grow: 1;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.footer {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  background-color: var(--eta-bg-subtle);
+  border-top: 1px solid var(--eta-border-default);
+  flex-shrink: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--eta-radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--eta-text-muted);
+  cursor: pointer;
+  transition: color var(--eta-transition-fast), background-color var(--eta-transition-fast);
+  padding: 0;
+}
+
+.closeButton:hover {
+  color: var(--eta-text-heading);
+  background-color: var(--eta-bg-subtle);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--eta-color-primary);
+  outline-offset: 2px;
+}
+
+.closeButton svg {
+  width: 14px;
+  height: 14px;
+}
+
+.arrow {
+  fill: var(--eta-bg-surface);
+}
+
+.content[data-state='open'] {
+  animation-name: eta-popover-slide-in;
+}
+
+.content[data-state='closed'] {
+  animation-name: eta-popover-slide-out;
+}
+
+@keyframes eta-popover-slide-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes eta-popover-slide-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}

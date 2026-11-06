@@ -215,7 +215,16 @@ Before marking a component goal complete:
   - Tests: `Tooltip.test.tsx` (3 tests passing)
   - Stories: `Tooltip.stories.tsx` (Storybook v10 with interactive controls)
 
-- [ ] **Popover**: Floating helper content
+#### 8. Popover
+- **Path**: `src/components/Popover/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless `@radix-ui/react-popover` with subcomponents (`Popover`, `PopoverTrigger`, `PopoverContent`, `PopoverHeader`, `PopoverTitle`, `PopoverDescription`, `PopoverBody`, `PopoverFooter`, `PopoverClose`, `PopoverArrow`)
+  - Sizes: `sm`, `md`, `lg`, `auto`
+  - Diffused soft shadows and accessible ESC / outside-click handling
+  - Tests: `Popover.test.tsx` (2 tests passing)
+  - Stories: `Popover.stories.tsx` (Storybook v10 with interactive controls)
+
 - [ ] **Tabs & Accordion**: Accessible collapsible panels
 - [ ] **Breadcrumb**: Path navigation
 
