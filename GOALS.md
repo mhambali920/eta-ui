@@ -225,7 +225,17 @@ Before marking a component goal complete:
   - Tests: `Popover.test.tsx` (2 tests passing)
   - Stories: `Popover.stories.tsx` (Storybook v10 with interactive controls)
 
-- [ ] **Tabs & Accordion**: Accessible collapsible panels
+#### 9. Tabs
+- **Path**: `src/components/Tabs/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless `@radix-ui/react-tabs` with variants (`soft`, `underline`, `outline`), sizes (`sm`, `md`, `lg`), and orientations (`horizontal`, `vertical`)
+  - Full keyboard navigation (arrows, home, end) and roving focus
+  - Interactive Storybook controls binding
+  - Tests: `Tabs.test.tsx` (4 tests passing)
+  - Stories: `Tabs.stories.tsx` (Storybook v10 with dynamic controls)
+
+- [ ] **Accordion**: Accessible collapsible panels
 - [ ] **Breadcrumb**: Path navigation
 
 ---
