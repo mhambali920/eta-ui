@@ -29,3 +29,4 @@ export * from './components/Drawer';
 export * from './components/Tooltip';
 export * from './components/Popover';
 export * from './components/Tabs';
+export * from './components/Accordion';

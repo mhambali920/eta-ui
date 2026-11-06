@@ -235,7 +235,16 @@ Before marking a component goal complete:
   - Tests: `Tabs.test.tsx` (4 tests passing)
   - Stories: `Tabs.stories.tsx` (Storybook v10 with dynamic controls)
 
-- [ ] **Accordion**: Accessible collapsible panels
+#### 10. Accordion
+- **Path**: `src/components/Accordion/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Headless `@radix-ui/react-accordion` supporting `single` (collapsible) and `multiple` modes
+  - Smooth height animation and rotating chevron indicator
+  - Variants: `bordered`, `flush`, `soft`
+  - Tests: `Accordion.test.tsx` (4 tests passing)
+  - Stories: `Accordion.stories.tsx` (Storybook v10 with interactive controls)
+
 - [ ] **Breadcrumb**: Path navigation
 
 ---
