@@ -1,0 +1,106 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: var(--eta-radius-lg, 12px);
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  color: var(--eta-text-body, #5C6070);
+  font-family: inherit;
+  transition: all var(--eta-transition-fast, 150ms cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+/* Variants */
+.elevated {
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+}
+
+.elevation-sm {
+  box-shadow: var(--eta-shadow-sm, 0 2px 8px -2px rgba(43, 45, 66, 0.05));
+}
+
+.elevation-md {
+  box-shadow: var(--eta-shadow-md, 0 8px 24px -4px rgba(43, 45, 66, 0.06));
+}
+
+.elevation-lg {
+  box-shadow: var(--eta-shadow-lg, 0 16px 36px -6px rgba(43, 45, 66, 0.08));
+}
+
+.outline {
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+  box-shadow: none;
+}
+
+.filled {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+/* Interactive Card */
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--eta-shadow-md, 0 8px 24px -4px rgba(43, 45, 66, 0.06));
+  border-color: var(--eta-color-secondary, #7E99A3);
+}
+
+/* Padding Options */
+.padding-none {
+  padding: 0;
+}
+
+.padding-sm {
+  padding: 1rem;
+}
+
+.padding-md {
+  padding: 1.5rem;
+}
+
+.padding-lg {
+  padding: 2rem;
+}
+
+/* Subcomponents */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--eta-text-heading, #2B2D42);
+}
+
+.description {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--eta-text-muted, #8D99AE);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--eta-border-default, #E5E3DC);
+}

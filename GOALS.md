@@ -87,11 +87,16 @@ Before marking a component goal complete:
 
 #### 5. Card Container
 - **Path**: `src/components/Card/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
-  - Subcomponents: `Card`, `CardHeader`, `CardBody`, `CardFooter`
+  - Subcomponents: `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardBody`, `CardFooter`
   - Elevation: Soft diffused shadows (`--eta-shadow-sm`, `md`, `lg`)
-  - Border highlight for dark mode support
+  - Variants: `elevated`, `outline`, `filled`
+  - Padding: `none`, `sm`, `md`, `lg`
+  - Interactive hover state: subtle lift (`translateY(-2px)`) & accent highlight
+  - Border highlight for dark mode support (`1px solid var(--eta-border-default)`)
+  - Tests: `Card.test.tsx` (4 tests passing)
+  - Stories: `Card.stories.tsx` (Storybook v10 with subcomponent layouts)
 
 ---
 
