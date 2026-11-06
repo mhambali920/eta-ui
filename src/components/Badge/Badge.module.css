@@ -1,0 +1,140 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  box-sizing: border-box;
+  gap: 0.375rem;
+  transition: all var(--eta-transition-fast, 150ms cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+/* Radii */
+.pill {
+  border-radius: var(--eta-radius-full, 9999px);
+}
+
+.rounded {
+  border-radius: var(--eta-radius-sm, 6px);
+}
+
+/* Sizes */
+.sm {
+  height: 20px;
+  padding: 0 6px;
+  font-size: 0.6875rem;
+}
+
+.md {
+  height: 24px;
+  padding: 0 8px;
+  font-size: 0.75rem;
+}
+
+.lg {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 0.8125rem;
+}
+
+/* Color Scoped Variables */
+.primary {
+  --badge-soft-bg: var(--eta-color-primary-subtle, rgba(107, 144, 128, 0.12));
+  --badge-soft-text: var(--eta-color-primary);
+  --badge-solid-bg: var(--eta-color-primary);
+  --badge-solid-text: var(--eta-text-inverse, #ffffff);
+  --badge-outline-border: var(--eta-color-primary);
+  --badge-outline-text: var(--eta-color-primary);
+  --badge-dot: var(--eta-color-primary);
+}
+
+.secondary {
+  --badge-soft-bg: var(--eta-color-secondary-subtle, rgba(126, 153, 163, 0.12));
+  --badge-soft-text: var(--eta-color-secondary);
+  --badge-solid-bg: var(--eta-color-secondary);
+  --badge-solid-text: var(--eta-text-inverse, #ffffff);
+  --badge-outline-border: var(--eta-color-secondary);
+  --badge-outline-text: var(--eta-color-secondary);
+  --badge-dot: var(--eta-color-secondary);
+}
+
+.success {
+  --badge-soft-bg: var(--eta-status-success-bg);
+  --badge-soft-text: var(--eta-status-success-text);
+  --badge-solid-bg: var(--eta-status-success-solid);
+  --badge-solid-text: #ffffff;
+  --badge-outline-border: var(--eta-status-success-solid);
+  --badge-outline-text: var(--eta-status-success-text);
+  --badge-dot: var(--eta-status-success-solid);
+}
+
+.warning {
+  --badge-soft-bg: var(--eta-status-warning-bg);
+  --badge-soft-text: var(--eta-status-warning-text);
+  --badge-solid-bg: var(--eta-status-warning-solid);
+  --badge-solid-text: #ffffff;
+  --badge-outline-border: var(--eta-status-warning-solid);
+  --badge-outline-text: var(--eta-status-warning-text);
+  --badge-dot: var(--eta-status-warning-solid);
+}
+
+.danger {
+  --badge-soft-bg: var(--eta-status-error-bg);
+  --badge-soft-text: var(--eta-status-error-text);
+  --badge-solid-bg: var(--eta-status-error-solid);
+  --badge-solid-text: #ffffff;
+  --badge-outline-border: var(--eta-status-error-solid);
+  --badge-outline-text: var(--eta-status-error-text);
+  --badge-dot: var(--eta-status-error-solid);
+}
+
+.info {
+  --badge-soft-bg: var(--eta-status-info-bg);
+  --badge-soft-text: var(--eta-status-info-text);
+  --badge-solid-bg: var(--eta-status-info-solid);
+  --badge-solid-text: #ffffff;
+  --badge-outline-border: var(--eta-status-info-solid);
+  --badge-outline-text: var(--eta-status-info-text);
+  --badge-dot: var(--eta-status-info-solid);
+}
+
+.neutral {
+  --badge-soft-bg: var(--eta-bg-subtle, #EAE6DF);
+  --badge-soft-text: var(--eta-text-body, #5C6070);
+  --badge-solid-bg: var(--eta-text-body, #5C6070);
+  --badge-solid-text: #ffffff;
+  --badge-outline-border: var(--eta-border-default, #E5E3DC);
+  --badge-outline-text: var(--eta-text-body, #5C6070);
+  --badge-dot: var(--eta-text-muted);
+}
+
+/* Style Variants */
+.soft {
+  background-color: var(--badge-soft-bg);
+  color: var(--badge-soft-text);
+  border: 1px solid transparent;
+}
+
+.solid {
+  background-color: var(--badge-solid-bg);
+  color: var(--badge-solid-text);
+  border: 1px solid transparent;
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--badge-outline-text);
+  border: 1px solid var(--badge-outline-border);
+}
+
+/* Optional Dot */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--eta-radius-full, 9999px);
+  background-color: var(--badge-dot);
+  flex-shrink: 0;
+}

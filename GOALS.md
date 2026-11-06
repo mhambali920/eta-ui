@@ -72,10 +72,16 @@ Before marking a component goal complete:
 
 #### 4. Data Display (Badge & Avatar)
 - **Path**: `src/components/Badge/`, `src/components/Avatar/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
-  - Badge variants: `soft`, `solid`, `outline` with semantic colors (success, warning, error, info)
-  - Avatar: Image source with fallback initials, rounded shapes (`md`, `full`)
+  - Badge variants: `soft`, `solid`, `outline` with full semantic colors (`primary`, `secondary`, `success`, `warning`, `danger`, `info`, `neutral`)
+  - Badge sizes: `sm`, `md`, `lg`; shapes: `pill`, `rounded`; with optional dot indicator & icons
+  - Avatar: Radix UI `@radix-ui/react-avatar` with image loading lifecycle & fallback initials derived from name (e.g. "Jane Doe" -> "JD")
+  - Avatar sizes: `xs` (24px), `sm` (32px), `md` (40px), `lg` (48px), `xl` (56px)
+  - Avatar shapes: `circle`, `rounded`; status indicator badge (`online`, `busy`, `away`, `offline`)
+  - AvatarGroup: Overlapping stacked avatars with max visible count indicator (`+N`)
+  - Tests: `Badge.test.tsx` (3 tests), `Avatar.test.tsx` (5 tests) - All passing
+  - Stories: `Badge.stories.tsx`, `Avatar.stories.tsx` (Storybook v10)
 
 ---
 
