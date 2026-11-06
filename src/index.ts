@@ -32,3 +32,4 @@ export * from './components/Tabs';
 export * from './components/Accordion';
 export * from './components/Breadcrumb';
 export * from './components/Select';
+export * from './components/Slider';

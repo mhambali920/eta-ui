@@ -1,0 +1,170 @@
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  box-sizing: border-box;
+}
+
+.orientation-horizontal {
+  width: 100%;
+}
+
+.orientation-vertical {
+  flex-direction: column;
+  height: 200px;
+  width: auto;
+}
+
+/* Track */
+.track {
+  background-color: var(--eta-bg-subtle);
+  position: relative;
+  flex-grow: 1;
+  border-radius: var(--eta-radius-full);
+  overflow: hidden;
+}
+
+.orientation-horizontal.size-sm .track {
+  height: 4px;
+}
+
+.orientation-horizontal.size-md .track {
+  height: 6px;
+}
+
+.orientation-horizontal.size-lg .track {
+  height: 8px;
+}
+
+.orientation-vertical.size-sm .track {
+  width: 4px;
+}
+
+.orientation-vertical.size-md .track {
+  width: 6px;
+}
+
+.orientation-vertical.size-lg .track {
+  width: 8px;
+}
+
+/* Range */
+.range {
+  position: absolute;
+  border-radius: inherit;
+  transition: background-color var(--eta-transition-fast);
+}
+
+.orientation-horizontal .range {
+  height: 100%;
+}
+
+.orientation-vertical .range {
+  width: 100%;
+}
+
+/* Semantic Colors */
+.color-primary .range {
+  background-color: var(--eta-color-primary);
+}
+
+.color-secondary .range {
+  background-color: var(--eta-color-secondary);
+}
+
+.color-success .range {
+  background-color: var(--eta-status-success-solid);
+}
+
+.color-warning .range {
+  background-color: var(--eta-status-warning-solid);
+}
+
+.color-danger .range {
+  background-color: var(--eta-status-error-solid);
+}
+
+/* Thumb */
+.thumb {
+  display: block;
+  box-sizing: border-box;
+  background-color: var(--eta-bg-surface);
+  border: 2px solid var(--eta-color-primary);
+  border-radius: var(--eta-radius-full);
+  box-shadow: var(--eta-shadow-sm);
+  transition: transform var(--eta-transition-fast), border-color var(--eta-transition-fast), box-shadow var(--eta-transition-fast);
+  cursor: grab;
+  outline: none;
+}
+
+.color-primary .thumb {
+  border-color: var(--eta-color-primary);
+}
+
+.color-secondary .thumb {
+  border-color: var(--eta-color-secondary);
+}
+
+.color-success .thumb {
+  border-color: var(--eta-status-success-solid);
+}
+
+.color-warning .thumb {
+  border-color: var(--eta-status-warning-solid);
+}
+
+.color-danger .thumb {
+  border-color: var(--eta-status-error-solid);
+}
+
+.size-sm .thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.size-md .thumb {
+  width: 18px;
+  height: 18px;
+}
+
+.size-lg .thumb {
+  width: 22px;
+  height: 22px;
+}
+
+.thumb:hover {
+  transform: scale(1.1);
+}
+
+.thumb:active {
+  cursor: grabbing;
+  transform: scale(1.15);
+}
+
+.thumb:focus-visible {
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus);
+}
+
+.color-secondary .thumb:focus-visible {
+  box-shadow: 0 0 0 3px var(--eta-color-secondary-subtle);
+}
+
+.color-success .thumb:focus-visible {
+  box-shadow: 0 0 0 3px var(--eta-status-success-focus);
+}
+
+.color-warning .thumb:focus-visible {
+  box-shadow: 0 0 0 3px var(--eta-status-warning-focus);
+}
+
+.color-danger .thumb:focus-visible {
+  box-shadow: 0 0 0 3px var(--eta-status-error-focus);
+}
+
+.slider[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
