@@ -340,3 +340,204 @@ Before marking a component goal complete:
   - File preview list item with filename, human-readable file size formatter (`formatBytes`), and removal button
   - Tests: `FileDropzone.test.tsx` (7 tests passing)
   - Stories: `FileDropzone.stories.tsx` (Storybook v10 with interactive file queue and controls)
+
+---
+
+## 📋 Phase 4: Extended Form Controls, Feedback & Inputs (Target `v1.1.0`)
+
+#### 1. FormField
+- **Path**: `src/components/FormField/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Accessible form field container (`FormField`, `FormLabel`, `FormHelperText`, `FormErrorMessage`)
+  - React Context binding for automatic `id`, `htmlFor`, `aria-describedby`, `aria-invalid`, and `aria-required`
+  - Required indicator (`isRequired`) with soft danger asterisk and optional label (`optionalText`)
+  - States: `isInvalid`, `isDisabled`, `isRequired`, `isReadOnly`
+  - Tests: `src/components/FormField/FormField.test.tsx` (4 tests passing)
+  - Stories: `src/components/FormField/FormField.stories.tsx` (Storybook v10)
+
+#### 2. Progress & CircularProgress
+- **Path**: `src/components/Progress/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Accessible `Progress` (linear bar) and `CircularProgress` (SVG ring) with `role="progressbar"`, `aria-valuenow`, `aria-valuemin`, `aria-valuemax`
+  - Determinate (`value` 0–100) and `isIndeterminate` animated states
+  - Semantic colors: `primary`, `secondary`, `success`, `warning`, `danger`, `info`
+  - Sizes: `xs`, `sm`, `md`, `lg`, `xl`
+  - Optional striped animation (`hasStripe`, `isAnimated`) and percentage label (`showValueLabel`)
+  - Tests: `src/components/Progress/Progress.test.tsx` (4 tests passing)
+  - Stories: `src/components/Progress/Progress.stories.tsx` (Storybook v10)
+
+#### 3. NumberInput
+- **Path**: `src/components/NumberInput/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Accessible numeric input (`role="spinbutton"`, `aria-valuenow`, `aria-valuemin`, `aria-valuemax`)
+  - Subcomponents: `NumberInput`, `NumberInputField`, `NumberInputStepper`, `NumberIncrementStepper`, `NumberDecrementStepper`
+  - Value clamping (`min`, `max`), custom `step`, and decimal `precision`
+  - Keyboard `ArrowUp` / `ArrowDown` stepping and `Home` / `End` min-max jump
+  - Variants: `outline`, `filled`; Sizes: `sm`, `md`, `lg`; States: `isInvalid`, `disabled`, `readOnly`
+  - Tests: `src/components/NumberInput/NumberInput.test.tsx` (4 tests passing)
+  - Stories: `src/components/NumberInput/NumberInput.stories.tsx` (Storybook v10)
+
+#### 4. PinInput (OTP Input)
+- **Path**: `src/components/PinInput/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Multi-digit verification / OTP input (`PinInput`, `PinInputGroup`, `PinInputField`, `PinInputSeparator`)
+  - Auto-advance focus on input, smart `Backspace` / arrow navigation, and full clipboard paste distribution
+  - Input modes: `numeric` and `alphanumeric`; `mask` prop for secret PIN entry
+  - Callbacks: `onChange` and `onComplete` (triggered when all slots are filled)
+  - Sizes: `sm`, `md`, `lg`; Variants: `outline`, `filled`; States: `isInvalid`, `disabled`
+  - Tests: `src/components/PinInput/PinInput.test.tsx` (4 tests passing)
+  - Stories: `src/components/PinInput/PinInput.stories.tsx` (Storybook v10)
+
+#### 5. Combobox (Autocomplete)
+- **Path**: `src/components/Combobox/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Accessible searchable select (`role="combobox"`, `aria-expanded`, `aria-controls`, `aria-activedescendant`)
+  - Subcomponents: `Combobox`, `ComboboxInput`, `ComboboxTrigger`, `ComboboxContent`, `ComboboxList`, `ComboboxItem`, `ComboboxEmpty`, `ComboboxGroup`
+  - Single and multi-select (`multiple`) modes with keyboard arrow navigation (`ArrowDown`, `ArrowUp`, `Enter`, `Escape`)
+  - Built-in case-insensitive search filtering, custom `filterFn`, clearable button, and empty state message
+  - Sizes: `sm`, `md`, `lg`; Variants: `outline`, `filled`; Validation: `isInvalid`
+  - Tests: `src/components/Combobox/Combobox.test.tsx` (4 tests passing)
+  - Stories: `src/components/Combobox/Combobox.stories.tsx` (Storybook v10)
+
+#### 6. DatePicker & Calendar
+- **Path**: `src/components/DatePicker/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Zero-dependency accessible `Calendar`, `DatePicker`, and `DateRangePicker` using native `Intl.DateTimeFormat`
+  - Month and year navigation header, weekday grid, today indicator, and outside-month day dimming
+  - Date constraints: `minDate`, `maxDate`, `disabledDates` predicate
+  - Range selection mode with soft pastel connector highlight between start and end dates
+  - Popover trigger input with formatted date display (`dateFormat` presets, `locale`, and custom `formatDate`) and clear button
+  - Tests: `src/components/DatePicker/DatePicker.test.tsx` (5 tests passing)
+  - Stories: `src/components/DatePicker/DatePicker.stories.tsx` (Storybook v10 with interactive `dateFormat` & `locale` controls)
+
+#### 7. Tag / Chip
+- **Path**: `src/components/Tag/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Interactive & dismissible tag/chip (`Tag`, `TagLabel`, `TagCloseButton`, `TagGroup`)
+  - Variants: `soft`, `solid`, `outline`
+  - Semantic colors: `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `neutral`
+  - Sizes: `sm`, `md`, `lg`; Shapes: `rounded`, `pill`
+  - Removable (`isClosable`, `onRemove`) and interactive filter chip toggle (`isSelected`, `onClick`)
+  - Tests: `src/components/Tag/Tag.test.tsx` (3 tests passing)
+  - Stories: `src/components/Tag/Tag.stories.tsx` (Storybook v10)
+
+#### 8. Toggle & ToggleGroup (Segmented Control)
+- **Path**: `src/components/ToggleGroup/`
+- **Status**: [x] COMPLETED
+- **Features**:
+  - Accessible two-state `Toggle` button (`aria-pressed`) and `ToggleGroup` / `ToggleGroupItem`
+  - Selection modes: `single` (radio-like with `role="radiogroup"`) and `multiple` (toolbar-like with `role="group"`)
+  - Variants: `soft`, `outline`, `segmented` (pill container with elevated active indicator)
+  - Sizes: `sm`, `md`, `lg`; Orientations: `horizontal`, `vertical`
+  - Full keyboard arrow navigation and disabled state handling
+  - Tests: `src/components/ToggleGroup/ToggleGroup.test.tsx` (3 tests passing)
+  - Stories: `src/components/ToggleGroup/ToggleGroup.stories.tsx` (Storybook v10)
+
+---
+
+## 📋 Phase 5: Advanced Disclosure, Data Display & Spotlight (Target `v1.2.0`)
+
+#### 1. AlertDialog
+- **Path**: `src/components/AlertDialog/`
+- **Status**: [ ] PENDING
+- **Features**:
+  - Accessible confirmation dialog (`role="alertdialog"`, `aria-modal="true"`) built on `@radix-ui/react-dialog`
+  - Subcomponents: `AlertDialog`, `AlertDialogTrigger`, `AlertDialogContent`, `AlertDialogHeader`, `AlertDialogTitle`, `AlertDialogDescription`, `AlertDialogBody`, `AlertDialogFooter`, `AlertDialogAction`, `AlertDialogCancel`
+  - Prevents accidental outside-click dismissal by default to protect destructive user flows
+  - Semantic intents (`danger`, `warning`, `info`, `primary`) with soft status icon badge
+  - Tests: `src/components/AlertDialog/AlertDialog.test.tsx`
+  - Stories: `src/components/AlertDialog/AlertDialog.stories.tsx`
+
+#### 2. HoverCard
+- **Path**: `src/components/HoverCard/`
+- **Status**: [ ] PENDING
+- **Features**:
+  - Rich preview card triggered by pointer hover and keyboard focus
+  - Subcomponents: `HoverCard`, `HoverCardTrigger`, `HoverCardContent`, `HoverCardArrow`
+  - Configurable `openDelay` (default 200ms) and `closeDelay` (default 150ms) with hover-bridge persistence
+  - Placements (`top`, `right`, `bottom`, `left`) and sizes (`sm`, `md`, `lg`)
+  - Diffused soft elevation (`--eta-shadow-lg`) and smooth fade/scale animation
+  - Tests: `src/components/HoverCard/HoverCard.test.tsx`
+  - Stories: `src/components/HoverCard/HoverCard.stories.tsx`
+
+#### 3. Collapsible
+- **Path**: `src/components/Collapsible/`
+- **Status**: [ ] PENDING
+- **Features**:
+  - Accessible single-panel expand/collapse primitive (`Collapsible`, `CollapsibleTrigger`, `CollapsibleContent`)
+  - Controlled (`open`, `onOpenChange`) and uncontrolled (`defaultOpen`) modes
+  - Automatic `aria-expanded`, `aria-controls`, and `data-state="open|closed"` attributes
+  - Smooth animated transition and disabled state support
+  - Tests: `src/components/Collapsible/Collapsible.test.tsx`
+  - Stories: `src/components/Collapsible/Collapsible.stories.tsx`
+
+#### 4. Stepper
+- **Path**: `src/components/Stepper/`
+- **Status**: [ ] PENDING
+- **Features**:
+  - Multi-step workflow progress component (`Stepper`, `Step`, `StepIndicator`, `StepTitle`, `StepDescription`, `StepSeparator`)
+  - Orientations: `horizontal` and `vertical`; Sizes: `sm`, `md`, `lg`
+  - Automatic step status calculation (`complete`, `active`, `upcoming`, `error`) from `activeStep` index
+  - Built-in checkmark & error SVG indicators, custom icon override, and optional clickable steps (`onStepClick`)
+  - Tests: `src/components/Stepper/Stepper.test.tsx`
+  - Stories: `src/components/Stepper/Stepper.stories.tsx`
+
+#### 5. Timeline
+- **Path**: `src/components/Timeline/`
+- **Status**: [ ] PENDING
+- **Features**:
+  - Chronological event & activity feed (`Timeline`, `TimelineItem`, `TimelinePoint`, `TimelineConnector`, `TimelineContent`, `TimelineTitle`, `TimelineTime`, `TimelineDescription`)
+  - Semantic status point colors (`primary`, `secondary`, `success`, `warning`, `danger`, `info`, `neutral`)
+  - Variants: `solid`, `soft`, `outline` indicator dots with custom icon slot
+  - Layouts: `left` (standard) and `alternate`
+  - Tests: `src/components/Timeline/Timeline.test.tsx`
+  - Stories: `src/components/Timeline/Timeline.stories.tsx`
+
+#### 6. Stat (Metric Card)
+- **Path**: `src/components/Stat/`
+- **Status**: [ ] PENDING
+- **Features**:
+  - Dashboard KPI and metric display (`Stat`, `StatLabel`, `StatValue`, `StatHelpText`, `StatTrend`, `StatIcon`, `StatGroup`)
+  - `StatTrend` with directional indicator (`up`, `down`, `neutral`) and soft semantic badge styling
+  - Variants: `surface` (elevated card), `outline`, `subtle`, `ghost`
+  - Responsive `StatGroup` grid container
+  - Tests: `src/components/Stat/Stat.test.tsx`
+  - Stories: `src/components/Stat/Stat.stories.tsx`
+
+#### 7. EmptyState
+- **Path**: `src/components/EmptyState/`
+- **Status**: [ ] PENDING
+- **Features**:
+  - Reusable zero-data / empty view placeholder (`EmptyState`, `EmptyStateIcon`, `EmptyStateTitle`, `EmptyStateDescription`, `EmptyStateActions`)
+  - Sizes: `sm`, `md`, `lg`; Variants: `default`, `bordered` (dashed soft border), `surface`
+  - Built-in calming soft SVG illustration fallback with custom icon & action button slots
+  - Tests: `src/components/EmptyState/EmptyState.test.tsx`
+  - Stories: `src/components/EmptyState/EmptyState.stories.tsx`
+
+#### 8. Code & Kbd
+- **Path**: `src/components/Code/`
+- **Status**: [ ] PENDING
+- **Features**:
+  - `Kbd`: Tactile keyboard shortcut badge (`<Kbd>⌘</Kbd><Kbd>K</Kbd>`) with subtle 3D bottom border
+  - `Code`: Inline monospace code highlight with `soft`, `outline`, and `solid` variants across semantic colors
+  - `CodeBlock`: Multi-line preformatted code container with optional filename header, line numbers (`showLineNumbers`), and one-click Copy to Clipboard button
+  - Tests: `src/components/Code/Code.test.tsx`
+  - Stories: `src/components/Code/Code.stories.tsx`
+
+#### 9. Command (Command Palette / Spotlight)
+- **Path**: `src/components/Command/`
+- **Status**: [ ] PENDING
+- **Features**:
+  - Composable Command Palette (`Command`, `CommandDialog`, `CommandInput`, `CommandList`, `CommandEmpty`, `CommandGroup`, `CommandItem`, `CommandSeparator`, `CommandShortcut`)
+  - Instant search filtering, keyboard navigation (`ArrowUp`, `ArrowDown`, `Home`, `End`, `Enter`), and item selection (`onSelect`)
+  - `CommandDialog` modal overlay with optional `⌘K` / `Ctrl+K` global shortcut binding
+  - Soft glassmorphic backdrop and calm highlight states
+  - Tests: `src/components/Command/Command.test.tsx`
+  - Stories: `src/components/Command/Command.stories.tsx`

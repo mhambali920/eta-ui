@@ -125,8 +125,19 @@ eta-ui/
 
 ## **Fase 3: Komponen Lanjutan & Kompleks (Target Rilis `v1.0.0`)**
 
-1. **Form Lanjutan:** `Select` / `Combobox` (searchable), `Datepicker`, `Slider`, dan `FileDropzone`.  
+1. **Form Lanjutan:** `Select`, `Slider`, dan `FileDropzone`.  
 2. **Data & Struktur:** `Table` (dengan state kosong & sorting), `Pagination`, dan `DropdownMenu`.
+
+## **Fase 4: Extended Form Controls, Feedback & Inputs (Target Rilis `v1.1.0`)**
+
+1. **Form Wrappers & Inputs Khusus:** `FormField` (`FormLabel`, `FormHelperText`, `FormErrorMessage`), `NumberInput`, `PinInput` (OTP), `Combobox` (Autocomplete), dan `DatePicker` / `Calendar`.  
+2. **Progress & Selection Chips:** `Progress` & `CircularProgress`, `Tag` / `Chip` (dismissible & filterable), serta `Toggle` & `ToggleGroup` (Segmented Control).
+
+## **Fase 5: Advanced Disclosure, Data Display & Spotlight (Target Rilis `v1.2.0`)**
+
+1. **Disclosure & Overlay Lanjutan:** `AlertDialog` (konfirmasi aksi destruktif), `HoverCard` (preview konten saat hover), dan `Collapsible`.  
+2. **Workflow & Data Visualization:** `Stepper` (multi-step wizard), `Timeline` (kronologi aktivitas), `Stat` (kartu metrik/KPI dashboard), dan `EmptyState`.  
+3. **Developer & Power-User Primitives:** `Code` / `CodeBlock` & `Kbd` (keyboard shortcut badge), serta `Command` (Command Palette / Spotlight `⌘K`).
 
 # **5\. Konfigurasi Build & Publikasi ke NPM**
 
