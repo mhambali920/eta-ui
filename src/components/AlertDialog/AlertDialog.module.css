@@ -1,0 +1,211 @@
+@keyframes etaAlertOverlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes etaAlertContentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(24, 26, 32, 0.45);
+  backdrop-filter: blur(4px);
+  animation: etaAlertOverlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  width: calc(100vw - 2rem);
+  max-height: 85vh;
+  overflow-y: auto;
+  background-color: var(--eta-bg-surface);
+  border: 1px solid var(--eta-border-default);
+  border-radius: var(--eta-radius-lg);
+  box-shadow: var(--eta-shadow-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: etaAlertContentShow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.content:focus {
+  outline: none;
+}
+
+.sm {
+  max-width: 24rem;
+}
+
+.md {
+  max-width: 28rem;
+}
+
+.lg {
+  max-width: 34rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  flex: 1;
+}
+
+.iconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--eta-radius-full);
+  flex-shrink: 0;
+}
+
+.danger {
+  background-color: var(--eta-status-error-bg);
+  color: var(--eta-status-error-text);
+}
+
+.warning {
+  background-color: var(--eta-status-warning-bg);
+  color: var(--eta-status-warning-text);
+}
+
+.info {
+  background-color: var(--eta-status-info-bg);
+  color: var(--eta-status-info-text);
+}
+
+.primary {
+  background-color: var(--eta-color-primary-subtle);
+  color: var(--eta-color-primary);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--eta-text-heading);
+}
+
+.description {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--eta-text-body);
+}
+
+.body {
+  font-size: 0.875rem;
+  color: var(--eta-text-body);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.625rem;
+  margin-top: 0.25rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.375rem;
+  padding: 0 1rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--eta-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--eta-transition-fast),
+    border-color var(--eta-transition-fast),
+    color var(--eta-transition-fast),
+    box-shadow var(--eta-transition-fast);
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.cancelButton {
+  background-color: var(--eta-bg-base);
+  border-color: var(--eta-border-default);
+  color: var(--eta-text-heading);
+}
+
+.cancelButton:hover:not(:disabled) {
+  background-color: var(--eta-bg-hover);
+}
+
+.actionDanger {
+  background-color: var(--eta-status-error-solid);
+  color: var(--eta-text-inverse);
+}
+
+.actionDanger:hover:not(:disabled) {
+  background-color: var(--eta-status-error-solid-hover);
+}
+
+.actionWarning {
+  background-color: var(--eta-status-warning-solid);
+  color: var(--eta-text-inverse);
+}
+
+.actionWarning:hover:not(:disabled) {
+  background-color: var(--eta-status-warning-solid-hover);
+}
+
+.actionInfo {
+  background-color: var(--eta-status-info-solid);
+  color: var(--eta-text-inverse);
+}
+
+.actionInfo:hover:not(:disabled) {
+  background-color: var(--eta-status-info-solid-hover);
+}
+
+.actionPrimary {
+  background-color: var(--eta-color-primary);
+  color: var(--eta-text-inverse);
+}
+
+.actionPrimary:hover:not(:disabled) {
+  background-color: var(--eta-color-primary-hover);
+}

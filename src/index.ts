@@ -45,3 +45,4 @@ export * from './components/Combobox';
 export * from './components/DatePicker';
 export * from './components/Tag';
 export * from './components/ToggleGroup';
+export * from './components/AlertDialog';
