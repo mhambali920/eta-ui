@@ -446,98 +446,98 @@ Before marking a component goal complete:
 
 #### 1. AlertDialog
 - **Path**: `src/components/AlertDialog/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - Accessible confirmation dialog (`role="alertdialog"`, `aria-modal="true"`) built on `@radix-ui/react-dialog`
   - Subcomponents: `AlertDialog`, `AlertDialogTrigger`, `AlertDialogContent`, `AlertDialogHeader`, `AlertDialogTitle`, `AlertDialogDescription`, `AlertDialogBody`, `AlertDialogFooter`, `AlertDialogAction`, `AlertDialogCancel`
   - Prevents accidental outside-click dismissal by default to protect destructive user flows
   - Semantic intents (`danger`, `warning`, `info`, `primary`) with soft status icon badge
-  - Tests: `src/components/AlertDialog/AlertDialog.test.tsx`
-  - Stories: `src/components/AlertDialog/AlertDialog.stories.tsx`
+  - Tests: `src/components/AlertDialog/AlertDialog.test.tsx` (2 tests passing)
+  - Stories: `src/components/AlertDialog/AlertDialog.stories.tsx` (Storybook v10)
 
 #### 2. HoverCard
 - **Path**: `src/components/HoverCard/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - Rich preview card triggered by pointer hover and keyboard focus
   - Subcomponents: `HoverCard`, `HoverCardTrigger`, `HoverCardContent`, `HoverCardArrow`
   - Configurable `openDelay` (default 200ms) and `closeDelay` (default 150ms) with hover-bridge persistence
   - Placements (`top`, `right`, `bottom`, `left`) and sizes (`sm`, `md`, `lg`)
   - Diffused soft elevation (`--eta-shadow-lg`) and smooth fade/scale animation
-  - Tests: `src/components/HoverCard/HoverCard.test.tsx`
-  - Stories: `src/components/HoverCard/HoverCard.stories.tsx`
+  - Tests: `src/components/HoverCard/HoverCard.test.tsx` (2 tests passing)
+  - Stories: `src/components/HoverCard/HoverCard.stories.tsx` (Storybook v10)
 
 #### 3. Collapsible
 - **Path**: `src/components/Collapsible/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - Accessible single-panel expand/collapse primitive (`Collapsible`, `CollapsibleTrigger`, `CollapsibleContent`)
   - Controlled (`open`, `onOpenChange`) and uncontrolled (`defaultOpen`) modes
   - Automatic `aria-expanded`, `aria-controls`, and `data-state="open|closed"` attributes
   - Smooth animated transition and disabled state support
-  - Tests: `src/components/Collapsible/Collapsible.test.tsx`
-  - Stories: `src/components/Collapsible/Collapsible.stories.tsx`
+  - Tests: `src/components/Collapsible/Collapsible.test.tsx` (2 tests passing)
+  - Stories: `src/components/Collapsible/Collapsible.stories.tsx` (Storybook v10)
 
 #### 4. Stepper
 - **Path**: `src/components/Stepper/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - Multi-step workflow progress component (`Stepper`, `Step`, `StepIndicator`, `StepTitle`, `StepDescription`, `StepSeparator`)
   - Orientations: `horizontal` and `vertical`; Sizes: `sm`, `md`, `lg`
   - Automatic step status calculation (`complete`, `active`, `upcoming`, `error`) from `activeStep` index
   - Built-in checkmark & error SVG indicators, custom icon override, and optional clickable steps (`onStepClick`)
-  - Tests: `src/components/Stepper/Stepper.test.tsx`
-  - Stories: `src/components/Stepper/Stepper.stories.tsx`
+  - Tests: `src/components/Stepper/Stepper.test.tsx` (2 tests passing)
+  - Stories: `src/components/Stepper/Stepper.stories.tsx` (Storybook v10)
 
 #### 5. Timeline
 - **Path**: `src/components/Timeline/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - Chronological event & activity feed (`Timeline`, `TimelineItem`, `TimelinePoint`, `TimelineConnector`, `TimelineContent`, `TimelineTitle`, `TimelineTime`, `TimelineDescription`)
   - Semantic status point colors (`primary`, `secondary`, `success`, `warning`, `danger`, `info`, `neutral`)
   - Variants: `solid`, `soft`, `outline` indicator dots with custom icon slot
   - Layouts: `left` (standard) and `alternate`
-  - Tests: `src/components/Timeline/Timeline.test.tsx`
-  - Stories: `src/components/Timeline/Timeline.stories.tsx`
+  - Tests: `src/components/Timeline/Timeline.test.tsx` (2 tests passing)
+  - Stories: `src/components/Timeline/Timeline.stories.tsx` (Storybook v10)
 
 #### 6. Stat (Metric Card)
 - **Path**: `src/components/Stat/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - Dashboard KPI and metric display (`Stat`, `StatLabel`, `StatValue`, `StatHelpText`, `StatTrend`, `StatIcon`, `StatGroup`)
   - `StatTrend` with directional indicator (`up`, `down`, `neutral`) and soft semantic badge styling
   - Variants: `surface` (elevated card), `outline`, `subtle`, `ghost`
   - Responsive `StatGroup` grid container
-  - Tests: `src/components/Stat/Stat.test.tsx`
-  - Stories: `src/components/Stat/Stat.stories.tsx`
+  - Tests: `src/components/Stat/Stat.test.tsx` (2 tests passing)
+  - Stories: `src/components/Stat/Stat.stories.tsx` (Storybook v10)
 
 #### 7. EmptyState
 - **Path**: `src/components/EmptyState/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - Reusable zero-data / empty view placeholder (`EmptyState`, `EmptyStateIcon`, `EmptyStateTitle`, `EmptyStateDescription`, `EmptyStateActions`)
   - Sizes: `sm`, `md`, `lg`; Variants: `default`, `bordered` (dashed soft border), `surface`
   - Built-in calming soft SVG illustration fallback with custom icon & action button slots
-  - Tests: `src/components/EmptyState/EmptyState.test.tsx`
-  - Stories: `src/components/EmptyState/EmptyState.stories.tsx`
+  - Tests: `src/components/EmptyState/EmptyState.test.tsx` (2 tests passing)
+  - Stories: `src/components/EmptyState/EmptyState.stories.tsx` (Storybook v10)
 
 #### 8. Code & Kbd
 - **Path**: `src/components/Code/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - `Kbd`: Tactile keyboard shortcut badge (`<Kbd>⌘</Kbd><Kbd>K</Kbd>`) with subtle 3D bottom border
   - `Code`: Inline monospace code highlight with `soft`, `outline`, and `solid` variants across semantic colors
   - `CodeBlock`: Multi-line preformatted code container with optional filename header, line numbers (`showLineNumbers`), and one-click Copy to Clipboard button
-  - Tests: `src/components/Code/Code.test.tsx`
-  - Stories: `src/components/Code/Code.stories.tsx`
+  - Tests: `src/components/Code/Code.test.tsx` (2 tests passing)
+  - Stories: `src/components/Code/Code.stories.tsx` (Storybook v10)
 
 #### 9. Command (Command Palette / Spotlight)
 - **Path**: `src/components/Command/`
-- **Status**: [ ] PENDING
+- **Status**: [x] COMPLETED
 - **Features**:
   - Composable Command Palette (`Command`, `CommandDialog`, `CommandInput`, `CommandList`, `CommandEmpty`, `CommandGroup`, `CommandItem`, `CommandSeparator`, `CommandShortcut`)
   - Instant search filtering, keyboard navigation (`ArrowUp`, `ArrowDown`, `Home`, `End`, `Enter`), and item selection (`onSelect`)
   - `CommandDialog` modal overlay with optional `⌘K` / `Ctrl+K` global shortcut binding
   - Soft glassmorphic backdrop and calm highlight states
-  - Tests: `src/components/Command/Command.test.tsx`
-  - Stories: `src/components/Command/Command.stories.tsx`
+  - Tests: `src/components/Command/Command.test.tsx` (2 tests passing)
+  - Stories: `src/components/Command/Command.stories.tsx` (Storybook v10)
