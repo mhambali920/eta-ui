@@ -1,0 +1,125 @@
+.wrapper {
+  display: inline-flex;
+  align-items: stretch;
+  width: 100%;
+  border-radius: var(--eta-radius-md);
+  border: 1px solid var(--eta-border-default);
+  background-color: var(--eta-bg-base);
+  color: var(--eta-text-heading);
+  transition:
+    border-color var(--eta-transition-fast),
+    box-shadow var(--eta-transition-fast),
+    background-color var(--eta-transition-fast);
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.outline {
+  background-color: var(--eta-bg-base);
+}
+
+.filled {
+  background-color: var(--eta-bg-subtle);
+  border-color: transparent;
+}
+
+.focused {
+  border-color: var(--eta-border-focus);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus);
+  background-color: var(--eta-bg-base);
+}
+
+.invalid {
+  border-color: var(--eta-status-error-solid);
+}
+
+.invalid.focused {
+  border-color: var(--eta-status-error-solid);
+  box-shadow: 0 0 0 3px var(--eta-status-error-focus);
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--eta-bg-subtle);
+}
+
+/* Sizes */
+.sm {
+  height: 2rem;
+  font-size: 0.8125rem;
+}
+
+.md {
+  height: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.lg {
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.input::placeholder {
+  color: var(--eta-text-muted);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+.stepperGroup {
+  display: flex;
+  flex-direction: column;
+  width: 1.75rem;
+  border-left: 1px solid var(--eta-border-default);
+  flex-shrink: 0;
+}
+
+.stepperButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--eta-bg-surface);
+  color: var(--eta-text-body);
+  cursor: pointer;
+  padding: 0;
+  user-select: none;
+  transition:
+    background-color var(--eta-transition-fast),
+    color var(--eta-transition-fast);
+}
+
+.stepperButton + .stepperButton {
+  border-top: 1px solid var(--eta-border-default);
+}
+
+.stepperButton:hover:not(:disabled) {
+  background-color: var(--eta-bg-hover);
+  color: var(--eta-text-heading);
+}
+
+.stepperButton:active:not(:disabled) {
+  background-color: var(--eta-color-primary-subtle);
+  color: var(--eta-color-primary);
+}
+
+.stepperButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
