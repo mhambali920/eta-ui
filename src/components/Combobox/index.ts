@@ -1,0 +1,16 @@
+export {
+  Combobox,
+  ComboboxInput,
+  ComboboxTrigger,
+  ComboboxContent,
+  ComboboxList,
+  ComboboxGroup,
+  ComboboxItem,
+  ComboboxEmpty,
+  type ComboboxProps,
+  type ComboboxOption,
+  type ComboboxItemProps,
+  type ComboboxGroupProps,
+  type ComboboxSize,
+  type ComboboxVariant,
+} from './Combobox';

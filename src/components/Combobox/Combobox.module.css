@@ -1,0 +1,244 @@
+.root {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-family: inherit;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  width: 100%;
+  border-radius: var(--eta-radius-md);
+  border: 1px solid var(--eta-border-default);
+  background-color: var(--eta-bg-base);
+  color: var(--eta-text-heading);
+  transition:
+    border-color var(--eta-transition-fast),
+    box-shadow var(--eta-transition-fast),
+    background-color var(--eta-transition-fast);
+  padding: 0.25rem 0.5rem 0.25rem 0.75rem;
+}
+
+.outline {
+  background-color: var(--eta-bg-base);
+}
+
+.filled {
+  background-color: var(--eta-bg-subtle);
+  border-color: transparent;
+}
+
+.focused {
+  border-color: var(--eta-border-focus);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus);
+  background-color: var(--eta-bg-base);
+}
+
+.invalid {
+  border-color: var(--eta-status-error-solid);
+}
+
+.invalid.focused {
+  border-color: var(--eta-status-error-solid);
+  box-shadow: 0 0 0 3px var(--eta-status-error-focus);
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--eta-bg-subtle);
+}
+
+/* Sizes */
+.sm {
+  min-height: 2rem;
+  font-size: 0.8125rem;
+}
+
+.md {
+  min-height: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.lg {
+  min-height: 3rem;
+  font-size: 1rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--eta-radius-sm);
+  background-color: var(--eta-color-primary-subtle);
+  color: var(--eta-color-primary);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.chipRemove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.chipRemove:hover {
+  opacity: 1;
+}
+
+.input {
+  flex: 1;
+  min-width: 4rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+}
+
+.input::placeholder {
+  color: var(--eta-text-muted);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+.actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: var(--eta-radius-sm);
+  background: transparent;
+  color: var(--eta-text-muted);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background-color var(--eta-transition-fast),
+    color var(--eta-transition-fast);
+}
+
+.iconButton:hover:not(:disabled) {
+  background-color: var(--eta-bg-subtle);
+  color: var(--eta-text-heading);
+}
+
+.iconButton:disabled {
+  cursor: not-allowed;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.content {
+  position: absolute;
+  top: calc(100% + 0.375rem);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: var(--eta-bg-surface);
+  border: 1px solid var(--eta-border-default);
+  border-radius: var(--eta-radius-md);
+  box-shadow: var(--eta-shadow-lg);
+  max-height: 16rem;
+  overflow-y: auto;
+  padding: 0.375rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.groupHeading {
+  padding: 0.375rem 0.5rem 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--eta-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: var(--eta-radius-sm);
+  font-size: 0.875rem;
+  color: var(--eta-text-body);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--eta-transition-fast),
+    color var(--eta-transition-fast);
+}
+
+.item:hover:not([data-disabled]),
+.itemActive {
+  background-color: var(--eta-bg-hover);
+  color: var(--eta-text-heading);
+}
+
+.itemSelected {
+  background-color: var(--eta-color-primary-subtle);
+  color: var(--eta-color-primary);
+  font-weight: 500;
+}
+
+.itemDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  color: var(--eta-color-primary);
+}
+
+.empty {
+  padding: 1rem 0.75rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--eta-text-muted);
+}
