@@ -42,3 +42,4 @@ export * from './components/Progress';
 export * from './components/NumberInput';
 export * from './components/PinInput';
 export * from './components/Combobox';
+export * from './components/DatePicker';

@@ -1,0 +1,247 @@
+.root {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-family: inherit;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: var(--eta-radius-md);
+  border: 1px solid var(--eta-border-default);
+  background-color: var(--eta-bg-base);
+  color: var(--eta-text-heading);
+  cursor: pointer;
+  padding: 0 0.75rem;
+  text-align: left;
+  transition:
+    border-color var(--eta-transition-fast),
+    box-shadow var(--eta-transition-fast),
+    background-color var(--eta-transition-fast);
+}
+
+.outline {
+  background-color: var(--eta-bg-base);
+}
+
+.filled {
+  background-color: var(--eta-bg-subtle);
+  border-color: transparent;
+}
+
+.trigger:focus-visible,
+.triggerOpen {
+  outline: none;
+  border-color: var(--eta-border-focus);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus);
+  background-color: var(--eta-bg-base);
+}
+
+.invalid {
+  border-color: var(--eta-status-error-solid);
+}
+
+.invalid:focus-visible,
+.invalid.triggerOpen {
+  border-color: var(--eta-status-error-solid);
+  box-shadow: 0 0 0 3px var(--eta-status-error-focus);
+}
+
+.trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--eta-bg-subtle);
+}
+
+/* Sizes */
+.sm {
+  height: 2rem;
+  font-size: 0.8125rem;
+}
+
+.md {
+  height: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.lg {
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.triggerText {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder {
+  color: var(--eta-text-muted);
+}
+
+.triggerActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--eta-text-muted);
+}
+
+.clearButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  border-radius: var(--eta-radius-sm);
+  background: transparent;
+  color: var(--eta-text-muted);
+  cursor: pointer;
+  padding: 0;
+}
+
+.clearButton:hover {
+  background-color: var(--eta-bg-subtle);
+  color: var(--eta-text-heading);
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + 0.375rem);
+  left: 0;
+  z-index: 60;
+}
+
+/* Calendar */
+.calendar {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: var(--eta-radius-lg);
+  border: 1px solid var(--eta-border-default);
+  background-color: var(--eta-bg-surface);
+  box-shadow: var(--eta-shadow-lg);
+  user-select: none;
+  width: 18rem;
+  font-family: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.monthLabel {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--eta-text-heading);
+}
+
+.navGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--eta-radius-sm);
+  border: 1px solid var(--eta-border-default);
+  background-color: var(--eta-bg-base);
+  color: var(--eta-text-body);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background-color var(--eta-transition-fast),
+    color var(--eta-transition-fast);
+}
+
+.navButton:hover:not(:disabled) {
+  background-color: var(--eta-bg-hover);
+  color: var(--eta-text-heading);
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.weekday {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--eta-text-muted);
+  padding: 0.25rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 0.25rem;
+}
+
+.dayButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.125rem;
+  width: 100%;
+  border: none;
+  border-radius: var(--eta-radius-sm);
+  background: transparent;
+  color: var(--eta-text-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  font-variant-numeric: tabular-nums;
+  transition:
+    background-color var(--eta-transition-fast),
+    color var(--eta-transition-fast);
+}
+
+.dayButton:hover:not(:disabled):not(.daySelected) {
+  background-color: var(--eta-bg-hover);
+  color: var(--eta-text-heading);
+}
+
+.dayOutside {
+  color: var(--eta-text-muted);
+  opacity: 0.45;
+}
+
+.dayToday {
+  color: var(--eta-color-primary);
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px var(--eta-color-primary);
+}
+
+.dayInRange {
+  background-color: var(--eta-color-primary-subtle);
+  color: var(--eta-color-primary);
+  border-radius: 0;
+}
+
+.daySelected {
+  background-color: var(--eta-color-primary);
+  color: var(--eta-text-inverse);
+  font-weight: 600;
+}
+
+.dayButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
