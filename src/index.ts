@@ -38,3 +38,4 @@ export * from './components/Table';
 export * from './components/Pagination';
 export * from './components/FileDropzone';
 export * from './components/FormField';
+export * from './components/Progress';

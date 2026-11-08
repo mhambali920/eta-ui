@@ -1,0 +1,203 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+  font-family: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--eta-text-heading);
+}
+
+.valueText {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--eta-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--eta-bg-subtle);
+  border-radius: var(--eta-radius-full);
+}
+
+/* Linear Sizes */
+.xs {
+  height: 0.25rem;
+}
+
+.sm {
+  height: 0.375rem;
+}
+
+.md {
+  height: 0.5rem;
+}
+
+.lg {
+  height: 0.75rem;
+}
+
+.xl {
+  height: 1rem;
+}
+
+.indicator {
+  height: 100%;
+  border-radius: var(--eta-radius-full);
+  transition: width var(--eta-transition-normal);
+}
+
+/* Semantic Colors */
+.primary {
+  background-color: var(--eta-color-primary);
+  color: var(--eta-color-primary);
+}
+
+.secondary {
+  background-color: var(--eta-color-secondary);
+  color: var(--eta-color-secondary);
+}
+
+.success {
+  background-color: var(--eta-status-success-solid);
+  color: var(--eta-status-success-solid);
+}
+
+.warning {
+  background-color: var(--eta-status-warning-solid);
+  color: var(--eta-status-warning-solid);
+}
+
+.danger {
+  background-color: var(--eta-status-error-solid);
+  color: var(--eta-status-error-solid);
+}
+
+.info {
+  background-color: var(--eta-status-info-solid);
+  color: var(--eta-status-info-solid);
+}
+
+/* Stripes */
+.striped {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+
+@keyframes etaProgressStripe {
+  from {
+    background-position: 1rem 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.animated {
+  animation: etaProgressStripe 1s linear infinite;
+}
+
+/* Indeterminate Linear */
+@keyframes etaProgressIndeterminate {
+  0% {
+    transform: translateX(-100%) scaleX(0.35);
+  }
+  50% {
+    transform: translateX(40%) scaleX(0.5);
+  }
+  100% {
+    transform: translateX(180%) scaleX(0.35);
+  }
+}
+
+.indeterminate {
+  width: 60% !important;
+  transform-origin: left center;
+  animation: etaProgressIndeterminate 1.4s ease-in-out infinite;
+}
+
+/* Circular Progress */
+.circularWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.circularSvg {
+  transform: rotate(-90deg);
+}
+
+@keyframes etaCircularRotate {
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.circularIndeterminate {
+  animation: etaCircularRotate 1.4s linear infinite;
+}
+
+.circularTrack {
+  stroke: var(--eta-bg-subtle);
+}
+
+.circularIndicator {
+  transition: stroke-dashoffset var(--eta-transition-normal);
+  stroke: currentColor;
+}
+
+@keyframes etaCircularDash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 100, 200;
+    stroke-dashoffset: -15;
+  }
+  100% {
+    stroke-dasharray: 100, 200;
+    stroke-dashoffset: -125;
+  }
+}
+
+.circularIndicatorIndeterminate {
+  animation: etaCircularDash 1.4s ease-in-out infinite;
+}
+
+.circularLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--eta-text-heading);
+  font-variant-numeric: tabular-nums;
+}
