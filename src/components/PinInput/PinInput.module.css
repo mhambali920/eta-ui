@@ -1,0 +1,97 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+}
+
+.group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--eta-text-muted);
+  font-weight: 500;
+  padding: 0 0.125rem;
+  user-select: none;
+}
+
+.field {
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  border-radius: var(--eta-radius-md);
+  border: 1px solid var(--eta-border-default);
+  background-color: var(--eta-bg-base);
+  color: var(--eta-text-heading);
+  outline: none;
+  transition:
+    border-color var(--eta-transition-fast),
+    box-shadow var(--eta-transition-fast),
+    background-color var(--eta-transition-fast),
+    transform var(--eta-transition-fast);
+}
+
+.field::placeholder {
+  color: var(--eta-text-muted);
+  font-weight: 400;
+}
+
+.outline {
+  background-color: var(--eta-bg-base);
+}
+
+.filled {
+  background-color: var(--eta-bg-subtle);
+  border-color: transparent;
+}
+
+.field:focus {
+  border-color: var(--eta-border-focus);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus);
+  background-color: var(--eta-bg-base);
+  transform: translateY(-1px);
+}
+
+.filledField {
+  border-color: var(--eta-color-primary);
+}
+
+.invalid {
+  border-color: var(--eta-status-error-solid);
+}
+
+.invalid:focus {
+  border-color: var(--eta-status-error-solid);
+  box-shadow: 0 0 0 3px var(--eta-status-error-focus);
+}
+
+.field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--eta-bg-subtle);
+}
+
+/* Sizes */
+.sm {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 0.875rem;
+}
+
+.md {
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.125rem;
+}
+
+.lg {
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.25rem;
+}

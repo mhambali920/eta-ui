@@ -40,3 +40,4 @@ export * from './components/FileDropzone';
 export * from './components/FormField';
 export * from './components/Progress';
 export * from './components/NumberInput';
+export * from './components/PinInput';
