@@ -53,3 +53,4 @@ export * from './components/Timeline';
 export * from './components/Stat';
 export * from './components/EmptyState';
 export * from './components/Code';
+export * from './components/Command';
