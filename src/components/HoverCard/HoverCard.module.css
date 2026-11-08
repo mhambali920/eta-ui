@@ -1,0 +1,82 @@
+@keyframes etaHoverCardShow {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.root {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.content {
+  position: absolute;
+  z-index: 80;
+  background-color: var(--eta-bg-surface);
+  border: 1px solid var(--eta-border-default);
+  border-radius: var(--eta-radius-lg);
+  box-shadow: var(--eta-shadow-lg);
+  padding: 1rem;
+  color: var(--eta-text-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  animation: etaHoverCardShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Sizes */
+.sm {
+  width: 15rem;
+}
+
+.md {
+  width: 20rem;
+}
+
+.lg {
+  width: 25rem;
+}
+
+/* Placements */
+.bottom {
+  top: calc(100% + 0.5rem);
+  left: 0;
+}
+
+.top {
+  bottom: calc(100% + 0.5rem);
+  left: 0;
+}
+
+.right {
+  top: 0;
+  left: calc(100% + 0.5rem);
+}
+
+.left {
+  top: 0;
+  right: calc(100% + 0.5rem);
+}
+
+.arrow {
+  position: absolute;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: var(--eta-bg-surface);
+  border-left: 1px solid var(--eta-border-default);
+  border-top: 1px solid var(--eta-border-default);
+  transform: rotate(45deg);
+  top: -0.35rem;
+  left: 1.25rem;
+}

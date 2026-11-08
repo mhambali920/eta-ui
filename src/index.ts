@@ -46,3 +46,4 @@ export * from './components/DatePicker';
 export * from './components/Tag';
 export * from './components/ToggleGroup';
 export * from './components/AlertDialog';
+export * from './components/HoverCard';
