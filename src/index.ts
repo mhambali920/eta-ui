@@ -51,3 +51,4 @@ export * from './components/Collapsible';
 export * from './components/Stepper';
 export * from './components/Timeline';
 export * from './components/Stat';
+export * from './components/EmptyState';
