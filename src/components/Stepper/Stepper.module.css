@@ -1,0 +1,145 @@
+.stepper {
+  display: flex;
+  width: 100%;
+  font-family: inherit;
+}
+
+.horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.vertical {
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1;
+  position: relative;
+}
+
+.stepClickable {
+  cursor: pointer;
+}
+
+.indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--eta-radius-full);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  border: 2px solid var(--eta-border-default);
+  background-color: var(--eta-bg-base);
+  color: var(--eta-text-muted);
+  transition:
+    background-color var(--eta-transition-fast),
+    border-color var(--eta-transition-fast),
+    color var(--eta-transition-fast),
+    box-shadow var(--eta-transition-fast);
+}
+
+/* Sizes */
+.sm .indicator {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.75rem;
+}
+
+.md .indicator {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 0.875rem;
+}
+
+.lg .indicator {
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1rem;
+}
+
+/* Statuses */
+.upcoming .indicator {
+  border-color: var(--eta-border-default);
+  background-color: var(--eta-bg-base);
+  color: var(--eta-text-muted);
+}
+
+.active .indicator {
+  border-color: var(--eta-color-primary);
+  background-color: var(--eta-color-primary-subtle);
+  color: var(--eta-color-primary);
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus);
+}
+
+.complete .indicator {
+  border-color: var(--eta-color-primary);
+  background-color: var(--eta-color-primary);
+  color: var(--eta-text-inverse);
+}
+
+.error .indicator {
+  border-color: var(--eta-status-error-solid);
+  background-color: var(--eta-status-error-bg);
+  color: var(--eta-status-error-text);
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--eta-text-heading);
+  line-height: 1.35;
+}
+
+.upcoming .title {
+  color: var(--eta-text-muted);
+  font-weight: 500;
+}
+
+.error .title {
+  color: var(--eta-status-error-text);
+}
+
+.description {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--eta-text-muted);
+  line-height: 1.4;
+}
+
+.separator {
+  flex: 1;
+  background-color: var(--eta-border-default);
+  transition: background-color var(--eta-transition-fast);
+}
+
+.horizontal .separator {
+  height: 2px;
+  align-self: center;
+  min-width: 1.5rem;
+}
+
+.vertical .separator {
+  width: 2px;
+  min-height: 1.25rem;
+  margin-left: 1.0625rem;
+}
+
+.separatorComplete {
+  background-color: var(--eta-color-primary);
+}
