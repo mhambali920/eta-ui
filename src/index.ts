@@ -44,3 +44,4 @@ export * from './components/PinInput';
 export * from './components/Combobox';
 export * from './components/DatePicker';
 export * from './components/Tag';
+export * from './components/ToggleGroup';
