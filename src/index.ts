@@ -50,3 +50,4 @@ export * from './components/HoverCard';
 export * from './components/Collapsible';
 export * from './components/Stepper';
 export * from './components/Timeline';
+export * from './components/Stat';
