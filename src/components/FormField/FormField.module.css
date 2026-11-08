@@ -1,0 +1,68 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+  font-family: inherit;
+}
+
+.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--eta-text-heading);
+  cursor: pointer;
+  user-select: none;
+  transition: color var(--eta-transition-fast);
+}
+
+.labelDisabled {
+  cursor: not-allowed;
+  color: var(--eta-text-muted);
+}
+
+.requiredIndicator {
+  color: var(--eta-status-error-solid);
+  font-weight: 600;
+  margin-left: 0.125rem;
+}
+
+.optionalText {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--eta-text-muted);
+  margin-left: 0.25rem;
+}
+
+.helperText {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--eta-text-muted);
+}
+
+.errorMessage {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--eta-status-error-text);
+}
+
+.errorIcon {
+  flex-shrink: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--eta-status-error-solid);
+}
