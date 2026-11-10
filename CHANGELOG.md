@@ -1,40 +1,42 @@
 # Changelog
 
-All notable changes to `@eta-ui/react` will be documented in this file.
+All notable changes to `@eta-ui/react` are documented in this file.
 
 ## 0.1.0
 
 ### Initial Release
 
-- First public release of **`@eta-ui/react`** - An accessible React UI Kit with a calming soft/muted pastel color scheme.
-- **Core Primitives**:
-  - `Button` & `IconButton`: Solid, soft, outline, ghost variants, loading spinner, polymorphic `asChild`.
-  - `Input` & `Textarea`: Soft focus rings, left/right adornments, character counter, auto-resize.
-  - `Checkbox`, `Radio` & `RadioGroup`, `Switch`: Custom SVG indicators, keyboard roving focus.
-  - `Badge`, `Avatar`, `AvatarGroup`: Pill/rounded shapes, status indicators, initials fallback, overlapping stack.
-  - `Card`: Subcomponents (`CardHeader`, `CardTitle`, `CardDescription`, `CardBody`, `CardFooter`) with soft diffused shadows.
-  - `Heading`, `Text`, `Container`, `Divider`: Semantic typography and responsive layout containers.
-  - `ThemeProvider`, `useTheme()`, `ThemeToggle`: Persistent theme switching across Light, Dark, and System modes.
-- **Feedback & Overlay**:
-  - `Alert` / `Callout`: Soft tinted status callouts (`info`, `success`, `warning`, `error`).
-  - `Spinner`: Smooth rotating SVG indicator.
-  - `Skeleton`: Soft pastel shimmer and pulse placeholders (`SkeletonText`, `SkeletonCircle`).
-  - `Toast`: Imperative `useToast()` hook with 6 viewport placement options.
-  - `Dialog` / `Modal`: Radix Dialog with diffused backdrop blur.
-  - `Drawer` / `Sheet`: 4-direction slide-out sheet (`right`, `left`, `top`, `bottom`).
-  - `Tooltip`: Shorthand and composable tooltips with dark and soft variants.
-  - `Popover`: Diffused soft floating interactive content panels.
-- **Navigation**:
-  - `Tabs`: Segmented, underline, and outline variants with full keyboard navigation.
-  - `Accordion`: Single and multiple collapsible sections with rotating chevrons.
-  - `Breadcrumb`: Accessible semantic path navigation with `asChild` router integration.
-  - `Pagination`: Accessible page navigation controls with active variants.
-- **Advanced Form & Data**:
-  - `Select`: Headless Radix Select with customizable options, trigger, and scroll buttons.
-  - `Slider`: Single and dual-thumb range sliders with pastel accents.
-  - `DropdownMenu`: Contextual action menus with submenus, checkbox items, and keyboard navigation.
-  - `Table`: Responsive styled data table with column sorting and empty state illustration.
-  - `FileDropzone`: Drag & drop file upload with file type/size validation and file queue list.
-- **Accessibility**:
-  - 100% WCAG AA contrast ratio compliance (`>= 4.5:1`).
-  - Full keyboard accessibility and WAI-ARIA attributes across all primitives.
+First public release of `@eta-ui/react`, an accessible React component library built with dynamic CSS custom properties (`--eta-*`), zero-runtime CSS Modules, and Radix UI primitives.
+
+#### Core Primitives
+- `Button` and `IconButton` with `solid`, `soft`, `outline`, and `ghost` variants, loading states, and `asChild` composition.
+- `Input` and `Textarea` with left and right adornments, character counter, auto-resize, and validation states.
+- `Checkbox`, `Radio`, `RadioGroup`, and `Switch` with custom SVG indicators and keyboard roving focus.
+- `Badge`, `Avatar`, and `AvatarGroup` with status dots, initials fallback, and stacked layout.
+- `Card` container with `CardHeader`, `CardTitle`, `CardDescription`, `CardBody`, and `CardFooter`.
+- `Heading`, `Text`, `Container`, and `Divider` for typography and page layout.
+- `ThemeProvider`, `useTheme`, and `ThemeToggle` for persistent light, dark, and system theme switching.
+
+#### Feedback and Overlays
+- `Alert` for `info`, `success`, `warning`, and `error` status messages.
+- `Progress` and `CircularProgress` with determinate and indeterminate states.
+- `Spinner` and `Skeleton` (`SkeletonText`, `SkeletonCircle`) loading indicators.
+- `Toast` and `useToast` hook with six viewport placement options.
+- `EmptyState` placeholder for empty views and search results.
+- `Dialog`, `AlertDialog`, and `Drawer` overlays with focus trapping and backdrop blur.
+- `Tooltip`, `Popover`, `HoverCard`, and `Command` (`Cmd+K` palette) floating components.
+
+#### Navigation and Disclosure
+- `Tabs` with segmented, underline, and outline variants.
+- `Accordion` and `Collapsible` disclosure panels.
+- `Breadcrumb`, `Pagination`, and `Stepper` navigation components.
+
+#### Forms and Data Display
+- `FormField` and `useFormField` for linking labels, helper text, and error messages via ARIA attributes.
+- `Select`, `Combobox`, `DatePicker`, `NumberInput`, `PinInput`, `ToggleGroup`, and `Slider` form controls.
+- `DropdownMenu` with submenus, checkbox items, and radio items.
+- `Table`, `FileDropzone`, `Tag`, `Timeline`, `Stat`, `Code`, and `CodeBlock` data display components.
+
+#### Accessibility
+- Minimum 4.5:1 contrast ratio (WCAG 2.1 AA) across light and dark themes.
+- Full keyboard navigation and WAI-ARIA attributes across all interactive components.

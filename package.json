@@ -1,7 +1,7 @@
 {
   "name": "@eta-ui/react",
   "version": "0.1.0",
-  "description": "Accessible React UI Kit with a calming soft color scheme",
+  "description": "Accessible React component library with dynamic CSS-variable theming",
   "publishConfig": {
     "access": "public"
   },
@@ -9,8 +9,8 @@
     "react",
     "ui-kit",
     "design-system",
-    "soft-ui",
-    "pastel",
+    "radix-ui",
+    "css-variables",
     "component-library",
     "eta-ui",
     "@eta-ui/react"
