@@ -54,3 +54,4 @@ export * from './components/Stat';
 export * from './components/EmptyState';
 export * from './components/Code';
 export * from './components/Command';
+export * from './components/ContextMenu';
