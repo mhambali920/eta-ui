@@ -153,15 +153,18 @@
 
 .group .container {
   margin-left: -0.5rem;
-  border: 2px solid var(--eta-bg-base, #FAF9F6);
-  border-radius: inherit;
 }
 
 .group .container:first-child {
   margin-left: 0;
 }
 
-.moreFallback {
+.group .root {
+  border: 2px solid var(--eta-bg-base, #FAF9F6);
+}
+
+.moreFallback,
+.moreFallback .fallback {
   background-color: var(--eta-bg-subtle, #EAE6DF);
   color: var(--eta-text-heading);
 }

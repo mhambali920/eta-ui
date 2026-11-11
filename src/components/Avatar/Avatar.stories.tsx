@@ -66,9 +66,22 @@ export const Sizes: Story = {
   ),
 };
 
-export const Group: Story = {
-  render: () => (
-    <AvatarGroup max={3}>
+export const Group: StoryObj<typeof AvatarGroup> = {
+  argTypes: {
+    max: {
+      control: 'number',
+    },
+    size: {
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    },
+  },
+  args: {
+    max: 3,
+    size: 'md',
+  },
+  render: (args) => (
+    <AvatarGroup {...args}>
       <Avatar name="Alex Rivera" status="online" />
       <Avatar name="Brenda Taylor" status="busy" />
       <Avatar name="Chris Evans" status="away" />
