@@ -14,6 +14,19 @@ const meta: Meta<typeof Slider> = {
       control: 'select',
       options: ['primary', 'secondary', 'success', 'warning', 'danger'],
     },
+    min: {
+      control: 'number',
+    },
+    max: {
+      control: 'number',
+    },
+    step: {
+      control: 'number',
+    },
+    orientation: {
+      control: 'select',
+      options: ['horizontal', 'vertical'],
+    },
     disabled: {
       control: 'boolean',
     },
@@ -21,6 +34,10 @@ const meta: Meta<typeof Slider> = {
   args: {
     size: 'md',
     color: 'primary',
+    min: 0,
+    max: 100,
+    step: 1,
+    orientation: 'horizontal',
     disabled: false,
     defaultValue: [45],
   },

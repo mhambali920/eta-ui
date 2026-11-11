@@ -14,6 +14,18 @@ const meta: Meta<typeof Spinner> = {
       control: 'select',
       options: ['current', 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'neutral'],
     },
+    thickness: {
+      control: 'text',
+    },
+    speed: {
+      control: 'text',
+    },
+    emptyColor: {
+      control: 'color',
+    },
+    label: {
+      control: 'text',
+    },
   },
 };
 
@@ -24,6 +36,7 @@ export const Default: Story = {
   args: {
     size: 'md',
     color: 'primary',
+    label: 'Loading...',
   },
 };
 

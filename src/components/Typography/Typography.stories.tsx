@@ -6,10 +6,89 @@ const meta: Meta<typeof Heading> = {
   title: 'Components/Typography',
   component: Heading,
   tags: ['autodocs'],
+  argTypes: {
+    as: {
+      control: 'select',
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    },
+    size: {
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
+    },
+    color: {
+      control: 'select',
+      options: ['default', 'muted', 'primary', 'secondary', 'success', 'warning', 'danger', 'info'],
+    },
+    weight: {
+      control: 'select',
+      options: ['normal', 'medium', 'semibold', 'bold'],
+    },
+    align: {
+      control: 'select',
+      options: ['left', 'center', 'right'],
+    },
+    children: {
+      control: 'text',
+    },
+  },
+  args: {
+    as: 'h2',
+    size: '2xl',
+    color: 'default',
+    weight: 'semibold',
+    align: 'left',
+    children: 'Soft Pastel Typography',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Heading>;
+
+export const DefaultHeading: Story = {
+  render: (args) => <Heading {...args} />,
+};
+
+export const DefaultText: StoryObj<typeof Text> = {
+  argTypes: {
+    as: {
+      control: 'select',
+      options: ['p', 'span', 'div', 'label'],
+    },
+    size: {
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    },
+    variant: {
+      control: 'select',
+      options: ['body', 'muted', 'lead', 'caption'],
+    },
+    color: {
+      control: 'select',
+      options: ['default', 'muted', 'primary', 'secondary', 'success', 'warning', 'danger', 'info'],
+    },
+    weight: {
+      control: 'select',
+      options: ['normal', 'medium', 'semibold', 'bold'],
+    },
+    align: {
+      control: 'select',
+      options: ['left', 'center', 'right'],
+    },
+    children: {
+      control: 'text',
+    },
+  },
+  args: {
+    as: 'p',
+    size: 'md',
+    variant: 'body',
+    color: 'default',
+    weight: 'normal',
+    align: 'left',
+    children: 'Standard typography designed with soft contrast to prevent visual fatigue during long sessions.',
+  },
+  render: (args) => <Text {...args} />,
+};
 
 export const Headings: Story = {
   render: () => (

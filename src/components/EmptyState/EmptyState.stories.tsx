@@ -9,6 +9,8 @@ const meta: Meta<typeof EmptyState> = {
   argTypes: {
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     variant: { control: 'select', options: ['bordered', 'surface', 'default'] },
+    title: { control: 'text' },
+    description: { control: 'text' },
     hideIcon: { control: 'boolean' },
   },
 };
@@ -22,6 +24,7 @@ export const Default: Story = {
     variant: 'bordered',
     title: 'No documents found',
     description: 'Upload a new file or adjust your search filters to find what you need.',
+    hideIcon: false,
   },
   render: (args) => (
     <div style={{ maxWidth: '520px' }}>

@@ -17,6 +17,8 @@ const meta: Meta<typeof Combobox> = {
   argTypes: {
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     variant: { control: 'select', options: ['outline', 'filled'] },
+    placeholder: { control: 'text' },
+    emptyMessage: { control: 'text' },
     multiple: { control: 'boolean' },
     isClearable: { control: 'boolean' },
     isInvalid: { control: 'boolean' },

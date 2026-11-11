@@ -11,6 +11,11 @@ const meta: Meta<typeof Accordion> = {
   component: Accordion,
   tags: ['autodocs'],
   argTypes: {
+    type: {
+      control: 'select',
+      options: ['single', 'multiple'],
+      description: 'Allow one or multiple items open at once',
+    },
     variant: {
       control: 'select',
       options: ['bordered', 'flush', 'soft'],
@@ -20,6 +25,10 @@ const meta: Meta<typeof Accordion> = {
       control: 'select',
       options: ['sm', 'md', 'lg'],
       description: 'Trigger padding and text sizing',
+    },
+    collapsible: {
+      control: 'boolean',
+      description: 'When type is single, allow closing the active item',
     },
   },
   args: {

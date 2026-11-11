@@ -8,6 +8,11 @@ const meta: Meta<typeof FormField> = {
   component: FormField,
   tags: ['autodocs'],
   argTypes: {
+    size: { control: 'select', options: ['sm', 'md', 'lg'] },
+    label: { control: 'text' },
+    optionalText: { control: 'text' },
+    helperText: { control: 'text' },
+    errorMessage: { control: 'text' },
     isRequired: { control: 'boolean' },
     isInvalid: { control: 'boolean' },
     isDisabled: { control: 'boolean' },
@@ -20,17 +25,20 @@ type Story = StoryObj<typeof FormField>;
 
 export const Default: Story = {
   args: {
+    size: 'md',
+    label: 'Full Name',
+    optionalText: '(Optional)',
+    helperText: 'Use your official name as it appears on documents.',
+    errorMessage: 'Please enter a valid full name.',
     isRequired: false,
     isInvalid: false,
     isDisabled: false,
+    isReadOnly: false,
   },
   render: (args) => (
     <div style={{ maxWidth: '380px' }}>
       <FormField {...args}>
-        <FormLabel optionalText="(Optional)">Full Name</FormLabel>
-        <Input placeholder="Jane Doe" />
-        <FormHelperText>Use your official name as it appears on documents.</FormHelperText>
-        <FormErrorMessage>Please enter a valid full name.</FormErrorMessage>
+        <Input size={args.size} placeholder="Jane Doe" />
       </FormField>
     </div>
   ),

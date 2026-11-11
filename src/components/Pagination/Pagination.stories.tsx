@@ -46,7 +46,7 @@ export const Default: Story = {
     variant: 'ghost',
   },
   render: (args) => (
-    <Pagination>
+    <Pagination size={args.size}>
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious size={args.size} variant={args.variant} href="#prev" />
@@ -110,7 +110,7 @@ export const SolidActive: Story = {
     variant: 'ghost',
   },
   render: (args) => (
-    <Pagination>
+    <Pagination size={args.size}>
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious size={args.size} variant={args.variant} href="#" />
@@ -145,7 +145,7 @@ export const OutlineStyle: Story = {
     variant: 'outline',
   },
   render: (args) => (
-    <Pagination>
+    <Pagination size={args.size}>
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious size={args.size} variant={args.variant} disabled href="#" />

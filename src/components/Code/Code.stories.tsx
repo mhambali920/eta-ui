@@ -16,6 +16,9 @@ const meta: Meta<typeof Code> = {
       options: ['neutral', 'primary', 'secondary', 'success', 'warning', 'danger'],
       description: 'Semantic color palette of the inline <Code> badge',
     },
+    children: {
+      control: 'text',
+    },
   },
 };
 
@@ -71,6 +74,7 @@ export const MultiLineCodeBlock: StoryObj<typeof CodeBlock> = {
   args: {
     filename: 'src/App.tsx',
     language: 'tsx',
+    size: 'md',
     showLineNumbers: true,
     copyable: true,
     code: `import { ThemeProvider, Button, Card } from '@eta-ui/react';
@@ -89,6 +93,7 @@ export function App() {
   argTypes: {
     filename: { control: 'text' },
     language: { control: 'text' },
+    size: { control: 'select', options: ['sm', 'md', 'lg'] },
     showLineNumbers: { control: 'boolean' },
     copyable: { control: 'boolean' },
   },

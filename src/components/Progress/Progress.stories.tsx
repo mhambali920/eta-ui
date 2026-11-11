@@ -7,11 +7,14 @@ const meta: Meta<typeof Progress> = {
   tags: ['autodocs'],
   argTypes: {
     value: { control: { type: 'range', min: 0, max: 100 } },
+    min: { control: 'number' },
+    max: { control: 'number' },
     size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     color: {
       control: 'select',
       options: ['primary', 'secondary', 'success', 'warning', 'danger', 'info'],
     },
+    label: { control: 'text' },
     isIndeterminate: { control: 'boolean' },
     hasStripe: { control: 'boolean' },
     isAnimated: { control: 'boolean' },

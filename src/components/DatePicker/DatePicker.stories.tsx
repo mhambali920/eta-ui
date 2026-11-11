@@ -18,6 +18,7 @@ const meta: Meta<typeof DatePicker> = {
     },
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     variant: { control: 'select', options: ['outline', 'filled'] },
+    placeholder: { control: 'text' },
     isClearable: { control: 'boolean' },
     isInvalid: { control: 'boolean' },
     disabled: { control: 'boolean' },

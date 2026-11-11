@@ -14,6 +14,7 @@ const meta: Meta<typeof Tag> = {
     },
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     shape: { control: 'select', options: ['rounded', 'pill'] },
+    children: { control: 'text' },
     isClosable: { control: 'boolean' },
     isSelected: { control: 'boolean' },
     disabled: { control: 'boolean' },

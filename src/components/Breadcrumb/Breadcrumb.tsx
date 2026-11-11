@@ -5,6 +5,8 @@ import styles from './Breadcrumb.module.css';
 
 export type BreadcrumbSize = 'sm' | 'md' | 'lg';
 
+const BreadcrumbSeparatorContext = React.createContext<React.ReactNode>(undefined);
+
 export interface BreadcrumbProps extends React.ComponentPropsWithoutRef<'nav'> {
   separator?: React.ReactNode;
   size?: BreadcrumbSize;
@@ -39,13 +41,17 @@ const MoreHorizontalIcon = () => (
 );
 
 export const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
-  ({ size = 'md', className, ...props }, ref) => (
-    <nav
-      ref={ref}
-      aria-label="Breadcrumb"
-      className={cn(styles.nav, styles[`size-${size}`], className)}
-      {...props}
-    />
+  ({ size = 'md', separator, className, children, ...props }, ref) => (
+    <BreadcrumbSeparatorContext.Provider value={separator}>
+      <nav
+        ref={ref}
+        aria-label="Breadcrumb"
+        className={cn(styles.nav, styles[`size-${size}`], className)}
+        {...props}
+      >
+        {children}
+      </nav>
+    </BreadcrumbSeparatorContext.Provider>
   )
 );
 Breadcrumb.displayName = 'Breadcrumb';
@@ -104,16 +110,19 @@ export const BreadcrumbSeparator = ({
   children,
   className,
   ...props
-}: BreadcrumbSeparatorProps) => (
-  <li
-    role="presentation"
-    aria-hidden="true"
-    className={cn(styles.separator, className)}
-    {...props}
-  >
-    {children ?? <ChevronRightIcon />}
-  </li>
-);
+}: BreadcrumbSeparatorProps) => {
+  const contextSeparator = React.useContext(BreadcrumbSeparatorContext);
+  return (
+    <li
+      role="presentation"
+      aria-hidden="true"
+      className={cn(styles.separator, className)}
+      {...props}
+    >
+      {children ?? contextSeparator ?? <ChevronRightIcon />}
+    </li>
+  );
+};
 BreadcrumbSeparator.displayName = 'BreadcrumbSeparator';
 
 export const BreadcrumbEllipsis = ({

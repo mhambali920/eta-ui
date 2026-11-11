@@ -6,9 +6,16 @@ const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
   tags: ['autodocs'],
   argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
     orientation: {
       control: 'select',
       options: ['vertical', 'horizontal'],
+    },
+    disabled: {
+      control: 'boolean',
     },
   },
 };
@@ -17,6 +24,11 @@ export default meta;
 type Story = StoryObj<typeof RadioGroup>;
 
 export const Default: Story = {
+  args: {
+    size: 'md',
+    orientation: 'vertical',
+    disabled: false,
+  },
   render: (args) => (
     <RadioGroup defaultValue="starter" {...args}>
       <Radio

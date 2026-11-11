@@ -6,6 +6,15 @@ const meta: Meta<typeof Avatar> = {
   component: Avatar,
   tags: ['autodocs'],
   argTypes: {
+    name: {
+      control: 'text',
+    },
+    src: {
+      control: 'text',
+    },
+    alt: {
+      control: 'text',
+    },
     size: {
       control: 'select',
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -17,6 +26,9 @@ const meta: Meta<typeof Avatar> = {
     status: {
       control: 'select',
       options: ['online', 'busy', 'away', 'offline'],
+    },
+    delayMs: {
+      control: 'number',
     },
   },
 };

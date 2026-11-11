@@ -19,6 +19,10 @@ const meta: Meta<typeof FileDropzone> = {
       control: 'select',
       options: ['outline', 'soft'],
     },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
     disabled: {
       control: 'boolean',
     },
@@ -31,6 +35,12 @@ const meta: Meta<typeof FileDropzone> = {
     accept: {
       control: 'text',
     },
+    maxFiles: {
+      control: 'number',
+    },
+    maxSize: {
+      control: 'number',
+    },
   },
 };
 
@@ -41,6 +51,7 @@ type Story = StoryObj<typeof FileDropzone>;
 export const Default: Story = {
   args: {
     variant: 'outline',
+    size: 'md',
     disabled: false,
     isInvalid: false,
     multiple: true,

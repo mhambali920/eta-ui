@@ -7,13 +7,23 @@ const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   tags: ['autodocs'],
   argTypes: {
+    content: {
+      control: 'text',
+    },
     variant: {
       control: 'select',
       options: ['dark', 'soft'],
     },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
     side: {
       control: 'select',
       options: ['top', 'right', 'bottom', 'left'],
+    },
+    sideOffset: {
+      control: 'number',
     },
     hasArrow: {
       control: 'boolean',
@@ -21,7 +31,9 @@ const meta: Meta<typeof Tooltip> = {
   },
   args: {
     variant: 'dark',
+    size: 'md',
     side: 'top',
+    sideOffset: 6,
     hasArrow: true,
   },
   decorators: [

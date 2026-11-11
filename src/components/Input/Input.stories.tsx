@@ -14,10 +14,16 @@ const meta: Meta<typeof Input> = {
       control: 'select',
       options: ['outline', 'filled', 'unstyled'],
     },
+    placeholder: {
+      control: 'text',
+    },
     isInvalid: {
       control: 'boolean',
     },
     disabled: {
+      control: 'boolean',
+    },
+    readOnly: {
       control: 'boolean',
     },
   },

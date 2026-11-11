@@ -16,15 +16,30 @@ const meta: Meta<typeof Command> = {
   title: 'Components/Command',
   component: Command,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+      description: 'Sizing scale for command input and items',
+    },
+    defaultQuery: {
+      control: 'text',
+      description: 'Initial search query filter',
+    },
+  },
+  args: {
+    size: 'md',
+    defaultQuery: '',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Command>;
 
 export const InlineCommandPalette: Story = {
-  render: () => (
+  render: (args) => (
     <div style={{ maxWidth: '460px' }}>
-      <Command>
+      <Command {...args}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandGroup heading="Quick Actions">

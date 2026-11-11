@@ -22,6 +22,26 @@ const meta: Meta<typeof PopoverContent> = {
       control: 'select',
       options: ['sm', 'md', 'lg', 'auto'],
     },
+    side: {
+      control: 'select',
+      options: ['bottom', 'top', 'right', 'left'],
+    },
+    align: {
+      control: 'select',
+      options: ['start', 'center', 'end'],
+    },
+    sideOffset: {
+      control: 'number',
+    },
+    hasArrow: {
+      control: 'boolean',
+    },
+    showCloseButton: {
+      control: 'boolean',
+    },
+    closeLabel: {
+      control: 'text',
+    },
   },
 };
 
@@ -32,7 +52,12 @@ type Story = StoryObj<typeof PopoverContent>;
 export const Default: Story = {
   args: {
     size: 'md',
+    side: 'bottom',
+    align: 'center',
+    sideOffset: 8,
+    hasArrow: true,
     showCloseButton: true,
+    closeLabel: 'Close popover',
   },
   render: (args) => (
     <div style={{ padding: 60, display: 'flex', justifyContent: 'center' }}>

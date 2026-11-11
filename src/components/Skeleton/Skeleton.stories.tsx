@@ -15,6 +15,18 @@ const meta: Meta<typeof Skeleton> = {
       control: 'select',
       options: ['shimmer', 'pulse', 'none'],
     },
+    width: {
+      control: 'text',
+    },
+    height: {
+      control: 'number',
+    },
+    radius: {
+      control: 'text',
+    },
+    isLoaded: {
+      control: 'boolean',
+    },
   },
 };
 
@@ -27,6 +39,7 @@ export const Default: Story = {
     height: 40,
     variant: 'rounded',
     animation: 'shimmer',
+    isLoaded: false,
   },
 };
 

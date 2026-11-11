@@ -25,6 +25,12 @@ const meta: Meta<typeof DrawerContent> = {
       control: 'select',
       options: ['sm', 'md', 'lg', 'full'],
     },
+    showCloseButton: {
+      control: 'boolean',
+    },
+    closeLabel: {
+      control: 'text',
+    },
   },
 };
 
@@ -37,6 +43,7 @@ export const RightSideDefault: Story = {
     side: 'right',
     size: 'md',
     showCloseButton: true,
+    closeLabel: 'Close drawer',
   },
   render: (args) => (
     <Drawer>

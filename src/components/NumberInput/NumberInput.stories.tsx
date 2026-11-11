@@ -12,6 +12,8 @@ const meta: Meta<typeof NumberInput> = {
     max: { control: 'number' },
     step: { control: 'number' },
     precision: { control: 'number' },
+    placeholder: { control: 'text' },
+    allowMouseWheel: { control: 'boolean' },
     isInvalid: { control: 'boolean' },
     disabled: { control: 'boolean' },
     readOnly: { control: 'boolean' },

@@ -18,10 +18,19 @@ const meta: Meta<typeof Textarea> = {
       control: 'select',
       options: ['none', 'vertical', 'horizontal', 'both'],
     },
+    placeholder: {
+      control: 'text',
+    },
+    rows: {
+      control: 'number',
+    },
     isInvalid: {
       control: 'boolean',
     },
     disabled: {
+      control: 'boolean',
+    },
+    readOnly: {
       control: 'boolean',
     },
   },

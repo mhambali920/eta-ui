@@ -29,6 +29,10 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
       description: 'Disable user interaction',
     },
+    children: {
+      control: 'text',
+      description: 'Button label text',
+    },
   },
 };
 
@@ -38,8 +42,11 @@ type Story = StoryObj<typeof Button>;
 export const Solid: Story = {
   args: {
     variant: 'solid',
+    color: 'primary',
     children: 'Solid Button',
     size: 'md',
+    isLoading: false,
+    disabled: false,
   },
 };
 

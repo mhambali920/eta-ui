@@ -22,6 +22,12 @@ const meta: Meta<typeof DialogContent> = {
       control: 'select',
       options: ['sm', 'md', 'lg', 'xl', 'full'],
     },
+    showCloseButton: {
+      control: 'boolean',
+    },
+    closeLabel: {
+      control: 'text',
+    },
   },
 };
 
@@ -33,6 +39,7 @@ export const Default: Story = {
   args: {
     size: 'md',
     showCloseButton: true,
+    closeLabel: 'Close dialog',
   },
   render: (args) => (
     <Dialog>

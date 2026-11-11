@@ -198,11 +198,14 @@ DropdownMenuSubTrigger.displayName = 'DropdownMenuSubTrigger';
 export const DropdownMenuSubContent = forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.SubContent>,
   DropdownMenuSubContentProps
->(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.SubContent
-    ref={ref}
-    className={cn(styles.content, className)}
-    {...props}
-  />
-));
+>(({ className, ...props }, ref) => {
+  const size = useContext(DropdownMenuSizeContext);
+  return (
+    <DropdownMenuPrimitive.SubContent
+      ref={ref}
+      className={cn(styles.content, styles[`size-${size}`], className)}
+      {...props}
+    />
+  );
+});
 DropdownMenuSubContent.displayName = 'DropdownMenuSubContent';

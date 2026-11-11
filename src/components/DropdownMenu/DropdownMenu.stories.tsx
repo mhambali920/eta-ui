@@ -22,6 +22,19 @@ const meta: Meta<typeof DropdownMenuContent> = {
   component: DropdownMenuContent,
   tags: ['autodocs'],
   argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+      description: 'Menu item height, padding, and typography size.',
+    },
+    side: {
+      control: 'select',
+      options: ['bottom', 'top', 'right', 'left'],
+    },
+    align: {
+      control: 'select',
+      options: ['start', 'center', 'end'],
+    },
     sideOffset: {
       control: 'number',
       description: 'The distance in pixels from the trigger.',
@@ -35,6 +48,9 @@ type Story = StoryObj<typeof DropdownMenuContent>;
 
 export const Default: Story = {
   args: {
+    size: 'md',
+    side: 'bottom',
+    align: 'center',
     sideOffset: 6,
   },
   render: (args) => (

@@ -25,6 +25,9 @@ const meta: Meta<typeof Badge> = {
     hasDot: {
       control: 'boolean',
     },
+    children: {
+      control: 'text',
+    },
   },
 };
 
@@ -38,6 +41,7 @@ export const Default: Story = {
     color: 'primary',
     size: 'md',
     shape: 'pill',
+    hasDot: false,
   },
 };
 

@@ -15,8 +15,24 @@ const meta: Meta<typeof Alert> = {
       control: 'select',
       options: ['soft', 'outline', 'solid'],
     },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
+    title: {
+      control: 'text',
+    },
+    description: {
+      control: 'text',
+    },
+    icon: {
+      control: 'boolean',
+    },
     isClosable: {
       control: 'boolean',
+    },
+    closeLabel: {
+      control: 'text',
     },
   },
 };
@@ -28,8 +44,10 @@ export const Default: Story = {
   args: {
     status: 'info',
     variant: 'soft',
+    size: 'md',
     title: 'Informational Notice',
     description: 'We have updated our terms of service to better protect your privacy.',
+    isClosable: false,
   },
 };
 

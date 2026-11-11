@@ -13,13 +13,28 @@ const meta: Meta<typeof Breadcrumb> = {
   title: 'Navigation/Breadcrumb',
   component: Breadcrumb,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+      description: 'Font and icon sizing scale',
+    },
+    separator: {
+      control: 'text',
+      description: 'Custom separator character or node between items',
+    },
+  },
+  args: {
+    size: 'md',
+  },
 };
 
 export default meta;
+type Story = StoryObj<typeof Breadcrumb>;
 
-export const Default: StoryObj = {
-  render: () => (
-    <Breadcrumb>
+export const Default: Story = {
+  render: (args) => (
+    <Breadcrumb {...args}>
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink href="#">Home</BreadcrumbLink>

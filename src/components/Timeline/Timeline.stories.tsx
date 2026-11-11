@@ -7,6 +7,7 @@ const meta: Meta<typeof Timeline> = {
   tags: ['autodocs'],
   argTypes: {
     layout: { control: 'select', options: ['left', 'alternate'] },
+    size: { control: 'select', options: ['sm', 'md', 'lg'] },
   },
 };
 
@@ -16,6 +17,7 @@ type Story = StoryObj<typeof Timeline>;
 export const Default: Story = {
   args: {
     layout: 'left',
+    size: 'md',
   },
   render: (args) => (
     <div style={{ maxWidth: '480px' }}>

@@ -37,6 +37,12 @@ export default meta;
 type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
+  args: {
+    variant: 'elevated',
+    elevation: 'sm',
+    padding: 'md',
+    isInteractive: false,
+  },
   render: (args) => (
     <Card style={{ maxWidth: '420px' }} {...args}>
       <CardHeader>
