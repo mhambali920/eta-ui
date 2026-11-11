@@ -2,6 +2,12 @@
 
 All notable changes to `@eta-ui/react` are documented in this file.
 
+## 0.4.1
+
+### Patch Changes
+
+- c8d53e3: Add accessible Soft UI `Carousel` component (`Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext`, `CarouselDots`, `CarouselCounter`, `useCarousel`) with seamless infinite loop, horizontal and vertical orientations, multi-item views (`itemsPerView`), interactive pointer drag, wheel/trackpad gesture navigation, and smart autoplay.
+
 ## 0.4.0
 
 ### Minor Changes

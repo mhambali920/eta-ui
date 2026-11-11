@@ -576,6 +576,7 @@ These four presets pair high-saturation primary colors with slate and off-white 
 | `ToggleGroup` | Single or multiple segmented toggle buttons built on `@radix-ui/react-toggle-group` |
 | `Slider` | Single-thumb and range sliders |
 | `Rating` | Interactive star rating component with half-precision, keyboard control, and read-only states |
+| `Carousel` | Interactive content and image slider with navigation buttons, pagination dots, touch swipe, and keyboard controls |
 | `DropdownMenu` | Action menu with nested submenus, checkbox items, and radio groups |
 | `Table` | Data table with sortable columns and empty state display |
 | `FileDropzone` | Drag-and-drop file uploader with MIME type and size validation |
