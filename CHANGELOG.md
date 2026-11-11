@@ -2,6 +2,20 @@
 
 All notable changes to `@eta-ui/react` are documented in this file.
 
+## 0.4.0
+
+### Minor Changes
+
+- Add 7 new accessible Soft UI components and harmonize Storybook categories:
+  - `ContextMenu`: Contextual right-click action menu built on `@radix-ui/react-context-menu` with submenus, shortcuts, and checkbox/radio items.
+  - `ScrollArea`: Smooth custom scrollbars built on `@radix-ui/react-scroll-area` supporting vertical, horizontal, and bidirectional scrolling with Soft UI theming.
+  - `Rating`: Pure interactive SVG star rating supporting 0.5 half-precision, keyboard roving navigation, and read-only states.
+  - `AspectRatio`: Media container preserving fixed aspect ratios (`16:9`, `4:3`, `1:1`) to eliminate layout shifts.
+  - `Menubar`: Desktop application top navigation menu built on `@radix-ui/react-menubar` with shortcuts and nested submenus.
+  - `TreeView`: Accessible hierarchical tree view for nested files, folders, and category navigation.
+  - `Sidebar`: Responsive compound application sidebar with icon-rail collapse, floating variant, mobile drawer mode, and floating popover submenu when collapsed.
+  - Standardize all 52 Storybook stories into 6 clean, semantic categories (`Layout`, `Forms`, `Data Display`, `Navigation`, `Overlay`, `Feedback`).
+
 ## 0.3.1
 
 ### Patch Changes
