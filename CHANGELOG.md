@@ -2,6 +2,17 @@
 
 All notable changes to `@eta-ui/react` are documented in this file.
 
+## 0.3.0
+
+### Minor Changes
+
+- Harmonize component size scales across all 46 components and complete Storybook controls:
+  
+  - Establish a unified two-tier size standard (`sm | md | lg` at `32px / 40px / 48px` for interactive, form, navigation, and selection components; `xs | sm | md | lg | xl` for media, loaders, and typography).
+  - Align height, padding, font size, and border radius across `Button`, `IconButton`, `Input`, `Select`, `Combobox`, `DatePicker`, `NumberInput`, `PinInput`, `ToggleGroup`, `Tabs`, `Pagination`, `ThemeToggle`, `Badge`, `Tag`, `Checkbox`, `Radio`, `Switch`, and `Slider`.
+  - Add `size` (`sm | md | lg`) support to `Alert`, `Breadcrumb`, `Collapsible`, `DropdownMenu`, `Command`, `FileDropzone`, `Stat`, `Timeline`, `CodeBlock`, `Divider`, `Tooltip`, `Toast`, `FormField`, `RadioGroup`, `AvatarGroup`, and `Pagination`, plus `xs | sm | md | lg | xl` presets on `SkeletonCircle`.
+  - Complete `argTypes` and default `args` across all 46 Storybook stories (`*.stories.tsx`) for full interactive control coverage.
+
 ## 0.2.0
 
 ### Minor Changes

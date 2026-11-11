@@ -46,7 +46,7 @@ export default function InviteMemberCard() {
         <CardHeader>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <CardTitle>Invite team member</CardTitle>
-            <Badge variant="soft" color="primary">v0.2.0</Badge>
+            <Badge variant="soft" color="primary">v0.3.0</Badge>
           </div>
         </CardHeader>
 

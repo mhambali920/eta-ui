@@ -1,6 +1,6 @@
 {
   "name": "@eta-ui/react",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Accessible React component library with dynamic CSS-variable theming",
   "publishConfig": {
     "access": "public"
