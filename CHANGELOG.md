@@ -2,6 +2,12 @@
 
 All notable changes to `@eta-ui/react` are documented in this file.
 
+## 0.3.1
+
+### Patch Changes
+
+- Fix square border artifact (`border-radius: inherit` on `.group .container`) in `AvatarGroup` by moving the circular cutout ring to `.group .root` and adding `max` and `size` Storybook controls on the `Group` story.
+
 ## 0.3.0
 
 ### Minor Changes
