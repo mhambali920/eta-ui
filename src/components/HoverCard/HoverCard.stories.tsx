@@ -4,7 +4,7 @@ import { Avatar } from '../Avatar';
 import { Badge } from '../Badge';
 
 const meta: Meta<typeof HoverCardContent> = {
-  title: 'Components/HoverCard',
+  title: 'Overlay/HoverCard',
   component: HoverCardContent,
   tags: ['autodocs'],
   argTypes: {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Toggle, ToggleGroup, ToggleGroupItem } from './ToggleGroup';
 
 const meta: Meta<typeof ToggleGroup> = {
-  title: 'Components/ToggleGroup',
+  title: 'Forms/ToggleGroup',
   component: ToggleGroup,
   tags: ['autodocs'],
   argTypes: {

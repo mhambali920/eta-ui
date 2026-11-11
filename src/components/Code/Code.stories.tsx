@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Kbd, Code, CodeBlock } from './Code';
 
 const meta: Meta<typeof Code> = {
-  title: 'Components/Code',
+  title: 'Data Display/Code',
   component: Code,
   tags: ['autodocs'],
   argTypes: {

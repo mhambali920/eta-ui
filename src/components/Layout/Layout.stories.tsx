@@ -3,7 +3,7 @@ import { Container } from './Container';
 import { Divider } from './Divider';
 
 const meta: Meta<typeof Container> = {
-  title: 'Components/Layout',
+  title: 'Layout/Layout',
   component: Container,
   tags: ['autodocs'],
   argTypes: {

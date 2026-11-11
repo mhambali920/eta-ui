@@ -3,7 +3,7 @@ import { ThemeToggle } from './ThemeToggle';
 import { ThemeProvider } from '../../theme';
 
 const meta: Meta<typeof ThemeToggle> = {
-  title: 'Components/ThemeToggle',
+  title: 'Feedback/ThemeToggle',
   component: ThemeToggle,
   tags: ['autodocs'],
   decorators: [

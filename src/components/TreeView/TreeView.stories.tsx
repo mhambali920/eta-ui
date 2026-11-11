@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TreeView, TreeItem, type TreeItemData } from './TreeView';
 
 const meta: Meta<typeof TreeView> = {
-  title: 'Components/TreeView',
+  title: 'Navigation/TreeView',
   component: TreeView,
   tags: ['autodocs'],
   argTypes: {

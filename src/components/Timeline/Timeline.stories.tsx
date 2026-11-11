@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Timeline, TimelineItem } from './Timeline';
 
 const meta: Meta<typeof Timeline> = {
-  title: 'Components/Timeline',
+  title: 'Data Display/Timeline',
   component: Timeline,
   tags: ['autodocs'],
   argTypes: {

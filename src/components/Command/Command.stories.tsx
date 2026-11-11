@@ -13,7 +13,7 @@ import {
 import { Button } from '../Button';
 
 const meta: Meta<typeof Command> = {
-  title: 'Components/Command',
+  title: 'Overlay/Command',
   component: Command,
   tags: ['autodocs'],
   argTypes: {

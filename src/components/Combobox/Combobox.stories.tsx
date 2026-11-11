@@ -11,7 +11,7 @@ const COUNTRIES = [
 ];
 
 const meta: Meta<typeof Combobox> = {
-  title: 'Components/Combobox',
+  title: 'Forms/Combobox',
   component: Combobox,
   tags: ['autodocs'],
   argTypes: {

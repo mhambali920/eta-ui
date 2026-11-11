@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Tag, TagGroup } from './Tag';
 
 const meta: Meta<typeof Tag> = {
-  title: 'Components/Tag',
+  title: 'Data Display/Tag',
   component: Tag,
   tags: ['autodocs'],
   argTypes: {

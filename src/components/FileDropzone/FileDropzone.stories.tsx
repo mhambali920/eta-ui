@@ -11,7 +11,7 @@ import {
 } from './FileDropzone';
 
 const meta: Meta<typeof FileDropzone> = {
-  title: 'Form/FileDropzone',
+  title: 'Forms/FileDropzone',
   component: FileDropzone,
   tags: ['autodocs'],
   argTypes: {

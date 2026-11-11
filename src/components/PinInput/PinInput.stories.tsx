@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { PinInput, PinInputGroup, PinInputField, PinInputSeparator } from './PinInput';
 
 const meta: Meta<typeof PinInput> = {
-  title: 'Components/PinInput',
+  title: 'Forms/PinInput',
   component: PinInput,
   tags: ['autodocs'],
   argTypes: {
