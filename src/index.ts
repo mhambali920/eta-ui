@@ -61,3 +61,4 @@ export * from './components/AspectRatio';
 export * from './components/Menubar';
 export * from './components/TreeView';
 export * from './components/Sidebar';
+export * from './components/Carousel';
