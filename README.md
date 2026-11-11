@@ -521,6 +521,8 @@ These four presets pair high-saturation primary colors with slate and off-white 
 | `Badge`, `Avatar`, `AvatarGroup` | Status badges, user avatars with initials fallback, and stacked avatar groups |
 | `Card` | Surface container with `CardHeader`, `CardTitle`, `CardDescription`, `CardBody`, and `CardFooter` |
 | `Heading`, `Text`, `Container`, `Divider` | Typography elements, max-width layout wrapper, and horizontal or vertical dividers |
+| `ScrollArea`, `ScrollBar` | Custom smooth scroll container built on `@radix-ui/react-scroll-area` with Soft UI styling |
+| `AspectRatio` | Container preserving fixed aspect ratios (`16:9`, `4:3`, `1:1`) to eliminate layout shifts |
 | `ThemeProvider`, `useTheme`, `ThemeToggle` | Context provider, hook, and toggle control for light, dark, and system themes |
 
 ### Feedback
@@ -544,6 +546,7 @@ These four presets pair high-saturation primary colors with slate and off-white 
 | `Tooltip` | Hover and focus helper label with `dark` and `soft` variants |
 | `Popover` | Floating content panel with optional header, body, and footer slots |
 | `HoverCard` | Preview card triggered on pointer hover or keyboard focus |
+| `ContextMenu` | Right-click contextual action menu built on `@radix-ui/react-context-menu` |
 | `Command` | Searchable command palette (`Cmd+K`) with grouped items and keyboard navigation |
 
 ### Navigation and Disclosure
@@ -555,6 +558,8 @@ These four presets pair high-saturation primary colors with slate and off-white 
 | `Collapsible` | Single expandable disclosure primitive |
 | `Breadcrumb` | Hierarchical path links with `asChild` router integration |
 | `Pagination` | Page navigation controls with ellipsis truncation and `asChild` link support |
+| `Menubar` | Desktop-grade application menu bar built on `@radix-ui/react-menubar` with submenus and shortcuts |
+| `TreeView`, `TreeItem` | Accessible hierarchical tree view for nested files, folders, and category structures |
 | `Stepper` | Horizontal and vertical multi-step progress indicator |
 
 ### Forms and Data Display
@@ -569,6 +574,7 @@ These four presets pair high-saturation primary colors with slate and off-white 
 | `PinInput` | Multi-slot verification code input with auto-advance and clipboard paste support |
 | `ToggleGroup` | Single or multiple segmented toggle buttons built on `@radix-ui/react-toggle-group` |
 | `Slider` | Single-thumb and range sliders |
+| `Rating` | Interactive star rating component with half-precision, keyboard control, and read-only states |
 | `DropdownMenu` | Action menu with nested submenus, checkbox items, and radio groups |
 | `Table` | Data table with sortable columns and empty state display |
 | `FileDropzone` | Drag-and-drop file uploader with MIME type and size validation |
