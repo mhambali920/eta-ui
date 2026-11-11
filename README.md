@@ -521,6 +521,7 @@ These four presets pair high-saturation primary colors with slate and off-white 
 | `Badge`, `Avatar`, `AvatarGroup` | Status badges, user avatars with initials fallback, and stacked avatar groups |
 | `Card` | Surface container with `CardHeader`, `CardTitle`, `CardDescription`, `CardBody`, and `CardFooter` |
 | `Heading`, `Text`, `Container`, `Divider` | Typography elements, max-width layout wrapper, and horizontal or vertical dividers |
+| `Sidebar`, `SidebarProvider`, `SidebarTrigger` | Responsive compound application sidebar with icon-rail collapse, floating, and mobile drawer modes |
 | `ScrollArea`, `ScrollBar` | Custom smooth scroll container built on `@radix-ui/react-scroll-area` with Soft UI styling |
 | `AspectRatio` | Container preserving fixed aspect ratios (`16:9`, `4:3`, `1:1`) to eliminate layout shifts |
 | `ThemeProvider`, `useTheme`, `ThemeToggle` | Context provider, hook, and toggle control for light, dark, and system themes |

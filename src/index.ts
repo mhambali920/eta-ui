@@ -60,3 +60,4 @@ export * from './components/Rating';
 export * from './components/AspectRatio';
 export * from './components/Menubar';
 export * from './components/TreeView';
+export * from './components/Sidebar';
