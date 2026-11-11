@@ -1,0 +1,110 @@
+.root {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--eta-text-body);
+}
+
+.item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.node {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: var(--eta-radius-sm);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  gap: 6px;
+  transition: background-color var(--eta-transition-fast), color var(--eta-transition-fast);
+}
+
+.node:hover {
+  background-color: var(--eta-bg-subtle);
+  color: var(--eta-text-heading);
+}
+
+.node:focus-visible {
+  box-shadow: var(--eta-focus-ring);
+}
+
+.selected {
+  background-color: var(--eta-bg-subtle);
+  color: var(--eta-color-primary);
+  font-weight: 500;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--eta-radius-xs, 2px);
+  color: var(--eta-text-muted);
+  cursor: pointer;
+}
+
+.toggle:hover {
+  color: var(--eta-text-heading);
+}
+
+.toggleSpacer {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--eta-transition-fast);
+}
+
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
+.iconSlot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--eta-text-muted);
+  flex-shrink: 0;
+}
+
+.nodeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.group {
+  list-style: none;
+  margin: 2px 0 2px 9px;
+  padding-left: 14px;
+  border-left: 1px solid var(--eta-border-subtle);
+}
