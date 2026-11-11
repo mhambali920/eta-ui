@@ -16,8 +16,18 @@ export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 }
 
+export type SkeletonCircleSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
+const SKELETON_CIRCLE_SIZE_MAP: Record<SkeletonCircleSize, number> = {
+  xs: 24,
+  sm: 32,
+  md: 40,
+  lg: 48,
+  xl: 56,
+};
+
 export interface SkeletonCircleProps extends Omit<SkeletonProps, 'variant'> {
-  size?: string | number;
+  size?: SkeletonCircleSize | (string & {}) | number;
 }
 
 export interface SkeletonTextProps extends HTMLAttributes<HTMLDivElement> {
@@ -82,7 +92,11 @@ Skeleton.displayName = 'Skeleton';
 
 export const SkeletonCircle = forwardRef<HTMLDivElement, SkeletonCircleProps>(
   ({ size = 40, width, height, ...props }, ref) => {
-    const dim = size ?? width ?? height;
+    const resolvedSize =
+      typeof size === 'string' && size in SKELETON_CIRCLE_SIZE_MAP
+        ? SKELETON_CIRCLE_SIZE_MAP[size as SkeletonCircleSize]
+        : size;
+    const dim = resolvedSize ?? width ?? height;
     return (
       <Skeleton
         ref={ref}

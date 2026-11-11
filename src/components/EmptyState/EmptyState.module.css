@@ -52,14 +52,29 @@
   margin-bottom: 0.25rem;
 }
 
+.iconWrapper svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .sm .iconWrapper {
   width: 2.5rem;
   height: 2.5rem;
 }
 
+.sm .iconWrapper svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 .lg .iconWrapper {
   width: 4rem;
   height: 4rem;
+}
+
+.lg .iconWrapper svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 .title {
@@ -84,6 +99,14 @@
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--eta-text-muted);
+}
+
+.sm .description {
+  font-size: 0.8125rem;
+}
+
+.lg .description {
+  font-size: 0.9375rem;
 }
 
 .actions {

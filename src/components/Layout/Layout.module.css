@@ -56,6 +56,22 @@
   margin: 1rem 0;
 }
 
+.horizontal.spacing-none {
+  margin: 0;
+}
+
+.horizontal.spacing-sm {
+  margin: 0.5rem 0;
+}
+
+.horizontal.spacing-md {
+  margin: 1rem 0;
+}
+
+.horizontal.spacing-lg {
+  margin: 1.5rem 0;
+}
+
 .horizontal.hasNoLabel {
   border-top: 1px solid var(--eta-border-default, #E5E3DC);
 }
@@ -66,6 +82,22 @@
   min-height: 1rem;
   margin: 0 0.75rem;
   vertical-align: middle;
+}
+
+.vertical.spacing-none {
+  margin: 0;
+}
+
+.vertical.spacing-sm {
+  margin: 0 0.5rem;
+}
+
+.vertical.spacing-md {
+  margin: 0 0.75rem;
+}
+
+.vertical.spacing-lg {
+  margin: 0 1rem;
 }
 
 .vertical.hasNoLabel {

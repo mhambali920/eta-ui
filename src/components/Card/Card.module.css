@@ -74,6 +74,14 @@
   margin-bottom: 1rem;
 }
 
+.padding-sm .header {
+  margin-bottom: 0.75rem;
+}
+
+.padding-lg .header {
+  margin-bottom: 1.25rem;
+}
+
 .title {
   margin: 0;
   font-size: 1.25rem;
@@ -82,11 +90,27 @@
   color: var(--eta-text-heading, #2B2D42);
 }
 
+.padding-sm .title {
+  font-size: 1.0625rem;
+}
+
+.padding-lg .title {
+  font-size: 1.375rem;
+}
+
 .description {
   margin: 0;
   font-size: 0.875rem;
   line-height: 1.4;
   color: var(--eta-text-muted, #8D99AE);
+}
+
+.padding-sm .description {
+  font-size: 0.8125rem;
+}
+
+.padding-lg .description {
+  font-size: 0.9375rem;
 }
 
 .body {
@@ -103,4 +127,14 @@
   margin-top: 1.5rem;
   padding-top: 1rem;
   border-top: 1px solid var(--eta-border-default, #E5E3DC);
+}
+
+.padding-sm .footer {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+}
+
+.padding-lg .footer {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
 }

@@ -5,10 +5,13 @@ import styles from './Layout.module.css';
 export type DividerOrientation = 'horizontal' | 'vertical';
 export type DividerVariant = 'solid' | 'dashed' | 'dotted';
 export type DividerLabelPosition = 'left' | 'center' | 'right';
+export type DividerSpacing = 'none' | 'sm' | 'md' | 'lg';
 
 export interface DividerProps extends React.HTMLAttributes<HTMLDivElement> {
   orientation?: DividerOrientation;
   variant?: DividerVariant;
+  spacing?: DividerSpacing;
+  size?: 'sm' | 'md' | 'lg';
   label?: React.ReactNode;
   labelPosition?: DividerLabelPosition;
 }
@@ -18,6 +21,8 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
     {
       orientation = 'horizontal',
       variant = 'solid',
+      spacing,
+      size,
       label,
       labelPosition = 'center',
       className,
@@ -26,6 +31,7 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
     ref
   ) => {
     const hasLabel = Boolean(label) && orientation === 'horizontal';
+    const resolvedSpacing: DividerSpacing = spacing ?? size ?? 'md';
 
     return (
       <div
@@ -35,6 +41,7 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
         className={cn(
           styles.divider,
           styles[orientation],
+          styles[`spacing-${resolvedSpacing}`],
           styles[variant],
           hasLabel ? styles.hasLabel : styles.hasNoLabel,
           hasLabel && styles[`label-${labelPosition}`],

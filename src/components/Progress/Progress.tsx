@@ -48,7 +48,7 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
       : `${percentage}%`;
 
     return (
-      <div className={cn(styles.wrapper, className)}>
+      <div className={cn(styles.wrapper, styles[`wrapper-${size}`], className)}>
         {(label || (showValueLabel && !isIndeterminate)) && (
           <div className={styles.header}>
             {label && <span className={styles.label}>{label}</span>}
@@ -142,7 +142,12 @@ export const CircularProgress = forwardRef<HTMLDivElement, CircularProgressProps
         aria-valuemax={max}
         aria-valuenow={isIndeterminate ? undefined : clampedValue}
         data-indeterminate={isIndeterminate ? '' : undefined}
-        className={cn(styles.circularWrapper, styles[color], className)}
+        className={cn(
+          styles.circularWrapper,
+          typeof size === 'string' && styles[`circular-${size}`],
+          styles[color],
+          className
+        )}
         style={{ width: dimension, height: dimension, backgroundColor: 'transparent' }}
         {...props}
       >

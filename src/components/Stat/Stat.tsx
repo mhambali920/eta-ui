@@ -3,10 +3,12 @@ import { cn } from '../../utils/cn';
 import styles from './Stat.module.css';
 
 export type StatVariant = 'surface' | 'outline' | 'subtle' | 'ghost';
+export type StatSize = 'sm' | 'md' | 'lg';
 export type StatTrendDirection = 'up' | 'down' | 'neutral';
 
 export interface StatProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   variant?: StatVariant;
+  size?: StatSize;
   label?: React.ReactNode;
   value?: React.ReactNode;
   helpText?: React.ReactNode;
@@ -112,6 +114,7 @@ export const Stat = forwardRef<HTMLDivElement, StatProps>(
   (
     {
       variant = 'surface',
+      size = 'md',
       label,
       value,
       helpText,
@@ -127,7 +130,7 @@ export const Stat = forwardRef<HTMLDivElement, StatProps>(
     const hasShorthand = Boolean(label !== undefined || value !== undefined || helpText !== undefined);
 
     return (
-      <div ref={ref} className={cn(styles.stat, styles[variant], className)} {...props}>
+      <div ref={ref} className={cn(styles.stat, styles[variant], styles[size], className)} {...props}>
         {hasShorthand ? (
           <>
             {(label || icon) && (

@@ -11,6 +11,18 @@
   width: 100%;
 }
 
+.orientation-horizontal.size-sm {
+  min-height: 20px;
+}
+
+.orientation-horizontal.size-md {
+  min-height: 24px;
+}
+
+.orientation-horizontal.size-lg {
+  min-height: 28px;
+}
+
 .orientation-vertical {
   flex-direction: column;
   height: 200px;

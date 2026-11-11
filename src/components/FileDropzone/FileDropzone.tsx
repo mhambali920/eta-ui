@@ -7,6 +7,8 @@ export interface FileRejection {
   reason: 'exceeds-max-size' | 'exceeds-max-files' | 'invalid-type';
 }
 
+export type FileDropzoneSize = 'sm' | 'md' | 'lg';
+
 export interface FileDropzoneProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onDrop'> {
   accept?: string;
@@ -16,6 +18,7 @@ export interface FileDropzoneProps
   disabled?: boolean;
   isInvalid?: boolean;
   variant?: 'outline' | 'soft';
+  size?: FileDropzoneSize;
   onFilesSelected?: (files: File[]) => void;
   onFileReject?: (rejections: FileRejection[]) => void;
   name?: string;
@@ -94,6 +97,7 @@ export const FileDropzone = forwardRef<HTMLDivElement, FileDropzoneProps>(
       disabled = false,
       isInvalid = false,
       variant = 'outline',
+      size = 'md',
       onFilesSelected,
       onFileReject,
       name,
@@ -194,6 +198,7 @@ export const FileDropzone = forwardRef<HTMLDivElement, FileDropzoneProps>(
         aria-invalid={isInvalid ? 'true' : undefined}
         className={cn(
           styles.dropzone,
+          styles[`size-${size}`],
           styles[`variant-${variant}`],
           isDragging && styles.isDragging,
           isInvalid && styles.isInvalid,

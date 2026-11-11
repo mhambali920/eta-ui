@@ -46,11 +46,39 @@
   z-index: 1;
 }
 
+.sm .point {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.6875rem;
+}
+
+.md .point {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.75rem;
+}
+
+.lg .point {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 0.875rem;
+}
+
 .dotInner {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: var(--eta-radius-full);
   background-color: currentColor;
+}
+
+.sm .dotInner {
+  width: 0.375rem;
+  height: 0.375rem;
+}
+
+.lg .dotInner {
+  width: 0.625rem;
+  height: 0.625rem;
 }
 
 /* Point Variants & Colors */
@@ -176,6 +204,14 @@
   line-height: 1.35;
 }
 
+.sm .title {
+  font-size: 0.8125rem;
+}
+
+.lg .title {
+  font-size: 1.0625rem;
+}
+
 .time {
   font-size: 0.75rem;
   font-weight: 500;
@@ -187,4 +223,12 @@
   font-size: 0.8125rem;
   line-height: 1.5;
   color: var(--eta-text-body);
+}
+
+.sm .description {
+  font-size: 0.75rem;
+}
+
+.lg .description {
+  font-size: 0.875rem;
 }

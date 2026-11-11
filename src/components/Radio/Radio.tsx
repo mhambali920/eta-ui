@@ -1,24 +1,29 @@
-import React, { forwardRef, useId } from 'react';
+import React, { createContext, forwardRef, useContext, useId } from 'react';
 import * as RadixRadioGroup from '@radix-ui/react-radio-group';
 import { cn } from '../../utils/cn';
 import styles from './Radio.module.css';
 
 export type RadioSize = 'sm' | 'md' | 'lg';
 
+const RadioGroupContext = createContext<{ size?: RadioSize }>({});
+
 export interface RadioGroupProps
   extends React.ComponentPropsWithoutRef<typeof RadixRadioGroup.Root> {
   orientation?: 'vertical' | 'horizontal';
+  size?: RadioSize;
 }
 
 export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
-  ({ orientation = 'vertical', className, ...props }, ref) => {
+  ({ orientation = 'vertical', size, className, ...props }, ref) => {
     return (
-      <RadixRadioGroup.Root
-        ref={ref}
-        orientation={orientation}
-        className={cn(styles.group, className)}
-        {...props}
-      />
+      <RadioGroupContext.Provider value={{ size }}>
+        <RadixRadioGroup.Root
+          ref={ref}
+          orientation={orientation}
+          className={cn(styles.group, className)}
+          {...props}
+        />
+      </RadioGroupContext.Provider>
     );
   }
 );
@@ -37,7 +42,7 @@ export interface RadioProps
 export const Radio = forwardRef<HTMLButtonElement, RadioProps>(
   (
     {
-      size = 'md',
+      size: sizeProp,
       isInvalid = false,
       label,
       description,
@@ -49,6 +54,8 @@ export const Radio = forwardRef<HTMLButtonElement, RadioProps>(
     },
     ref
   ) => {
+    const groupContext = useContext(RadioGroupContext);
+    const size = sizeProp ?? groupContext.size ?? 'md';
     const generatedId = useId();
     const radioId = id || generatedId;
     const descriptionId = description ? `${radioId}-description` : undefined;

@@ -53,16 +53,31 @@
   font-size: 0.75rem;
 }
 
+.sm .indicator svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
 .md .indicator {
   width: 2.25rem;
   height: 2.25rem;
   font-size: 0.875rem;
 }
 
+.md .indicator svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
 .lg .indicator {
   width: 2.75rem;
   height: 2.75rem;
   font-size: 1rem;
+}
+
+.lg .indicator svg {
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
 /* Statuses */
@@ -106,6 +121,18 @@
   line-height: 1.35;
 }
 
+.sm .title {
+  font-size: 0.8125rem;
+}
+
+.md .title {
+  font-size: 0.875rem;
+}
+
+.lg .title {
+  font-size: 1rem;
+}
+
 .upcoming .title {
   color: var(--eta-text-muted);
   font-weight: 500;
@@ -120,6 +147,18 @@
   font-size: 0.75rem;
   color: var(--eta-text-muted);
   line-height: 1.4;
+}
+
+.sm .description {
+  font-size: 0.75rem;
+}
+
+.md .description {
+  font-size: 0.8125rem;
+}
+
+.lg .description {
+  font-size: 0.875rem;
 }
 
 .separator {
@@ -138,6 +177,18 @@
   width: 2px;
   min-height: 1.25rem;
   margin-left: 1.0625rem;
+}
+
+.vertical.sm .separator {
+  margin-left: 0.8125rem;
+}
+
+.vertical.md .separator {
+  margin-left: 1.0625rem;
+}
+
+.vertical.lg .separator {
+  margin-left: 1.3125rem;
 }
 
 .separatorComplete {

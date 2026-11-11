@@ -200,6 +200,33 @@
   color: var(--eta-text-heading);
 }
 
+.blockSm .blockHeader {
+  padding: 0.375rem 0.625rem;
+}
+
+.blockSm .pre {
+  padding: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.blockMd .blockHeader {
+  padding: 0.5rem 0.875rem;
+}
+
+.blockMd .pre {
+  padding: 1rem;
+  font-size: 0.8125rem;
+}
+
+.blockLg .blockHeader {
+  padding: 0.625rem 1.125rem;
+}
+
+.blockLg .pre {
+  padding: 1.25rem;
+  font-size: 0.875rem;
+}
+
 .lineRow {
   display: flex;
   gap: 1rem;

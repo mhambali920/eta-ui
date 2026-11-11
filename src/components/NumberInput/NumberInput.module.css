@@ -50,14 +50,38 @@
   font-size: 0.8125rem;
 }
 
+.sm .input {
+  padding: 0 0.625rem;
+}
+
+.sm .stepperGroup {
+  width: 1.5rem;
+}
+
 .md {
   height: 2.5rem;
   font-size: 0.875rem;
 }
 
+.md .input {
+  padding: 0 0.875rem;
+}
+
+.md .stepperGroup {
+  width: 1.75rem;
+}
+
 .lg {
   height: 3rem;
   font-size: 1rem;
+}
+
+.lg .input {
+  padding: 0 1.125rem;
+}
+
+.lg .stepperGroup {
+  width: 2rem;
 }
 
 .input {

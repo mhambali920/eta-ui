@@ -4,12 +4,14 @@ import { cn } from '../../utils/cn';
 import styles from './Tooltip.module.css';
 
 export type TooltipVariant = 'dark' | 'soft';
+export type TooltipSize = 'sm' | 'md' | 'lg';
 
 export interface TooltipProviderProps extends TooltipPrimitive.TooltipProviderProps {}
 
 export interface TooltipProps extends TooltipPrimitive.TooltipProps {
   content?: React.ReactNode;
   variant?: TooltipVariant;
+  size?: TooltipSize;
   side?: TooltipPrimitive.TooltipContentProps['side'];
   sideOffset?: number;
   hasArrow?: boolean;
@@ -20,6 +22,7 @@ export interface TooltipTriggerProps extends TooltipPrimitive.TooltipTriggerProp
 export interface TooltipContentProps
   extends React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> {
   variant?: TooltipVariant;
+  size?: TooltipSize;
   hasArrow?: boolean;
 }
 
@@ -59,6 +62,7 @@ export const TooltipContent = forwardRef<
       className,
       children,
       variant = 'dark',
+      size = 'md',
       sideOffset = 6,
       hasArrow = true,
       ...props
@@ -69,7 +73,7 @@ export const TooltipContent = forwardRef<
       <TooltipPrimitive.Content
         ref={ref}
         sideOffset={sideOffset}
-        className={cn(styles.content, styles[`variant-${variant}`], className)}
+        className={cn(styles.content, styles[`size-${size}`], styles[`variant-${variant}`], className)}
         {...props}
       >
         {children}
@@ -85,6 +89,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
   children,
   content,
   variant = 'dark',
+  size = 'md',
   side = 'top',
   sideOffset = 6,
   hasArrow = true,
@@ -96,6 +101,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
         <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
         <TooltipContent
           variant={variant}
+          size={size}
           side={side}
           sideOffset={sideOffset}
           hasArrow={hasArrow}

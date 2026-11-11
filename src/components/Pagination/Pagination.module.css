@@ -47,24 +47,24 @@
 
 /* Sizes */
 .size-sm {
-  height: 28px;
-  min-width: 28px;
-  font-size: 0.75rem;
-  padding: 0 6px;
+  height: 32px;
+  min-width: 32px;
+  font-size: 0.8125rem;
+  padding: 0 8px;
 }
 
 .size-md {
-  height: 36px;
-  min-width: 36px;
+  height: 40px;
+  min-width: 40px;
   font-size: 0.875rem;
-  padding: 0 10px;
+  padding: 0 12px;
 }
 
 .size-lg {
-  height: 44px;
-  min-width: 44px;
+  height: 48px;
+  min-width: 48px;
   font-size: 1rem;
-  padding: 0 14px;
+  padding: 0 16px;
 }
 
 /* Inactive Variants */
@@ -99,7 +99,7 @@
 
 .active-solid {
   background-color: var(--eta-color-primary);
-  color: var(--eta-color-primary-contrast);
+  color: var(--eta-text-inverse);
   font-weight: 600;
   border-color: transparent;
 }
@@ -126,6 +126,21 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.size-sm .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.size-md .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.size-lg .icon {
+  width: 18px;
+  height: 18px;
 }
 
 .icon svg {

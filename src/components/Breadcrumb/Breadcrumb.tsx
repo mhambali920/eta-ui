@@ -3,8 +3,11 @@ import { Slot } from '@radix-ui/react-slot';
 import { cn } from '../../utils/cn';
 import styles from './Breadcrumb.module.css';
 
+export type BreadcrumbSize = 'sm' | 'md' | 'lg';
+
 export interface BreadcrumbProps extends React.ComponentPropsWithoutRef<'nav'> {
   separator?: React.ReactNode;
+  size?: BreadcrumbSize;
 }
 
 export interface BreadcrumbListProps extends React.ComponentPropsWithoutRef<'ol'> {}
@@ -36,11 +39,11 @@ const MoreHorizontalIcon = () => (
 );
 
 export const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
-  ({ className, ...props }, ref) => (
+  ({ size = 'md', className, ...props }, ref) => (
     <nav
       ref={ref}
       aria-label="Breadcrumb"
-      className={cn(styles.nav, className)}
+      className={cn(styles.nav, styles[`size-${size}`], className)}
       {...props}
     />
   )

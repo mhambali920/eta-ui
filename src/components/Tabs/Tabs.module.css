@@ -71,7 +71,7 @@
 
 .size-lg .trigger {
   padding: 8px 18px;
-  font-size: 0.9375rem;
+  font-size: 1rem;
 }
 
 /* Variant: soft (pill/segmented) */
@@ -125,11 +125,35 @@
   padding-bottom: 10px;
 }
 
+.variant-underline.orientation-horizontal.size-sm .trigger {
+  padding-bottom: 6px;
+}
+
+.variant-underline.orientation-horizontal.size-md .trigger {
+  padding-bottom: 10px;
+}
+
+.variant-underline.orientation-horizontal.size-lg .trigger {
+  padding-bottom: 14px;
+}
+
 .variant-underline.orientation-vertical .trigger {
   border-right: 2px solid transparent;
   margin-right: -2px;
   padding-right: 12px;
   justify-content: flex-start;
+}
+
+.variant-underline.orientation-vertical.size-sm .trigger {
+  padding-right: 10px;
+}
+
+.variant-underline.orientation-vertical.size-md .trigger {
+  padding-right: 14px;
+}
+
+.variant-underline.orientation-vertical.size-lg .trigger {
+  padding-right: 18px;
 }
 
 .variant-underline .trigger:hover {

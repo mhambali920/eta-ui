@@ -4,10 +4,12 @@ import styles from './Alert.module.css';
 
 export type AlertStatus = 'info' | 'success' | 'warning' | 'error' | 'danger';
 export type AlertVariant = 'soft' | 'outline' | 'solid';
+export type AlertSize = 'sm' | 'md' | 'lg';
 
 export interface AlertProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   status?: AlertStatus;
   variant?: AlertVariant;
+  size?: AlertSize;
   title?: React.ReactNode;
   description?: React.ReactNode;
   icon?: React.ReactNode | boolean;
@@ -144,6 +146,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(
     {
       status = 'info',
       variant = 'soft',
+      size = 'md',
       title,
       description,
       icon = true,
@@ -171,6 +174,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(
         aria-live="polite"
         className={cn(
           styles.alert,
+          styles[`size-${size}`],
           styles[`variant-${variant}`],
           styles[`status-${normalizedStatus}`],
           className

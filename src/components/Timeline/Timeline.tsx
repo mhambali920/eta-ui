@@ -12,18 +12,20 @@ export type TimelineColor =
   | 'neutral';
 export type TimelinePointVariant = 'soft' | 'solid' | 'outline';
 export type TimelineLayout = 'left' | 'alternate';
+export type TimelineSize = 'sm' | 'md' | 'lg';
 
 export interface TimelineProps extends React.HTMLAttributes<HTMLOListElement> {
   layout?: TimelineLayout;
+  size?: TimelineSize;
 }
 
 export const Timeline = forwardRef<HTMLOListElement, TimelineProps>(
-  ({ layout = 'left', className, children, ...props }, ref) => (
+  ({ layout = 'left', size = 'md', className, children, ...props }, ref) => (
     <ol
       ref={ref}
       aria-label={props['aria-label'] ?? 'Timeline'}
       data-layout={layout}
-      className={cn(styles.timeline, layout === 'alternate' && styles.alternate, className)}
+      className={cn(styles.timeline, styles[size], layout === 'alternate' && styles.alternate, className)}
       {...props}
     >
       {children}

@@ -20,11 +20,14 @@ function useCollapsibleContext() {
   return ctx;
 }
 
+export type CollapsibleSize = 'sm' | 'md' | 'lg';
+
 export interface CollapsibleProps extends React.HTMLAttributes<HTMLDivElement> {
   open?: boolean;
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   disabled?: boolean;
+  size?: CollapsibleSize;
 }
 
 export const Collapsible = forwardRef<HTMLDivElement, CollapsibleProps>(
@@ -34,6 +37,7 @@ export const Collapsible = forwardRef<HTMLDivElement, CollapsibleProps>(
       defaultOpen = false,
       onOpenChange,
       disabled = false,
+      size = 'md',
       className,
       children,
       ...props
@@ -61,7 +65,7 @@ export const Collapsible = forwardRef<HTMLDivElement, CollapsibleProps>(
           ref={ref}
           data-state={open ? 'open' : 'closed'}
           data-disabled={disabled ? '' : undefined}
-          className={cn(styles.root, disabled && styles.disabled, className)}
+          className={cn(styles.root, styles[size], disabled && styles.disabled, className)}
           {...props}
         >
           {children}

@@ -50,6 +50,26 @@
   box-sizing: border-box;
 }
 
+/* Text Variants */
+.variant-body {
+  color: var(--eta-text-body, #5C6070);
+}
+
+.variant-muted {
+  color: var(--eta-text-muted, #8D99AE);
+}
+
+.variant-lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--eta-text-body, #5C6070);
+}
+
+.variant-caption {
+  font-size: 0.75rem;
+  color: var(--eta-text-muted, #8D99AE);
+}
+
 /* Text Sizes */
 .text-xs {
   font-size: 0.75rem; /* 12px */
@@ -69,26 +89,6 @@
 
 .text-xl {
   font-size: 1.25rem; /* 20px */
-}
-
-/* Text Variants */
-.variant-body {
-  color: var(--eta-text-body, #5C6070);
-}
-
-.variant-muted {
-  color: var(--eta-text-muted, #8D99AE);
-}
-
-.variant-lead {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: var(--eta-text-body, #5C6070);
-}
-
-.variant-caption {
-  font-size: 0.75rem;
-  color: var(--eta-text-muted, #8D99AE);
 }
 
 /* Semantic Colors */

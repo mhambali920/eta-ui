@@ -10,4 +10,5 @@ export {
   type DividerOrientation,
   type DividerVariant,
   type DividerLabelPosition,
+  type DividerSpacing,
 } from './Divider';

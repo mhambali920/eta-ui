@@ -2,11 +2,14 @@ import React, { createContext, forwardRef, useContext, useId } from 'react';
 import { cn } from '../../utils/cn';
 import styles from './FormField.module.css';
 
+export type FormFieldSize = 'sm' | 'md' | 'lg';
+
 export interface FormFieldContextValue {
   id: string;
   labelId: string;
   helperTextId: string;
   errorMessageId: string;
+  size: FormFieldSize;
   isInvalid: boolean;
   isDisabled: boolean;
   isRequired: boolean;
@@ -23,6 +26,7 @@ export function useFormField() {
 
 export interface FormFieldProps extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
+  size?: FormFieldSize;
   isInvalid?: boolean;
   isDisabled?: boolean;
   isRequired?: boolean;
@@ -137,6 +141,7 @@ export const FormField = forwardRef<HTMLDivElement, FormFieldProps>(
   (
     {
       id: idProp,
+      size = 'md',
       isInvalid = false,
       isDisabled = false,
       isRequired = false,
@@ -181,6 +186,7 @@ export const FormField = forwardRef<HTMLDivElement, FormFieldProps>(
       labelId,
       helperTextId,
       errorMessageId,
+      size,
       isInvalid,
       isDisabled,
       isRequired,
@@ -224,6 +230,9 @@ export const FormField = forwardRef<HTMLDivElement, FormFieldProps>(
       if (!isNativeTag && isInvalid && childProps.isInvalid === undefined) {
         injectedProps.isInvalid = true;
       }
+      if (!isNativeTag && childProps.size === undefined && size !== 'md') {
+        injectedProps.size = size;
+      }
 
       return React.cloneElement(child, injectedProps);
     });
@@ -232,7 +241,7 @@ export const FormField = forwardRef<HTMLDivElement, FormFieldProps>(
       <FormFieldContext.Provider value={contextValue}>
         <div
           ref={ref}
-          className={cn(styles.field, isDisabled && styles.disabled, className)}
+          className={cn(styles.field, styles[size], isDisabled && styles.disabled, className)}
           data-invalid={isInvalid ? '' : undefined}
           data-disabled={isDisabled ? '' : undefined}
           data-readonly={isReadOnly ? '' : undefined}

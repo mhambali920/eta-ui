@@ -27,6 +27,20 @@
   border-radius: var(--eta-radius-md, 8px);
 }
 
+.rounded.xs,
+.rounded.sm {
+  border-radius: var(--eta-radius-sm, 6px);
+}
+
+.rounded.md {
+  border-radius: var(--eta-radius-md, 8px);
+}
+
+.rounded.lg,
+.rounded.xl {
+  border-radius: var(--eta-radius-lg, 12px);
+}
+
 /* Sizes */
 .xs {
   width: 24px;
@@ -145,4 +159,9 @@
 
 .group .container:first-child {
   margin-left: 0;
+}
+
+.moreFallback {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  color: var(--eta-text-heading);
 }

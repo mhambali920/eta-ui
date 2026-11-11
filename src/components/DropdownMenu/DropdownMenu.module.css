@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 10px;
+  padding: 8px 10px;
   border-radius: var(--eta-radius-sm);
   color: var(--eta-text-body);
   font-size: 0.875rem;
@@ -31,6 +31,36 @@
   user-select: none;
   transition: background-color var(--eta-transition-fast), color var(--eta-transition-fast);
   gap: 8px;
+}
+
+.size-sm {
+  min-width: 150px;
+}
+
+.size-md {
+  min-width: 180px;
+}
+
+.size-lg {
+  min-width: 220px;
+}
+
+.size-sm .item,
+.size-sm .subTrigger {
+  padding: 5px 8px;
+  font-size: 0.8125rem;
+}
+
+.size-md .item,
+.size-md .subTrigger {
+  padding: 8px 10px;
+  font-size: 0.875rem;
+}
+
+.size-lg .item,
+.size-lg .subTrigger {
+  padding: 10px 12px;
+  font-size: 0.9375rem;
 }
 
 .item[data-highlighted] {
@@ -80,7 +110,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 10px;
+  padding: 8px 10px;
   border-radius: var(--eta-radius-sm);
   color: var(--eta-text-body);
   font-size: 0.875rem;

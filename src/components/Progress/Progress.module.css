@@ -26,6 +26,38 @@
   font-variant-numeric: tabular-nums;
 }
 
+.wrapper-xs .label {
+  font-size: 0.6875rem;
+}
+
+.wrapper-xs .valueText {
+  font-size: 0.6875rem;
+}
+
+.wrapper-sm .label {
+  font-size: 0.75rem;
+}
+
+.wrapper-sm .valueText {
+  font-size: 0.6875rem;
+}
+
+.wrapper-lg .label {
+  font-size: 0.875rem;
+}
+
+.wrapper-lg .valueText {
+  font-size: 0.8125rem;
+}
+
+.wrapper-xl .label {
+  font-size: 0.9375rem;
+}
+
+.wrapper-xl .valueText {
+  font-size: 0.875rem;
+}
+
 .track {
   position: relative;
   width: 100%;
@@ -200,4 +232,24 @@
   font-weight: 600;
   color: var(--eta-text-heading);
   font-variant-numeric: tabular-nums;
+}
+
+.circular-xs .circularLabel {
+  font-size: 0.5rem;
+}
+
+.circular-sm .circularLabel {
+  font-size: 0.625rem;
+}
+
+.circular-md .circularLabel {
+  font-size: 0.75rem;
+}
+
+.circular-lg .circularLabel {
+  font-size: 0.875rem;
+}
+
+.circular-xl .circularLabel {
+  font-size: 1rem;
 }

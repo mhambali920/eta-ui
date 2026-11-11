@@ -61,16 +61,19 @@
 .sm {
   height: 2rem;
   font-size: 0.8125rem;
+  padding: 0 0.625rem;
 }
 
 .md {
   height: 2.5rem;
   font-size: 0.875rem;
+  padding: 0 0.875rem;
 }
 
 .lg {
   height: 3rem;
   font-size: 1rem;
+  padding: 0 1.125rem;
 }
 
 .triggerText {

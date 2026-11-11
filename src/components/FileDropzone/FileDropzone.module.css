@@ -19,6 +19,18 @@
     transform var(--eta-transition-fast);
 }
 
+.size-sm {
+  padding: 20px 16px;
+}
+
+.size-md {
+  padding: 32px 24px;
+}
+
+.size-lg {
+  padding: 44px 32px;
+}
+
 .dropzone:hover:not(.disabled) {
   border-color: var(--eta-color-primary);
   background-color: var(--eta-bg-subtle);
@@ -88,6 +100,18 @@
   transition: transform var(--eta-transition-fast);
 }
 
+.size-sm .icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 8px;
+}
+
+.size-lg .icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 16px;
+}
+
 .isDragging .icon {
   transform: scale(1.1);
 }
@@ -97,6 +121,16 @@
   height: 24px;
 }
 
+.size-sm .icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.size-lg .icon svg {
+  width: 30px;
+  height: 30px;
+}
+
 .title {
   font-size: 0.9375rem;
   font-weight: 600;
@@ -104,9 +138,25 @@
   margin-bottom: 4px;
 }
 
+.size-sm .title {
+  font-size: 0.875rem;
+}
+
+.size-lg .title {
+  font-size: 1.0625rem;
+}
+
 .description {
   font-size: 0.8125rem;
   color: var(--eta-text-muted);
+}
+
+.size-sm .description {
+  font-size: 0.75rem;
+}
+
+.size-lg .description {
+  font-size: 0.875rem;
 }
 
 /* File List */

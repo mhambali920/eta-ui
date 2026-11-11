@@ -115,19 +115,29 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--eta-text-heading);
-  line-height: 1.25;
+  line-height: 24px;
 }
 
 .sm + .labelContent .label {
   font-size: 0.8125rem;
+  line-height: 18px;
 }
 
 .lg + .labelContent .label {
   font-size: 1rem;
+  line-height: 30px;
 }
 
 .description {
   font-size: 0.75rem;
   color: var(--eta-text-muted);
   line-height: 1.4;
+}
+
+.sm + .labelContent .description {
+  font-size: 0.6875rem;
+}
+
+.lg + .labelContent .description {
+  font-size: 0.8125rem;
 }

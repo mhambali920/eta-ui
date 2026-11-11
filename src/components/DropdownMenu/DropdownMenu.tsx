@@ -1,15 +1,23 @@
-import React, { forwardRef } from 'react';
+import React, { createContext, forwardRef, useContext } from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { cn } from '../../utils/cn';
 import styles from './DropdownMenu.module.css';
 
-export interface DropdownMenuProps extends DropdownMenuPrimitive.DropdownMenuProps {}
+export type DropdownMenuSize = 'sm' | 'md' | 'lg';
+
+const DropdownMenuSizeContext = createContext<DropdownMenuSize>('md');
+
+export interface DropdownMenuProps extends DropdownMenuPrimitive.DropdownMenuProps {
+  size?: DropdownMenuSize;
+}
 
 export interface DropdownMenuTriggerProps
   extends DropdownMenuPrimitive.DropdownMenuTriggerProps {}
 
 export interface DropdownMenuContentProps
-  extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> {}
+  extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> {
+  size?: DropdownMenuSize;
+}
 
 export interface DropdownMenuItemProps
   extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> {
@@ -48,7 +56,11 @@ const ChevronRightIcon = () => (
   </svg>
 );
 
-export const DropdownMenu: React.FC<DropdownMenuProps> = DropdownMenuPrimitive.Root;
+export const DropdownMenu: React.FC<DropdownMenuProps> = ({ size = 'md', children, ...props }) => (
+  <DropdownMenuSizeContext.Provider value={size}>
+    <DropdownMenuPrimitive.Root {...props}>{children}</DropdownMenuPrimitive.Root>
+  </DropdownMenuSizeContext.Provider>
+);
 DropdownMenu.displayName = 'DropdownMenu';
 
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
@@ -69,16 +81,20 @@ DropdownMenuRadioGroup.displayName = 'DropdownMenuRadioGroup';
 export const DropdownMenuContent = forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Content>,
   DropdownMenuContentProps
->(({ className, sideOffset = 4, ...props }, ref) => (
-  <DropdownMenuPrimitive.Portal>
-    <DropdownMenuPrimitive.Content
-      ref={ref}
-      sideOffset={sideOffset}
-      className={cn(styles.content, className)}
-      {...props}
-    />
-  </DropdownMenuPrimitive.Portal>
-));
+>(({ size: sizeProp, className, sideOffset = 4, ...props }, ref) => {
+  const contextSize = useContext(DropdownMenuSizeContext);
+  const size = sizeProp ?? contextSize;
+  return (
+    <DropdownMenuPrimitive.Portal>
+      <DropdownMenuPrimitive.Content
+        ref={ref}
+        sideOffset={sideOffset}
+        className={cn(styles.content, styles[`size-${size}`], className)}
+        {...props}
+      />
+    </DropdownMenuPrimitive.Portal>
+  );
+});
 DropdownMenuContent.displayName = 'DropdownMenuContent';
 
 export const DropdownMenuItem = forwardRef<

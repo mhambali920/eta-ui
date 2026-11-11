@@ -4,6 +4,7 @@ export {
   FormHelperText,
   FormErrorMessage,
   useFormField,
+  type FormFieldSize,
   type FormFieldProps,
   type FormLabelProps,
   type FormHelperTextProps,

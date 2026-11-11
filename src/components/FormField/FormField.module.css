@@ -6,6 +6,18 @@
   font-family: inherit;
 }
 
+.sm {
+  gap: 0.25rem;
+}
+
+.md {
+  gap: 0.375rem;
+}
+
+.lg {
+  gap: 0.5rem;
+}
+
 .disabled {
   opacity: 0.65;
   cursor: not-allowed;
@@ -22,6 +34,18 @@
   cursor: pointer;
   user-select: none;
   transition: color var(--eta-transition-fast);
+}
+
+.sm .label {
+  font-size: 0.8125rem;
+}
+
+.md .label {
+  font-size: 0.875rem;
+}
+
+.lg .label {
+  font-size: 1rem;
 }
 
 .labelDisabled {
@@ -47,6 +71,16 @@
   font-size: 0.75rem;
   line-height: 1.4;
   color: var(--eta-text-muted);
+}
+
+.sm .helperText,
+.sm .errorMessage {
+  font-size: 0.6875rem;
+}
+
+.lg .helperText,
+.lg .errorMessage {
+  font-size: 0.8125rem;
 }
 
 .errorMessage {

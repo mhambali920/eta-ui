@@ -8,6 +8,7 @@ export {
   CommandItem,
   CommandSeparator,
   CommandShortcut,
+  type CommandSize,
   type CommandProps,
   type CommandDialogProps,
   type CommandGroupProps,

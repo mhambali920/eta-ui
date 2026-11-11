@@ -16,6 +16,25 @@
   will-change: transform, opacity;
 }
 
+.size-sm {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  max-width: 220px;
+  border-radius: var(--eta-radius-sm);
+}
+
+.size-md {
+  padding: 6px 12px;
+  font-size: 0.8125rem;
+  max-width: 280px;
+}
+
+.size-lg {
+  padding: 8px 14px;
+  font-size: 0.875rem;
+  max-width: 340px;
+}
+
 .variant-dark {
   background-color: var(--eta-text-heading);
   color: var(--eta-text-inverse);

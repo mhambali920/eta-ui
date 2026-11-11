@@ -6,6 +6,7 @@ export {
   StatHelpText,
   StatTrend,
   StatIcon,
+  type StatSize,
   type StatProps,
   type StatTrendProps,
   type StatVariant,

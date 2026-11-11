@@ -3,6 +3,7 @@ import { cn } from '../../utils/cn';
 import styles from './Code.module.css';
 
 export type KbdSize = 'sm' | 'md' | 'lg';
+export type CodeBlockSize = 'sm' | 'md' | 'lg';
 export type CodeVariant = 'soft' | 'outline' | 'solid';
 export type CodeColor = 'neutral' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger';
 
@@ -50,6 +51,7 @@ export interface CodeBlockProps extends Omit<React.HTMLAttributes<HTMLDivElement
   code: string;
   filename?: string;
   language?: string;
+  size?: CodeBlockSize;
   showLineNumbers?: boolean;
   copyable?: boolean;
   onCopy?: (code: string) => void;
@@ -61,6 +63,7 @@ export const CodeBlock = forwardRef<HTMLDivElement, CodeBlockProps>(
       code,
       filename,
       language,
+      size = 'md',
       showLineNumbers = false,
       copyable = true,
       onCopy,
@@ -93,7 +96,17 @@ export const CodeBlock = forwardRef<HTMLDivElement, CodeBlockProps>(
     const lines = code.split('\n');
 
     return (
-      <div ref={ref} className={cn(styles.codeBlock, className)} {...props}>
+      <div
+        ref={ref}
+        className={cn(
+          styles.codeBlock,
+          size === 'sm' && styles.blockSm,
+          size === 'md' && styles.blockMd,
+          size === 'lg' && styles.blockLg,
+          className
+        )}
+        {...props}
+      >
         {(filename || language || copyable) && (
           <div className={styles.blockHeader}>
             <div className={styles.titleGroup}>

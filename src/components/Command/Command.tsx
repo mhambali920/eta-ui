@@ -22,13 +22,16 @@ const CommandContext = createContext<CommandContextValue>({
   matches: () => true,
 });
 
+export type CommandSize = 'sm' | 'md' | 'lg';
+
 export interface CommandProps extends React.HTMLAttributes<HTMLDivElement> {
   defaultQuery?: string;
   filterFn?: (value: string, query: string, keywords?: string[]) => boolean;
+  size?: CommandSize;
 }
 
 export const Command = forwardRef<HTMLDivElement, CommandProps>(
-  ({ defaultQuery = '', filterFn, onKeyDown, className, children, ...props }, ref) => {
+  ({ defaultQuery = '', filterFn, size = 'md', onKeyDown, className, children, ...props }, ref) => {
     const [query, setQuery] = useState(defaultQuery);
     const rootRef = useRef<HTMLDivElement>(null);
 
@@ -98,7 +101,7 @@ export const Command = forwardRef<HTMLDivElement, CommandProps>(
           role="application"
           aria-label={props['aria-label'] ?? 'Command menu'}
           onKeyDown={handleKeyDown}
-          className={cn(styles.command, className)}
+          className={cn(styles.command, styles[size], className)}
           {...props}
         >
           {children}

@@ -5,6 +5,7 @@ import styles from './Toast.module.css';
 
 export type ToastStatus = 'info' | 'success' | 'warning' | 'error' | 'neutral';
 export type ToastVariant = 'surface' | 'soft';
+export type ToastSize = 'sm' | 'md' | 'lg';
 export type ToastPosition =
   | 'top-right'
   | 'top-left'
@@ -17,6 +18,7 @@ export interface ToastProps
   extends React.ComponentPropsWithoutRef<typeof ToastPrimitive.Root> {
   status?: ToastStatus;
   variant?: ToastVariant;
+  size?: ToastSize;
   icon?: React.ReactNode | boolean;
 }
 
@@ -45,6 +47,7 @@ export interface ToastItemOptions {
   description?: React.ReactNode;
   status?: ToastStatus;
   variant?: ToastVariant;
+  size?: ToastSize;
   duration?: number;
   icon?: React.ReactNode | boolean;
   action?: React.ReactNode;
@@ -168,12 +171,13 @@ export const ToastClose = forwardRef<
 ToastClose.displayName = 'ToastClose';
 
 export const Toast = forwardRef<React.ElementRef<typeof ToastPrimitive.Root>, ToastProps>(
-  ({ className, status = 'neutral', variant = 'surface', icon = true, children, ...props }, ref) => {
+  ({ className, status = 'neutral', variant = 'surface', size = 'md', icon = true, children, ...props }, ref) => {
     return (
       <ToastPrimitive.Root
         ref={ref}
         className={cn(
           styles.toast,
+          styles[`size-${size}`],
           styles[`status-${status}`],
           styles[`variant-${variant}`],
           className
@@ -195,6 +199,7 @@ Toast.displayName = 'Toast';
 
 export interface ToastProviderProps extends ToastPrimitive.ToastProviderProps {
   position?: ToastPosition;
+  size?: ToastSize;
   children: React.ReactNode;
 }
 
@@ -203,6 +208,7 @@ let toastCount = 0;
 export const ToastProvider: React.FC<ToastProviderProps> = ({
   children,
   position = 'bottom-right',
+  size = 'md',
   duration = 5000,
   swipeDirection = 'right',
   ...props
@@ -241,11 +247,12 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
     >
       <ToastContext.Provider value={{ toast: toastHandler, dismiss, toasts }}>
         {children}
-        {toasts.map(({ id, title, description, status, variant, duration: toastDur, icon, action }) => (
+        {toasts.map(({ id, title, description, status, variant, size: toastSize, duration: toastDur, icon, action }) => (
           <Toast
             key={id}
             status={status}
             variant={variant}
+            size={toastSize ?? size}
             duration={toastDur}
             icon={icon}
             onOpenChange={(open) => {

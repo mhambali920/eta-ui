@@ -1,17 +1,21 @@
-import React, { forwardRef } from 'react';
+import React, { createContext, forwardRef, useContext } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cn } from '../../utils/cn';
 import styles from './Pagination.module.css';
 
-export interface PaginationProps extends React.ComponentPropsWithoutRef<'nav'> {}
+export type PaginationSize = 'sm' | 'md' | 'lg';
+export type PaginationVariant = 'ghost' | 'outline';
+export type PaginationActiveVariant = 'soft' | 'solid';
+
+const PaginationContext = createContext<{ size: PaginationSize }>({ size: 'md' });
+
+export interface PaginationProps extends React.ComponentPropsWithoutRef<'nav'> {
+  size?: PaginationSize;
+}
 
 export interface PaginationContentProps extends React.ComponentPropsWithoutRef<'ul'> {}
 
 export interface PaginationItemProps extends React.ComponentPropsWithoutRef<'li'> {}
-
-export type PaginationSize = 'sm' | 'md' | 'lg';
-export type PaginationVariant = 'ghost' | 'outline';
-export type PaginationActiveVariant = 'soft' | 'solid';
 
 export interface PaginationLinkProps extends React.ComponentPropsWithoutRef<'a'> {
   isActive?: boolean;
@@ -55,14 +59,16 @@ const MoreHorizontalIcon = () => (
 );
 
 export const Pagination = forwardRef<HTMLElement, PaginationProps>(
-  ({ className, ...props }, ref) => (
-    <nav
-      ref={ref}
-      role="navigation"
-      aria-label="Pagination"
-      className={cn(styles.nav, className)}
-      {...props}
-    />
+  ({ size = 'md', className, ...props }, ref) => (
+    <PaginationContext.Provider value={{ size }}>
+      <nav
+        ref={ref}
+        role="navigation"
+        aria-label="Pagination"
+        className={cn(styles.nav, className)}
+        {...props}
+      />
+    </PaginationContext.Provider>
   )
 );
 Pagination.displayName = 'Pagination';
@@ -88,13 +94,15 @@ export const PaginationLink = forwardRef<HTMLAnchorElement, PaginationLinkProps>
       isActive = false,
       activeVariant = 'soft',
       variant = 'ghost',
-      size = 'md',
+      size: sizeProp,
       disabled = false,
       asChild = false,
       ...props
     },
     ref
   ) => {
+    const ctx = useContext(PaginationContext);
+    const size = sizeProp ?? ctx.size;
     const Component = asChild ? Slot : 'a';
 
     return (
@@ -122,7 +130,7 @@ export const PaginationPrevious = forwardRef<HTMLAnchorElement, PaginationPrevio
     {
       className,
       label = 'Previous',
-      size = 'md',
+      size,
       variant = 'ghost',
       disabled = false,
       children,
@@ -153,7 +161,7 @@ export const PaginationNext = forwardRef<HTMLAnchorElement, PaginationNextProps>
     {
       className,
       label = 'Next',
-      size = 'md',
+      size,
       variant = 'ghost',
       disabled = false,
       children,
@@ -180,18 +188,22 @@ export const PaginationNext = forwardRef<HTMLAnchorElement, PaginationNextProps>
 PaginationNext.displayName = 'PaginationNext';
 
 export const PaginationEllipsis = forwardRef<HTMLSpanElement, PaginationEllipsisProps>(
-  ({ className, size = 'md', ...props }, ref) => (
-    <span
-      ref={ref}
-      aria-hidden="true"
-      className={cn(styles.ellipsis, styles[`size-${size}`], className)}
-      {...props}
-    >
-      <span className={styles.icon}>
-        <MoreHorizontalIcon />
+  ({ className, size: sizeProp, ...props }, ref) => {
+    const ctx = useContext(PaginationContext);
+    const size = sizeProp ?? ctx.size;
+    return (
+      <span
+        ref={ref}
+        aria-hidden="true"
+        className={cn(styles.ellipsis, styles[`size-${size}`], className)}
+        {...props}
+      >
+        <span className={styles.icon}>
+          <MoreHorizontalIcon />
+        </span>
+        <span className={styles.srOnly}>More pages</span>
       </span>
-      <span className={styles.srOnly}>More pages</span>
-    </span>
-  )
+    );
+  }
 );
 PaginationEllipsis.displayName = 'PaginationEllipsis';

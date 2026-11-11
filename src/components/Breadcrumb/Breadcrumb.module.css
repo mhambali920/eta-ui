@@ -16,10 +16,33 @@
   color: var(--eta-text-muted);
 }
 
+.size-sm .list {
+  font-size: 0.8125rem;
+  gap: 6px;
+}
+
+.size-md .list {
+  font-size: 0.875rem;
+  gap: 8px;
+}
+
+.size-lg .list {
+  font-size: 1rem;
+  gap: 10px;
+}
+
 .item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+.size-sm .item {
+  gap: 6px;
+}
+
+.size-lg .item {
+  gap: 10px;
 }
 
 .link {
@@ -58,6 +81,16 @@
 .separator svg {
   width: 14px;
   height: 14px;
+}
+
+.size-sm .separator svg {
+  width: 12px;
+  height: 12px;
+}
+
+.size-lg .separator svg {
+  width: 16px;
+  height: 16px;
 }
 
 .ellipsis {

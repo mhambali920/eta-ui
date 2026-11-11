@@ -7,6 +7,7 @@ export {
   TimelineTitle,
   TimelineTime,
   TimelineDescription,
+  type TimelineSize,
   type TimelineProps,
   type TimelineItemProps,
   type TimelinePointProps,

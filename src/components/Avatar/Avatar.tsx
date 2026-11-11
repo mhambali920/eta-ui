@@ -98,13 +98,24 @@ Avatar.displayName = 'Avatar';
 
 export interface AvatarGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   max?: number;
+  size?: AvatarSize;
   children: React.ReactNode;
 }
 
 export const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
-  ({ max, children, className, ...props }, ref) => {
+  ({ max, size, children, className, ...props }, ref) => {
     const avatarArray = React.Children.toArray(children);
-    const visibleAvatars = max ? avatarArray.slice(0, max) : avatarArray;
+    const firstChildSize =
+      React.isValidElement<{ size?: AvatarSize }>(avatarArray[0])
+        ? avatarArray[0].props.size
+        : undefined;
+    const resolvedSize: AvatarSize = size ?? firstChildSize ?? 'md';
+    const visibleAvatars = (max ? avatarArray.slice(0, max) : avatarArray).map((child) => {
+      if (React.isValidElement<{ size?: AvatarSize }>(child) && size && !child.props.size) {
+        return React.cloneElement(child, { size });
+      }
+      return child;
+    });
     const remainingCount = max ? avatarArray.length - max : 0;
 
     return (
@@ -112,6 +123,7 @@ export const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
         {visibleAvatars}
         {remainingCount > 0 && (
           <Avatar
+            size={resolvedSize}
             fallback={`+${remainingCount}`}
             className={styles.moreFallback}
           />
