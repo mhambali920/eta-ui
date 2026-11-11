@@ -58,3 +58,4 @@ export * from './components/ContextMenu';
 export * from './components/ScrollArea';
 export * from './components/Rating';
 export * from './components/AspectRatio';
+export * from './components/Menubar';
