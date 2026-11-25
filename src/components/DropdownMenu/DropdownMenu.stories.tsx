@@ -94,45 +94,41 @@ export const WithCheckboxes: Story = {
     sideOffset: 6,
   },
   render: (args) => {
-    const CheckboxDemo = () => {
-      const [showStatusbar, setShowStatusbar] = useState(true);
-      const [showActivityBar, setShowActivityBar] = useState(false);
-      const [showPanel, setShowPanel] = useState(false);
+    const [showStatusbar, setShowStatusbar] = useState(true);
+    const [showActivityBar, setShowActivityBar] = useState(false);
+    const [showPanel, setShowPanel] = useState(false);
 
-      return (
-        <div style={{ padding: 80, display: 'flex', justifyContent: 'center' }}>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline">View Options</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent {...args}>
-              <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuCheckboxItem
-                checked={showStatusbar}
-                onCheckedChange={setShowStatusbar}
-              >
-                Status Bar
-              </DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem
-                checked={showActivityBar}
-                onCheckedChange={setShowActivityBar}
-              >
-                Activity Bar
-              </DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem
-                checked={showPanel}
-                onCheckedChange={setShowPanel}
-              >
-                Bottom Panel
-              </DropdownMenuCheckboxItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      );
-    };
-
-    return <CheckboxDemo />;
+    return (
+      <div style={{ padding: 80, display: 'flex', justifyContent: 'center' }}>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline">View Options</Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent {...args}>
+            <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuCheckboxItem
+              checked={showStatusbar}
+              onCheckedChange={setShowStatusbar}
+            >
+              Status Bar
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem
+              checked={showActivityBar}
+              onCheckedChange={setShowActivityBar}
+            >
+              Activity Bar
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem
+              checked={showPanel}
+              onCheckedChange={setShowPanel}
+            >
+              Bottom Panel
+            </DropdownMenuCheckboxItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    );
   },
 };
 
@@ -141,40 +137,36 @@ export const WithSubmenuAndRadio: Story = {
     sideOffset: 6,
   },
   render: (args) => {
-    const SubmenuDemo = () => {
-      const [position, setPosition] = useState('bottom');
+    const [position, setPosition] = useState('bottom');
 
-      return (
-        <div style={{ padding: 80, display: 'flex', justifyContent: 'center' }}>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="soft">More Actions</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent {...args}>
-              <DropdownMenuItem>New Tab</DropdownMenuItem>
-              <DropdownMenuItem>New Window</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuSub>
-                <DropdownMenuSubTrigger>Share</DropdownMenuSubTrigger>
-                <DropdownMenuSubContent>
-                  <DropdownMenuItem>Email link</DropdownMenuItem>
-                  <DropdownMenuItem>Messages</DropdownMenuItem>
-                  <DropdownMenuItem>Notes</DropdownMenuItem>
-                </DropdownMenuSubContent>
-              </DropdownMenuSub>
-              <DropdownMenuSeparator />
-              <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-              <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-                <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      );
-    };
-
-    return <SubmenuDemo />;
+    return (
+      <div style={{ padding: 80, display: 'flex', justifyContent: 'center' }}>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="soft">More Actions</Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent {...args}>
+            <DropdownMenuItem>New Tab</DropdownMenuItem>
+            <DropdownMenuItem>New Window</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuSub>
+              <DropdownMenuSubTrigger>Share</DropdownMenuSubTrigger>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem>Email link</DropdownMenuItem>
+                <DropdownMenuItem>Messages</DropdownMenuItem>
+                <DropdownMenuItem>Notes</DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
+            <DropdownMenuSeparator />
+            <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+            <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+              <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+              <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
+              <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
+            </DropdownMenuRadioGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    );
   },
 };

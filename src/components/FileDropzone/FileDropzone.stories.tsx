@@ -102,55 +102,51 @@ export const InteractiveWithFileList: Story = {
     maxSize: 1024 * 1024 * 5, // 5MB
   },
   render: (args) => {
-    const DropzoneDemo = () => {
-      const [files, setFiles] = useState<File[]>([]);
-      const [errorMsg, setErrorMsg] = useState<string | null>(null);
+    const [files, setFiles] = useState<File[]>([]);
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-      const handleFilesSelected = (newFiles: File[]) => {
-        setErrorMsg(null);
-        setFiles((prev) => [...prev, ...newFiles]);
-      };
-
-      const handleReject = (rejections: FileRejection[]) => {
-        const reasons = rejections.map((r) => `${r.file.name}: ${r.reason}`).join(', ');
-        setErrorMsg(`Rejected: ${reasons}`);
-      };
-
-      const handleRemove = (index: number) => {
-        setFiles((prev) => prev.filter((_, i) => i !== index));
-      };
-
-      return (
-        <div style={{ maxWidth: 500, margin: '0 auto', padding: 24 }}>
-          <FileDropzone
-            {...args}
-            onFilesSelected={handleFilesSelected}
-            onFileReject={handleReject}
-            isInvalid={Boolean(errorMsg)}
-          />
-
-          {errorMsg && (
-            <p style={{ color: 'var(--eta-status-error-solid)', fontSize: '0.8125rem', marginTop: 8 }}>
-              {errorMsg}
-            </p>
-          )}
-
-          {files.length > 0 && (
-            <FileDropzoneFileList>
-              {files.map((file, idx) => (
-                <FileDropzoneFileItem
-                  key={`${file.name}-${idx}`}
-                  name={file.name}
-                  size={file.size}
-                  onRemove={() => handleRemove(idx)}
-                />
-              ))}
-            </FileDropzoneFileList>
-          )}
-        </div>
-      );
+    const handleFilesSelected = (newFiles: File[]) => {
+      setErrorMsg(null);
+      setFiles((prev) => [...prev, ...newFiles]);
     };
 
-    return <DropzoneDemo />;
+    const handleReject = (rejections: FileRejection[]) => {
+      const reasons = rejections.map((r) => `${r.file.name}: ${r.reason}`).join(', ');
+      setErrorMsg(`Rejected: ${reasons}`);
+    };
+
+    const handleRemove = (index: number) => {
+      setFiles((prev) => prev.filter((_, i) => i !== index));
+    };
+
+    return (
+      <div style={{ maxWidth: 500, margin: '0 auto', padding: 24 }}>
+        <FileDropzone
+          {...args}
+          onFilesSelected={handleFilesSelected}
+          onFileReject={handleReject}
+          isInvalid={Boolean(errorMsg)}
+        />
+
+        {errorMsg && (
+          <p style={{ color: 'var(--eta-status-error-solid)', fontSize: '0.8125rem', marginTop: 8 }}>
+            {errorMsg}
+          </p>
+        )}
+
+        {files.length > 0 && (
+          <FileDropzoneFileList>
+            {files.map((file, idx) => (
+              <FileDropzoneFileItem
+                key={`${file.name}-${idx}`}
+                name={file.name}
+                size={file.size}
+                onRemove={() => handleRemove(idx)}
+              />
+            ))}
+          </FileDropzoneFileList>
+        )}
+      </div>
+    );
   },
 };

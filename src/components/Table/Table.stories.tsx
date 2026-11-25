@@ -146,62 +146,58 @@ export const SortableInteractive: Story = {
     size: 'md',
   },
   render: (args) => {
-    const SortableDemo = () => {
-      const [sortCol, setSortCol] = useState<'name' | 'role'>('name');
-      const [direction, setDirection] = useState<'asc' | 'desc'>('asc');
+    const [sortCol, setSortCol] = useState<'name' | 'role'>('name');
+    const [direction, setDirection] = useState<'asc' | 'desc'>('asc');
 
-      const handleSort = (column: 'name' | 'role') => {
-        if (sortCol === column) {
-          setDirection(direction === 'asc' ? 'desc' : 'asc');
-        } else {
-          setSortCol(column);
-          setDirection('asc');
-        }
-      };
-
-      const sortedData = [...sampleData].sort((a, b) => {
-        const valA = a[sortCol];
-        const valB = b[sortCol];
-        return direction === 'asc'
-          ? valA.localeCompare(valB)
-          : valB.localeCompare(valA);
-      });
-
-      return (
-        <Table {...args}>
-          <TableHeader>
-            <TableRow>
-              <TableHead
-                sortable
-                sortDirection={sortCol === 'name' ? direction : null}
-                onSort={() => handleSort('name')}
-              >
-                Name
-              </TableHead>
-              <TableHead
-                sortable
-                sortDirection={sortCol === 'role' ? direction : null}
-                onSort={() => handleSort('role')}
-              >
-                Role
-              </TableHead>
-              <TableHead>Email</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {sortedData.map((row) => (
-              <TableRow key={row.id}>
-                <TableCell>{row.name}</TableCell>
-                <TableCell>{row.role}</TableCell>
-                <TableCell>{row.email}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      );
+    const handleSort = (column: 'name' | 'role') => {
+      if (sortCol === column) {
+        setDirection(direction === 'asc' ? 'desc' : 'asc');
+      } else {
+        setSortCol(column);
+        setDirection('asc');
+      }
     };
 
-    return <SortableDemo />;
+    const sortedData = [...sampleData].sort((a, b) => {
+      const valA = a[sortCol];
+      const valB = b[sortCol];
+      return direction === 'asc'
+        ? valA.localeCompare(valB)
+        : valB.localeCompare(valA);
+    });
+
+    return (
+      <Table {...args}>
+        <TableHeader>
+          <TableRow>
+            <TableHead
+              sortable
+              sortDirection={sortCol === 'name' ? direction : null}
+              onSort={() => handleSort('name')}
+            >
+              Name
+            </TableHead>
+            <TableHead
+              sortable
+              sortDirection={sortCol === 'role' ? direction : null}
+              onSort={() => handleSort('role')}
+            >
+              Role
+            </TableHead>
+            <TableHead>Email</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {sortedData.map((row) => (
+            <TableRow key={row.id}>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.role}</TableCell>
+              <TableCell>{row.email}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    );
   },
 };
 

@@ -1,0 +1,535 @@
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.root {
+  position: relative;
+  box-sizing: border-box;
+  font-family: inherit;
+  color: var(--eta-text-body, #5C6070);
+  min-width: 0;
+}
+
+.draggable {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  box-sizing: border-box;
+  border-radius: var(--eta-radius-md, 8px);
+  color: var(--eta-text-heading, #2B2D42);
+  font-family: inherit;
+  min-width: 0;
+  max-width: 100%;
+  transition:
+    background-color var(--eta-transition-fast, 150ms ease),
+    border-color var(--eta-transition-fast, 150ms ease),
+    box-shadow var(--eta-transition-fast, 150ms ease),
+    opacity var(--eta-transition-fast, 150ms ease),
+    transform var(--eta-transition-fast, 150ms ease);
+}
+
+.variant-surface {
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+  box-shadow: var(--eta-shadow-sm);
+}
+
+.variant-outline {
+  background-color: var(--eta-bg-base, #FAF9F6);
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+}
+
+.variant-soft {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+}
+
+.variant-ghost {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.interactiveSurface:hover {
+  border-color: var(--eta-color-primary, #6B9080);
+}
+
+.variant-soft.interactiveSurface:hover,
+.variant-ghost.interactiveSurface:hover {
+  background-color: var(--eta-bg-hover, #E2DDD4);
+}
+
+.size-sm {
+  min-height: 36px;
+  padding: 0.375rem 0.625rem;
+  font-size: 0.8125rem;
+}
+
+.size-md {
+  min-height: 44px;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+}
+
+.size-lg {
+  min-height: 52px;
+  padding: 0.875rem 1.125rem;
+  font-size: 1rem;
+}
+
+.grabTarget {
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.grabTarget:active {
+  cursor: grabbing;
+}
+
+.focusable:focus-visible {
+  outline: none;
+  border-color: var(--eta-border-focus, #6B9080);
+  box-shadow:
+    0 0 0 2px var(--eta-bg-base, #FAF9F6),
+    0 0 0 4px var(--eta-border-focus, #6B9080);
+}
+
+.isDragging {
+  opacity: 0.45;
+  border-style: dashed;
+  border-color: var(--eta-color-primary, #6B9080);
+  box-shadow: none;
+}
+
+.isKeyboardDragging {
+  opacity: 1;
+  border-style: solid;
+  border-color: var(--eta-color-primary, #6B9080);
+  background-color: var(--eta-color-primary-subtle, rgba(107, 144, 128, 0.12));
+  box-shadow:
+    0 0 0 2px var(--eta-bg-base, #FAF9F6),
+    0 0 0 4px var(--eta-color-primary, #6B9080),
+    var(--eta-shadow-md);
+  z-index: 2;
+}
+
+.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--eta-radius-sm, 6px);
+  background: transparent;
+  color: var(--eta-text-body, #5C6070);
+  cursor: grab;
+  touch-action: none;
+  transition:
+    background-color var(--eta-transition-fast, 150ms ease),
+    color var(--eta-transition-fast, 150ms ease),
+    border-color var(--eta-transition-fast, 150ms ease);
+}
+
+.handle svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.handle:hover:not(:disabled) {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  color: var(--eta-text-heading, #2B2D42);
+  border-color: var(--eta-border-default, #E5E3DC);
+}
+
+.handle:active:not(:disabled),
+.handleDragging {
+  cursor: grabbing;
+  background-color: var(--eta-color-primary-subtle, rgba(107, 144, 128, 0.12));
+  color: var(--eta-text-heading, #2B2D42);
+  border-color: var(--eta-color-primary, #6B9080);
+}
+
+.handle:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--eta-bg-base, #FAF9F6),
+    0 0 0 4px var(--eta-border-focus, #6B9080);
+}
+
+.handle:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.droppable {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: var(--eta-radius-lg, 12px);
+  color: var(--eta-text-body, #5C6070);
+  min-width: 0;
+  max-width: 100%;
+  transition:
+    background-color var(--eta-transition-fast, 150ms ease),
+    border-color var(--eta-transition-fast, 150ms ease),
+    box-shadow var(--eta-transition-fast, 150ms ease);
+}
+
+.droppable-dashed {
+  background-color: var(--eta-bg-base, #FAF9F6);
+  border: 2px dashed var(--eta-border-default, #E5E3DC);
+}
+
+.droppable-surface {
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  border: 1.5px solid var(--eta-border-default, #E5E3DC);
+  box-shadow: var(--eta-shadow-sm);
+}
+
+.droppable-soft {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  border: 1.5px solid var(--eta-border-default, #E5E3DC);
+}
+
+.droppable-sm {
+  padding: 0.75rem;
+  min-height: 72px;
+}
+
+.droppable-md {
+  padding: 1rem;
+  min-height: 96px;
+}
+
+.droppable-lg {
+  padding: 1.5rem;
+  min-height: 128px;
+}
+
+.droppableCanDrop {
+  border-color: var(--eta-color-secondary, #7E99A3);
+}
+
+.droppableOver {
+  border-color: var(--eta-color-primary, #6B9080);
+  border-style: solid;
+  background-color: var(--eta-color-primary-subtle, rgba(107, 144, 128, 0.12));
+  box-shadow: 0 0 0 3px var(--eta-color-primary-focus, rgba(107, 144, 128, 0.25));
+}
+
+.droppableRejected {
+  border-color: var(--eta-status-error-solid, #C1121F);
+  border-style: solid;
+  background-color: var(--eta-status-error-bg, #FFCAD4);
+  color: var(--eta-status-error-text, #641220);
+}
+
+.droppableDisabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sortableList {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+  width: 100%;
+  position: relative;
+  border-radius: var(--eta-radius-lg, 12px);
+  transition:
+    background-color var(--eta-transition-fast, 150ms ease),
+    box-shadow var(--eta-transition-fast, 150ms ease);
+}
+
+.listVertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--eta-dnd-gap, 0.5rem);
+}
+
+.listHorizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--eta-dnd-gap, 0.5rem);
+}
+
+.listGrid {
+  display: grid;
+  grid-template-columns: repeat(var(--eta-dnd-columns, 3), minmax(0, 1fr));
+  gap: var(--eta-dnd-gap, 0.75rem);
+}
+
+.listOverContainer {
+  background-color: var(--eta-color-primary-subtle, rgba(107, 144, 128, 0.12));
+  box-shadow: 0 0 0 2px var(--eta-color-primary, #6B9080);
+}
+
+.sortableItem {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  min-width: 0;
+}
+
+.listHorizontal .sortableItem {
+  flex: 1 1 180px;
+}
+
+.dropIndicatorBeforeVertical::before,
+.dropIndicatorAfterVertical::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--eta-radius-full, 9999px);
+  background-color: var(--eta-color-primary, #6B9080);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.dropIndicatorBeforeVertical::before {
+  top: -5px;
+}
+
+.dropIndicatorAfterVertical::after {
+  bottom: -5px;
+}
+
+.dropIndicatorBeforeHorizontal::before,
+.dropIndicatorAfterHorizontal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: var(--eta-radius-full, 9999px);
+  background-color: var(--eta-color-primary, #6B9080);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.dropIndicatorBeforeHorizontal::before {
+  left: -5px;
+}
+
+.dropIndicatorAfterHorizontal::after {
+  right: -5px;
+}
+
+.itemContent {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: var(--eta-radius-sm, 6px);
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+  background-color: var(--eta-bg-base, #FAF9F6);
+  color: var(--eta-text-heading, #2B2D42);
+  cursor: pointer;
+  transition:
+    background-color var(--eta-transition-fast, 150ms ease),
+    border-color var(--eta-transition-fast, 150ms ease),
+    color var(--eta-transition-fast, 150ms ease);
+}
+
+.actionBtn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.actionBtn:hover:not(:disabled) {
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  border-color: var(--eta-color-primary, #6B9080);
+}
+
+.actionBtn:active:not(:disabled) {
+  background-color: var(--eta-color-primary-subtle, rgba(107, 144, 128, 0.12));
+}
+
+.actionBtn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--eta-bg-base, #FAF9F6),
+    0 0 0 4px var(--eta-border-focus, #6B9080);
+}
+
+.actionBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: var(--eta-radius-md, 8px);
+  border: 1.5px dashed var(--eta-border-default, #E5E3DC);
+  background-color: var(--eta-bg-base, #FAF9F6);
+  color: var(--eta-text-body, #5C6070);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  gap: 0.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.loadingLabel {
+  font-size: 0.8125rem;
+  color: var(--eta-text-body, #5C6070);
+  margin: 0 0 0.125rem;
+}
+
+.skeletonRow {
+  height: 44px;
+  width: 100%;
+  border-radius: var(--eta-radius-md, 8px);
+  background-color: var(--eta-bg-subtle, #EAE6DF);
+  border: 1px solid var(--eta-border-default, #E5E3DC);
+  animation: etaDndPulse 1.6s ease-in-out infinite;
+}
+
+.errorState {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--eta-radius-md, 8px);
+  border: 1px solid var(--eta-status-error-solid, #C1121F);
+  background-color: var(--eta-status-error-bg, #FFCAD4);
+  color: var(--eta-status-error-text, #641220);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform;
+  box-sizing: border-box;
+}
+
+.defaultOverlayCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--eta-radius-md, 8px);
+  background-color: var(--eta-bg-surface, #F3F1ED);
+  color: var(--eta-text-heading, #2B2D42);
+  border: 1.5px solid var(--eta-color-primary, #6B9080);
+  box-shadow: var(--eta-shadow-lg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  max-width: min(360px, calc(100vw - 32px));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.defaultOverlayGrip {
+  display: inline-flex;
+  align-items: center;
+  color: var(--eta-color-primary, #6B9080);
+  flex-shrink: 0;
+}
+
+.defaultOverlayGrip svg {
+  width: 15px;
+  height: 15px;
+}
+
+@keyframes etaDndPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@media (max-width: 640px) {
+  .listGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (pointer: coarse) {
+  .handle,
+  .actionBtn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .draggable,
+  .handle,
+  .droppable,
+  .sortableList,
+  .actionBtn {
+    transition: none !important;
+  }
+
+  .skeletonRow {
+    animation: none !important;
+  }
+}
