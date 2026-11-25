@@ -2,6 +2,15 @@
 
 All notable changes to `@eta-ui/react` are documented in this file.
 
+## 0.5.0
+
+### Minor Changes
+
+- 39069ee: Add Next.js App Router and Tailwind CSS v4 compatibility: scope component CSS Modules class names in `tsup`, ship `@eta-ui/react/styles.layer.css` with `@layer base` and `@layer components`, prepend `"use client"` module directives, add SSR `<ThemeScript />` anti-flicker helper, and expose `--eta-font-sans` for `next/font` integration.
+
+### Patch Changes
+
+- 5fd4c3a: Add zero-dependency Soft UI SVG `Chart` component suite (`AreaChart`, `LineChart`, `BarChart`, `DonutChart`, `Sparkline`, `ChartContainer`, `ChartLegend`) and `--eta-chart-1..6` CSS color tokens with interactive series filtering, keyboard-accessible tooltips, and light/dark theme support.
 ## 0.4.2
 
 ### Patch Changes

@@ -61,6 +61,7 @@ export function ThemeProvider({
       } else {
         root.classList.remove('dark');
       }
+      root.style.colorScheme = resolved;
     };
 
     if (theme === 'system' && enableSystem) {
