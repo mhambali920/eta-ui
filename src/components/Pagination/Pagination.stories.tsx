@@ -196,64 +196,60 @@ export const Interactive: Story = {
     variant: 'ghost',
   },
   render: (args) => {
-    const InteractiveDemo = () => {
-      const [currentPage, setCurrentPage] = useState(1);
-      const totalPages = 5;
+    const [currentPage, setCurrentPage] = useState(1);
+    const totalPages = 5;
 
-      return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-          <div style={{ fontSize: '0.875rem', color: 'var(--eta-text-muted)' }}>
-            Viewing page {currentPage} of {totalPages}
-          </div>
-          <Pagination>
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious
-                  size={args.size}
-                  variant={args.variant}
-                  disabled={currentPage <= 1}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (currentPage > 1) setCurrentPage(currentPage - 1);
-                  }}
-                  href="#"
-                />
-              </PaginationItem>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <PaginationItem key={page}>
-                  <PaginationLink
-                    size={args.size}
-                    variant={args.variant}
-                    activeVariant={args.activeVariant}
-                    isActive={currentPage === page}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setCurrentPage(page);
-                    }}
-                    href="#"
-                  >
-                    {page}
-                  </PaginationLink>
-                </PaginationItem>
-              ))}
-              <PaginationItem>
-                <PaginationNext
-                  size={args.size}
-                  variant={args.variant}
-                  disabled={currentPage >= totalPages}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-                  }}
-                  href="#"
-                />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
+        <div style={{ fontSize: '0.875rem', color: 'var(--eta-text-muted)' }}>
+          Viewing page {currentPage} of {totalPages}
         </div>
-      );
-    };
-
-    return <InteractiveDemo />;
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                size={args.size}
+                variant={args.variant}
+                disabled={currentPage <= 1}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (currentPage > 1) setCurrentPage(currentPage - 1);
+                }}
+                href="#"
+              />
+            </PaginationItem>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <PaginationItem key={page}>
+                <PaginationLink
+                  size={args.size}
+                  variant={args.variant}
+                  activeVariant={args.activeVariant}
+                  isActive={currentPage === page}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setCurrentPage(page);
+                  }}
+                  href="#"
+                >
+                  {page}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+            <PaginationItem>
+              <PaginationNext
+                size={args.size}
+                variant={args.variant}
+                disabled={currentPage >= totalPages}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+                }}
+                href="#"
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
+    );
   },
 };

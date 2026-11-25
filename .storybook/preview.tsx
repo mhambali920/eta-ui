@@ -4,6 +4,14 @@ import '../src/styles/index.css';
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        locales: 'en-US',
+        includeNames: true,
+        order: ['*', ['*', ['Docs', 'Default', '*']]],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
