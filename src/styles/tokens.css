@@ -51,6 +51,16 @@
   --eta-status-info-solid-hover: #293E58;
   --eta-status-info-focus: rgba(61, 90, 128, 0.25);
 
+  /* Semantic - Data Visualization */
+  --eta-chart-1: var(--eta-color-primary);
+  --eta-chart-2: #4A7C9B;
+  --eta-chart-3: #B5654D;
+  --eta-chart-4: #7A639E;
+  --eta-chart-5: #9E6F21;
+  --eta-chart-6: #9E4765;
+  --eta-chart-grid: var(--eta-border-default);
+  --eta-chart-axis: var(--eta-text-body);
+
   /* Geometry & Radius */
   --eta-radius-sm: 6px;
   --eta-radius-md: 8px;
@@ -116,6 +126,13 @@
   --eta-status-info-solid-hover: #6EC1E4;
   --eta-status-info-focus: rgba(142, 202, 230, 0.35);
 
+  --eta-chart-1: var(--eta-color-primary);
+  --eta-chart-2: #7EB0D5;
+  --eta-chart-3: #E08D73;
+  --eta-chart-4: #B39DDB;
+  --eta-chart-5: #E6BE68;
+  --eta-chart-6: #E58BA8;
+
   --eta-shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.35);
   --eta-shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
   --eta-shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.55);
@@ -169,6 +186,13 @@
     --eta-status-info-solid: #4EA8DE;
     --eta-status-info-solid-hover: #6EC1E4;
     --eta-status-info-focus: rgba(142, 202, 230, 0.35);
+
+    --eta-chart-1: var(--eta-color-primary);
+    --eta-chart-2: #7EB0D5;
+    --eta-chart-3: #E08D73;
+    --eta-chart-4: #B39DDB;
+    --eta-chart-5: #E6BE68;
+    --eta-chart-6: #E58BA8;
 
     --eta-shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.35);
     --eta-shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.45);

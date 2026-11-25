@@ -584,6 +584,7 @@ These four presets pair high-saturation primary colors with slate and off-white 
 | `Tag` | Interactive chip with optional remove button (`onRemove`) and selection state |
 | `Timeline` | Vertical chronological feed for events and activity logs |
 | `Stat` | Metric card displaying a label, value, helper text, and trend indicator (`up`, `down`, `neutral`) |
+| `AreaChart`, `LineChart`, `BarChart`, `DonutChart`, `Sparkline`, `ChartContainer` | Zero-dependency SVG data visualization components with interactive legends, keyboard tooltips, and `--eta-chart-*` theme tokens |
 | `Code`, `CodeBlock` | Inline code span and multi-line code block with line numbers and copy button |
 
 ---
