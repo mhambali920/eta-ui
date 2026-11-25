@@ -62,3 +62,4 @@ export * from './components/Menubar';
 export * from './components/TreeView';
 export * from './components/Sidebar';
 export * from './components/Carousel';
+export * from './components/DragAndDrop';
