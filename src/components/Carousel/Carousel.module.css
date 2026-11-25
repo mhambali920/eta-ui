@@ -294,7 +294,8 @@
 }
 
 /* Dark mode adjustments */
-:global([data-theme='dark']) .button {
+:global([data-theme='dark']) .button,
+:global(.dark) .button {
   background: var(--eta-bg-surface, #1e2430);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
@@ -302,19 +303,22 @@
     -2px -2px 5px rgba(255, 255, 255, 0.03);
 }
 
-:global([data-theme='dark']) .button:hover:not(:disabled) {
+:global([data-theme='dark']) .button:hover:not(:disabled),
+:global(.dark) .button:hover:not(:disabled) {
   box-shadow:
     3px 3px 6px rgba(0, 0, 0, 0.5),
     -2px -2px 5px rgba(255, 255, 255, 0.05);
 }
 
-:global([data-theme='dark']) .button:active:not(:disabled) {
+:global([data-theme='dark']) .button:active:not(:disabled),
+:global(.dark) .button:active:not(:disabled) {
   box-shadow:
     inset 2px 2px 4px rgba(0, 0, 0, 0.5),
     inset -1px -1px 3px rgba(255, 255, 255, 0.03);
 }
 
-:global([data-theme='dark']) .dot {
+:global([data-theme='dark']) .dot,
+:global(.dark) .dot {
   background: var(--eta-bg-surface, #1e2430);
   border-color: rgba(255, 255, 255, 0.06);
   box-shadow:
@@ -322,7 +326,8 @@
     inset -1px -1px 2px rgba(255, 255, 255, 0.03);
 }
 
-:global([data-theme='dark']) .counter {
+:global([data-theme='dark']) .counter,
+:global(.dark) .counter {
   background: var(--eta-bg-surface, #1e2430);
   color: var(--eta-text-heading, #f1f5f9);
   border-color: rgba(255, 255, 255, 0.08);

@@ -107,6 +107,7 @@ export const ThemeToggle = forwardRef<HTMLButtonElement, ThemeToggleProps>(
               type="button"
               role="radio"
               aria-checked={theme === opt.value}
+              suppressHydrationWarning
               className={cn(
                 styles.segmentItem,
                 theme === opt.value && styles.active
@@ -143,11 +144,12 @@ export const ThemeToggle = forwardRef<HTMLButtonElement, ThemeToggleProps>(
         ref={ref}
         type="button"
         aria-label={`Current theme: ${theme}. Click to switch theme.`}
+        suppressHydrationWarning
         className={cn(styles.iconButton, styles[size], className)}
         onClick={handleCycleTheme}
         {...props}
       >
-        <span className={styles.iconWrapper} key={theme}>
+        <span className={styles.iconWrapper} key={theme} suppressHydrationWarning>
           {renderIcon()}
         </span>
       </button>

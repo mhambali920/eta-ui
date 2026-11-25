@@ -44,7 +44,7 @@
 }
 
 [data-theme="dark"] .animation-shimmer,
-.dark .animation-shimmer {
+:global(.dark) .animation-shimmer {
   background: linear-gradient(
     90deg,
     var(--eta-bg-subtle) 0%,

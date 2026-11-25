@@ -88,7 +88,59 @@ function Header() {
 }
 ```
 
-`ThemeProvider` saves the active theme to `localStorage` under the `eta-ui-theme` key and sets the `data-theme` attribute on `<html>`.
+`ThemeProvider` saves the active theme to `localStorage` under the `eta-ui-theme` key and sets the `data-theme` attribute, `.dark` class, and `color-scheme` on `<html>`.
+
+---
+
+## Next.js (App Router) and Tailwind CSS Integration
+
+`@eta-ui/react` ships with `"use client"` module boundaries, scoped CSS Modules class hashes, an SSR `<ThemeScript />` helper to prevent dark-mode flashes, and a dedicated CSS Cascade Layer stylesheet (`@eta-ui/react/styles.layer.css`) so Tailwind utility classes (`className="p-0 mt-4 w-full"`) can override component defaults without `!important`.
+
+### 1. Tailwind CSS v4 (`app/globals.css`)
+
+Import `@eta-ui/react/styles.layer.css` alongside Tailwind v4 so `@eta-ui/react` sits inside `@layer components` (above Tailwind Preflight in `@layer base`, and below Tailwind utilities in `@layer utilities`):
+
+```css
+@import "tailwindcss";
+@import "@eta-ui/react/styles.layer.css";
+
+@theme inline {
+  --color-eta-base: var(--eta-bg-base);
+  --color-eta-surface: var(--eta-bg-surface);
+  --color-eta-subtle: var(--eta-bg-subtle);
+  --color-eta-primary: var(--eta-color-primary);
+  --color-eta-secondary: var(--eta-color-secondary);
+  --color-eta-heading: var(--eta-text-heading);
+  --color-eta-body: var(--eta-text-body);
+  --color-eta-border: var(--eta-border-default);
+}
+```
+
+*(For Tailwind CSS v3 or projects without CSS Cascade Layers, import `@eta-ui/react/styles.css` instead.)*
+
+### 2. Root Layout with SSR Anti-Flicker (`app/layout.tsx`)
+
+```tsx
+import type { ReactNode } from 'react';
+import { Inter } from 'next/font/google';
+import { ThemeProvider, ThemeScript } from '@eta-ui/react';
+import './globals.css';
+
+const inter = Inter({ subsets: ['latin'], variable: '--eta-font-sans' });
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <ThemeScript defaultTheme="system" />
+      </head>
+      <body>
+        <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
 
 ---
 
