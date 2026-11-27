@@ -138,9 +138,9 @@ export const Sidebar = forwardRef<HTMLElement, SidebarProps>(
 
     return (
       <>
-        {isMobile && openMobile && (
+        {isMobile && (
           <div
-            className={styles.backdrop}
+            className={cn(styles.backdrop, openMobile && styles.backdropOpen)}
             onClick={() => setOpenMobile(false)}
             aria-hidden="true"
           />
@@ -157,8 +157,8 @@ export const Sidebar = forwardRef<HTMLElement, SidebarProps>(
             styles.sidebar,
             styles[`variant-${variant}`],
             styles[`side-${side}`],
-            collapsible === 'icon' && state === 'collapsed' && styles.collapsedIcon,
-            collapsible === 'offcanvas' && state === 'collapsed' && styles.collapsedOffcanvas,
+            !isMobile && collapsible === 'icon' && state === 'collapsed' && styles.collapsedIcon,
+            !isMobile && collapsible === 'offcanvas' && state === 'collapsed' && styles.collapsedOffcanvas,
             isMobile && styles.mobileSidebar,
             isMobile && openMobile && styles.mobileOpen,
             className
