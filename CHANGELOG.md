@@ -2,6 +2,12 @@
 
 All notable changes to `@eta-ui/react` are documented in this file.
 
+## 0.5.1
+
+### Patch Changes
+
+- Add close animations for Drawer and Sidebar (overlay fade-out, directional slide-out, mobile backdrop fade, offcanvas min-width/margin transitions, and collapsed flyout animation).
+
 ## 0.5.0
 
 ### Minor Changes
