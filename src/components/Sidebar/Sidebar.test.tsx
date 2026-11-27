@@ -151,4 +151,54 @@ describe('Sidebar component', () => {
     expect(screen.getByText('General')).toBeInTheDocument();
     expect(screen.getByText('Team')).toBeInTheDocument();
   });
+
+  it('keeps backdrop mounted and toggles mobile open/close classes without desktop collapse classes', async () => {
+    const user = userEvent.setup();
+    const originalInnerWidth = window.innerWidth;
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 500,
+    });
+
+    try {
+      const { container } = render(
+        <SidebarProvider defaultOpen={false}>
+          <Sidebar collapsible="offcanvas" side="right" data-testid="mobile-sidebar">
+            <SidebarContent>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton>Dashboard</SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarContent>
+          </Sidebar>
+          <SidebarTrigger data-testid="mobile-toggle" />
+        </SidebarProvider>
+      );
+
+      const sidebar = screen.getByTestId('mobile-sidebar');
+      const backdrop = container.querySelector('[aria-hidden="true"]');
+      expect(backdrop).toBeInTheDocument();
+      expect(backdrop?.className).not.toContain('backdropOpen');
+      expect(sidebar.className).toContain('mobileSidebar');
+      expect(sidebar.className).toContain('side-right');
+      expect(sidebar.className).not.toContain('collapsedOffcanvas');
+      expect(sidebar.className).not.toContain('mobileOpen');
+
+      await user.click(screen.getByTestId('mobile-toggle'));
+      expect(sidebar.className).toContain('mobileOpen');
+      expect(backdrop?.className).toContain('backdropOpen');
+
+      await user.click(backdrop as Element);
+      expect(sidebar.className).not.toContain('mobileOpen');
+      expect(backdrop?.className).not.toContain('backdropOpen');
+    } finally {
+      Object.defineProperty(window, 'innerWidth', {
+        writable: true,
+        configurable: true,
+        value: originalInnerWidth,
+      });
+    }
+  });
 });
